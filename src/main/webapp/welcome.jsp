@@ -12,7 +12,7 @@
         <title>Welcome Page</title>
     </head>
     <body>
-        <h1>Form data should be posted here (week 5 workshop)</h1>
+        <h1>Welcome</h1>
         <h1>pog</h1>
     </body>
 </html>
