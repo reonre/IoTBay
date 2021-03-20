@@ -15,7 +15,7 @@
     </head>
     <body onload="startTime()">
         <div id="bar">
-            ISD Demo
+            IoTBay
             <span id="links"> <a href="login.jsp"> Login</a> | <a href="register.jsp">Register </a></span>
         </div>
         
