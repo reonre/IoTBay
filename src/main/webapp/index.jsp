@@ -16,7 +16,6 @@
     <body onload="startTime()">
         <div id="bar">
             IoTBay
-            UAERHWjqoehsgbfjarhgfjdekojhbfdjsoaihbxijos;aduhxfdfjosiaduhbdjsoia;duhghdjosi;DUGHJOI;Sdug
             <span id="links"> <a href="login.jsp"> Login</a> | <a href="register.jsp">Register </a></span>
         </div>
         
