@@ -1,7 +1,7 @@
 <%-- 
     Document   : welcome
     Created on : 15/03/2021, 5:09:16 PM
-    Author     : george
+    Author     : team 43
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -13,6 +13,6 @@
     </head>
     <body>
         <h1>Welcome</h1>
-        <h1>pog</h1>
+        <h1></h1>
     </body>
 </html>
