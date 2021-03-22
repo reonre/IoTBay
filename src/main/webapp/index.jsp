@@ -11,12 +11,14 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="css/layout.css">
         <script type="text/javascript" src="js/index.js"></script>
+        
         <title>Home Page</title>
     </head>
     <body onload="startTime()">
         <div id="bar">
             IoTBay
             <span id="links"> <a href="login.jsp"> Login</a> | <a href="register.jsp">Register </a></span>
+            <span id="links"><a href = "aboutUs.jsp"> about the company</a> </span>
         </div>
         
         <div id="clock" class="footer">            
