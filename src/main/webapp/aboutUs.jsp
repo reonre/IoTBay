@@ -16,14 +16,11 @@
     </head>
      
     <div id="bar">  
+        about us 
         <span id="links"> <a href="index.jsp">home page</a> 
-            about us
-    </div>
-    <body>
-        <section>
-         
-             <p1> The Internet of Things store is a small company based in Sydney, Australia</p1>
-        </section>
+           
+ <body>
+      
        
     
 
