@@ -40,8 +40,8 @@
                 <tr><td>Favourite Colour</td><td><input type ="text" name="favcol"/></td></tr>
                 <tr><td>Agree to Terms of Service</td><td><input type="checkbox" name="tos"/></td></tr>
                 <tr><td>
-                            <input type="submit" value="Submit" class="button">
-                    </td></tr>
+                        <input type="submit" value="Submit" class="button">
+                </td></tr>
             </table>
         </form>
 
