@@ -12,7 +12,29 @@
         <title>Welcome Page</title>
     </head>
     <body>
-        <h1>Welcome</h1>
-        <h1></h1>
+        <div id="bar">
+            ISD DEMO
+            <span id="links"> <a href="profile.jsp">Profile</a> | <a href="logout.jsp">Logout</a></span>
+        </div><!-- comment -->
+        <%
+            String name = request.getParameter("name");
+            String email = request.getParameter("email");
+            String password = request.getParameter("password");
+            String dob = request.getParameter("dob");
+            String gender = request.getParameter("gender");
+        %>
+        <%if(email != null){%>
+        <table class="table">
+            <tr><td>Name:</td><td><%= name%></td></tr>
+            <tr><td>Email:</td><td><%= email%></td></tr>
+            <tr><td>Password:</td><td><%= password%></td></tr>
+            <tr><td>Dob:</td><td><%= dob%></td></tr>
+            <tr><td>Gender:</td><td><%= gender%></td></tr>
+        </table>
+        <%}else{%>
+        <p>Sorry unknown email click <a href="register.jsp">here</a>to go back</p>
+        <%}%>
+        <div id="clock" class="footer">
+        </div>
     </body>
 </html>
