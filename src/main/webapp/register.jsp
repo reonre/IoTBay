@@ -30,18 +30,30 @@
                     <td>
                         <select class="select" name="gender">
                             <option value="empty">Gender</option>
-                            <option value="male">M</option>
-                            <option value="female">F</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
                             <option value="other">Other</option>                                                                
                         </select>
                         <input class="date" type="date" name="dob"/>                                     
                     </td>
                 </tr>
-                <tr><td>Favourite Colour</td><td><input type ="text" name="favcol"/></td></tr>
+  
                 <tr><td>Agree to Terms of Service</td><td><input type="checkbox" name="tos"/></td></tr>
                 <tr><td>
-                        <input type="submit" value="Submit" class="button">
-                </td></tr>
+                            <input type="submit" value="Submit" class="button" name = "submit">
+                            <script>
+                                var checker = document.getElementById("tos");
+                                var send = document.getElementById("submit")
+                                checker.onchange = function() {
+                                    if (checker.checked) {
+                                        send.disabled = false;
+                                    }
+                                    else {
+                                        send.disabled = true;
+                                    }
+                                }
+                                </script>
+                    </td></tr>
             </table>
         </form>
 
