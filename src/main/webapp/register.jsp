@@ -38,13 +38,16 @@
                     </td>
                 </tr>
   
-                <tr><td>Agree to Terms of Service</td><td><input type="checkbox" name="tos"/></td></tr>
+                <tr><td>Agree to Terms of Service</td><td><input type="checkbox" name="tos" id="tos"/></td></tr>
                 <tr><td>
-                            <input type="submit" value="Submit" class="button" name = "submit">
-                            <script>
+                            <input type="submit" value="Submit" class="button" name = "submit" id="submit" disabled>
+                    </td></tr>
+            </table>
+        </form>
+        <script>
                                 var checker = document.getElementById("tos");
                                 var send = document.getElementById("submit")
-                                checker.onchange = function() {
+                                this.onchange = function() {
                                     if (checker.checked) {
                                         send.disabled = false;
                                     }
@@ -53,9 +56,6 @@
                                     }
                                 }
                                 </script>
-                    </td></tr>
-            </table>
-        </form>
 
         <div id="clock" class="footer"></div>
 
