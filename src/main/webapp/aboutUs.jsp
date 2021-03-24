@@ -11,7 +11,7 @@
          <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="css/layout.css">
         
-        <title>about us page</title>
+        <title>About Us page</title>
         
     </head>
      
