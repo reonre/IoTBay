@@ -13,7 +13,7 @@
     </head>
     <body>
         <div id="bar">
-            ISD DEMO
+            IoTBay
             <span id="links"> <a href="profile.jsp">Profile</a> | <a href="logout.jsp">Logout</a></span>
         </div>
         <%
