@@ -29,7 +29,7 @@
     <div>
          
         
-        <p> we are an online retail, founded in Australia </p>
+        <p> we are an online retail store, founded in Australia </p>
         
         </div>
 </html>
