@@ -26,7 +26,7 @@
                 <tr><td>Email</td><td><input type="text" name="email"/></td></tr>
                 <tr><td>Password</td><td><input type="password" name="password"/></td></tr>                
                 <tr>
-                    
+    
                     <td>
                         <select class="select" name="gender">
                             <option value="empty">Gender</option>
