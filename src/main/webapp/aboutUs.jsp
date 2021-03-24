@@ -25,11 +25,12 @@
         
         <div id="clock" class="footer">            
         </div>
-    </body>
-    <div>
+    
+        <div>
          
         
         <p> we are an online retail store, founded in Australia </p>
+
         
-        </div>
+    </body>
 </html>
