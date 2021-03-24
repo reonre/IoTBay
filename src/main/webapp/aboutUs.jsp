@@ -15,14 +15,14 @@
         
     </head>
      
-    <div id="bar">  
-        about us 
-        <span id="links"> <a href="index.jsp">home page</a> 
-           
- <body>
-      
-       
-    
-
+    <body onload="startTime()">
+        <div id="bar">
+            IoTBay
+            <span id="links"> <a href="login.jsp"> Login</a> | <a href="register.jsp">Register </a></span>
+            <span id="links"><a href = "aboutUs.jsp"> about us</a> </span>
+        </div>
+        
+        <div id="clock" class="footer">            
+        </div>
     </body>
 </html>
