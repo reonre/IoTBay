@@ -19,10 +19,17 @@
         <div id="bar">
             
             <span id="links"> <a href="login.jsp"> Login</a> | <a href="register.jsp">Register </a></span>
-            <span id="links"><a href = "index.jsp"> Home Page </a> </span>
+            <span id="links"> <a href = "index.jsp"> Home Page </a> </span>
         </div>
+       
         
         <div id="clock" class="footer">            
         </div>
     </body>
+    <div>
+         
+        
+        <p> we are an online retail, founded in Australia </p>
+        
+        </div>
 </html>
