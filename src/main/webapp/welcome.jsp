@@ -15,7 +15,7 @@
         <div id="bar">
             ISD DEMO
             <span id="links"> <a href="profile.jsp">Profile</a> | <a href="logout.jsp">Logout</a></span>
-        </div><!-- comment -->
+        </div>
         <%
             String name = request.getParameter("name");
             String email = request.getParameter("email");
