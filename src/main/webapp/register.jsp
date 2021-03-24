@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 <%-- 
     Document   : register
     Created on : 15/03/2021, 3:55:19 PM
