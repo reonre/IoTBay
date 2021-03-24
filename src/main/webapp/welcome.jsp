@@ -23,7 +23,7 @@
             String dob = request.getParameter("dob");
             String gender = request.getParameter("gender");
         %>
-        <%if(email != null){%>
+        <%if(!(email.equals(""))){%>
         <table class="table">
             <tr><td>Name:</td><td><%= name%></td></tr>
             <tr><td>Email:</td><td><%= email%></td></tr>
