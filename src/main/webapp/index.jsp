@@ -19,6 +19,7 @@
             IoTBay
             <span id="links"> <a href="login.jsp"> Login</a> | <a href="register.jsp">Register </a></span>
             <span id="links"><a href = "aboutUs.jsp"> About Us</a> </span>
+              <span id="links"><a href = "contactus.jsp"> contact us</a> </span>
         </div>
         
         <div id="clock" class="footer">            
