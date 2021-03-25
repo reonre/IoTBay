@@ -25,7 +25,7 @@
         <div id="clock" class="footer">            
         </div>
     
-        <div>
+
          
         
         <p> we are an online retail store, founded in Australia </p>
