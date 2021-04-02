@@ -10,7 +10,7 @@
          <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="css/layout.css">
         
-        <title>About Us page</title>
+        <title>About Us</title>
         
     </head>
      

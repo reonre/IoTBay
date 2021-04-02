@@ -10,7 +10,7 @@
          <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="css/layout.css">
         
-        <title> contact us page </title>
+        <title> Contact Us </title>
         <div id="bar">
             Contact Us
             <span id="links"> <a href = "index.jsp"> Home Page </a> | <a href = "about_us.jsp"> About Us </a> | <a href = "contact_us.jsp"> Contact Us </a> | <a href="login.jsp"> Login</a> | <a href="register.jsp">Register </a></span>

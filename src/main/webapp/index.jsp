@@ -12,7 +12,7 @@
         <link rel="stylesheet" href="css/layout.css">
         <script type="text/javascript" src="js/index.js"></script>
         
-        <title>Home Page</title>
+        <title>Home</title>
     </head>
     <body onload="startTime()">
         <div id="bar">

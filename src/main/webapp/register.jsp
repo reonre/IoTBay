@@ -4,7 +4,7 @@
     Author     : team 43
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>  
 <!DOCTYPE html>
 <html>
     <head>
@@ -12,11 +12,11 @@
         <link rel="stylesheet" href="css/layout.css">
         <link rel="stylesheet" href="css/form.css">
         <script type="text/javascript" src="js/index.js"></script>
-        <title>Register Page</title>
+        <title>Register</title>
     </head>
     <body onload="startTime()">
         <div id="bar">
-            Sign Up
+            Register
             <span id="links"> <a href = "index.jsp"> Home Page </a> | <a href = "about_us.jsp"> About Us </a> | <a href = "contact_us.jsp"> Contact Us </a> | <a href="login.jsp"> Login</a> | <a href="register.jsp">Register </a></span>
         </div>
 

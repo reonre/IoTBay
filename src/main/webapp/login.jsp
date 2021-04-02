@@ -9,14 +9,14 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Login Page</title>
+        <title>Login</title>
         <link rel="stylesheet" href="css/layout.css">
         <link rel="stylesheet" href="css/form.css">
         <script type="text/javascript" src="js/index.js"></script>
     </head>
     <body onload="startTime()">
         <div id="bar">
-            Sign In
+            Login
             <span id="links"> <a href = "index.jsp"> Home Page </a> | <a href = "about_us.jsp"> About Us </a> | <a href = "contact_us.jsp"> Contact Us </a> | <a href="login.jsp"> Login</a> | <a href="register.jsp">Register </a></span>
         </div>
         
