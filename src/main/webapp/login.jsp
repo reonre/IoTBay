@@ -17,7 +17,7 @@
     <body onload="startTime()">
         <div id="bar">
             Sign In
-            <span id="links"> <a href="register.jsp"> Register</a> | <a href="index.jsp">Home </a></span>
+            <span id="links"> <a href = "index.jsp"> Home Page </a> | <a href = "about_us.jsp"> About Us </a> | <a href = "contact_us.jsp"> Contact Us </a> | <a href="login.jsp"> Login</a> | <a href="register.jsp">Register </a></span>
         </div>
         
         <div id="clock" class="footer">

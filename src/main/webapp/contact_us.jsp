@@ -12,10 +12,8 @@
         
         <title> contact us page </title>
         <div id="bar">
-            
-            <span id="links"> <a href="login.jsp"> Login</a> | <a href="register.jsp">Register </a></span>
-            <span id="links"> <a href = "index.jsp"> Home Page </a> </span>
-            <span id="links"><a href = "aboutUs.jsp"> About Us</a> </span>
+            Contact Us
+            <span id="links"> <a href = "index.jsp"> Home Page </a> | <a href = "about_us.jsp"> About Us </a> | <a href = "contact_us.jsp"> Contact Us </a> | <a href="login.jsp"> Login</a> | <a href="register.jsp">Register </a></span>
         </div>
           
     </head>
