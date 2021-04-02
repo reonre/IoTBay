@@ -5,18 +5,42 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="uts.isd.model.*"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="css/layout.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <script src="js/bootstrap.min.js"></script>
         <title>Welcome</title>
     </head>
     <body>
-        <div id="bar">
-            IoTBay
-            <span id="links"> <a href="profile.jsp">Profile</a> | <a href="logout.jsp">Logout</a></span>
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.jsp">IoTBay</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto topnav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.jsp">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about_us.jsp">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact_us.jsp">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link btn btn-primary text-white" type="button" href="profile.jsp" data-toggle="modal" data-target="#myModal">Profile</a>                  
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link btn btn-danger text-white" type="button" href="logout.jsp" data-toggle="modal" data-target="#myModal">Logout</a>
+                </li>
+            </ul>
         </div>
+        </nav>  
         <%
             String name = request.getParameter("name");
             String email = request.getParameter("email");
@@ -26,6 +50,10 @@
             String tos = request.getParameter("tos");
         %>
         <%if(!(email.equals("")) && tos != null){%>
+        <%
+            User user = new User(name, email, password, gender, dob);
+            session.setAttribute("user", user);
+        %>
         <table class="table">
             <tr><td>Name:</td><td><%= name%></td></tr>
             <tr><td>Email:</td><td><%= email%></td></tr>
