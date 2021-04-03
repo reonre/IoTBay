@@ -38,7 +38,7 @@
                     <a class="nav-link" href="contact_us.jsp">Contact</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link btn btn-primary text-white" type="button" href="profile.jsp" data-toggle="modal" data-target="#myModal">Profile</a>                  
+                    <a class="nav-link btn btn-primary text-white" type="button" href="main.jsp" data-toggle="modal" data-target="#myModal">Profile</a>                  
                 </li>
                 <li class="nav-item">
                     <a class="nav-link btn btn-danger text-white" type="button" href="logout.jsp" data-toggle="modal" data-target="#myModal">Logout</a>
