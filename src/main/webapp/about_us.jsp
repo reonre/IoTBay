@@ -4,6 +4,7 @@
     Author     : team 43
 --%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="uts.isd.model.*"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -21,13 +22,41 @@
             <span class="navbar-toggler-icon"></span>
         </button>
 
+        <%
+            User user = (User)session.getAttribute("user");
+            if (user != null) {
+        %>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto topnav">
                 <li class="nav-item">
-                    <a class="nav-link" href="index.jsp">Home</a>
+                    <a class="nav-link" href="index.jsp">Home</span></a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="about_us.jsp">About <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="about_us.jsp">About <span class="sr-only">(current)</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact_us.jsp">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link btn btn-primary text-white" type="button" href="profile.jsp" data-toggle="modal" data-target="#myModal">Profile</a>                  
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link btn btn-danger text-white" type="button" href="logout.jsp" data-toggle="modal" data-target="#myModal">Logout</a>
+                </li>
+            </ul>
+        </div>
+        </nav>
+        
+        <%}
+            else {
+        %>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto topnav">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.jsp">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="about_us.jsp">About <span class="sr-only">(current)</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="contact_us.jsp">Contact</a>
@@ -40,10 +69,9 @@
                 </li>
             </ul>
         </div>
-       
-        
-        <div id="clock" class="footer">            
-        </div>
+        </nav>
+        <% } 
+        %>
     
 
          
