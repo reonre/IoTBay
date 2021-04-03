@@ -22,7 +22,7 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto topnav">
-                <li class="nav-item active">
+                <li class="nav-item">
                     <a class="nav-link" href="index.jsp">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
@@ -34,7 +34,7 @@
                 <li class="nav-item">
                     <a class="nav-link btn btn-primary text-white" type="button" href="login.jsp" data-toggle="modal" data-target="#myModal">Sign In</a>                  
                 </li>
-                <li class="nav-item">
+                <li class="nav-item active">
                     <a class="nav-link btn btn-danger text-white" type="button" href="register.jsp" data-toggle="modal" data-target="#myModal">Register</a>
                 </li>
             </ul>
