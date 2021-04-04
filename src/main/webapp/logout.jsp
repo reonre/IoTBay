@@ -47,7 +47,7 @@
         </div>
         </nav>  
 
-        <div class="container-fluid" style="margin-top:60px">
+        <div class="container-fluid">
             <p>
                 You have successfully logged out! Redirecting in a few seconds...
             </p>
