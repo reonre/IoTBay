@@ -12,9 +12,7 @@
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <script src="js/bootstrap.min.js"></script>
         <title>About Us</title>
-        
     </head>
-     
     <body>
         <nav class="navbar navbar-expand-md navbar-dark bg-dark">
         <a class="navbar-brand" href="index.jsp">IoTBay</a>
@@ -46,7 +44,6 @@
             </ul>
         </div>
         </nav>
-        
         <%}
             else {
         %>
@@ -69,14 +66,13 @@
                 </li>
             </ul>
         </div>
-        </nav>
+    </nav>
         <% } 
         %>
-    
-
-         
-
-
-        
+        <div class="container-fluid">
+            <p>
+                We are IoTBay!
+            </p>
+        </div> 
     </body>
 </html>

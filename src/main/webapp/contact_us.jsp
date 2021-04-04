@@ -11,14 +11,11 @@
          <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <script src="js/bootstrap.min.js"></script>
+        <title>Contact Us</title>
     </head>
-        <title> Contact Us </title>
-        
-          
-    </head>
-     
     <body>
-     <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        
+     <nav class="navbar navbar-expand-md navbar-dark bg-dark">
         <a class="navbar-brand" href="index.jsp">IoTBay</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -73,16 +70,10 @@
     </nav>
         <% } 
         %>
-        <div class="container-fluid" style="margin-top:60px">
+        <div class="container-fluid">
             <p>
-                Contact us now
+                Contact us now!
             </p>
-        </div>
-        
-         
-        
- 
-
-        
+        </div> 
     </body>
 </html>

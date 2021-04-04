@@ -72,7 +72,11 @@
         </nav>
         <% } 
         %>
-        
+        <div class="container-fluid">
+            <p>
+                Welcome to IoTBay!
+            </p>
+        </div>
        
     </body>
 </html>

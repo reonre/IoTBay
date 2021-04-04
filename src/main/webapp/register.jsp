@@ -42,7 +42,7 @@
         </nav> 
 
         <form action="welcome.jsp" method="post">
-            <table class="table">
+            <table class="table table-responsive">
                 <tr><td>Name</td><td><input type="text" name="name"/></td></tr>
                 <tr><td>Email</td><td><input type="text" name="email"/></td></tr>
                 <tr><td>Password</td><td><input type="password" name="password"/></td></tr>                
@@ -54,8 +54,10 @@
                             <option value="male">Male</option>
                             <option value="female">Female</option>
                             <option value="other">Other</option>                                                                
-                        </select>
-                        <input class="date" type="date" name="dob"/>                                     
+                        </select>                                   
+                    </td>
+                    <td>
+                        <input class="date" type="date" name="dob"/>  
                     </td>
                 </tr>
   
@@ -66,19 +68,18 @@
             </table>
         </form>
         <script>
-                                var checker = document.getElementById("tos");
-                                var send = document.getElementById("submit")
-                                this.onchange = function() {
-                                    if (checker.checked) {
-                                        send.disabled = false;
-                                    }
-                                    else {
-                                        send.disabled = true;
-                                    }
-                                }
-                                </script>
+            var checker = document.getElementById("tos");
+            var send = document.getElementById("submit")
+            this.onchange = function() {
+                if (checker.checked) {
+                    send.disabled = false;
+                }
+                else {
+                    send.disabled = true;
+                }
+            }
+        </script>
 
-        <div id="clock" class="footer"></div>
 
     </body>
 </html>

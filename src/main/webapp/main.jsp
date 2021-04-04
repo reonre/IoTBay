@@ -49,21 +49,13 @@
         
          
 
-        <div class="container-fluid" style="margin-top:60px">
-            <table id="users">
-            <tr>
-                <th>User</th>
-                <th>Email</th>
-                <th>Gender</th>
-                <th>Date of Birth</th>
-            </tr>
-            <tr>
-                <td><%=user.getName()%></td>
-                <td><%=user.getEmail()%></td>
-                <td><%=user.getGender()%></td>
-                <td><%=user.getDob()%></td>
-            </tr>
-        </table>
+        <div class="container-fluid">
+            <table class="table table-responsive" id="users">
+            <tr><td>Name:</td><td><%= user.getName()%></td></tr>
+            <tr><td>Email:</td><td><%= user.getEmail()%></td></tr>
+            <tr><td>Password:</td><td><%= user.getPassword()%></td></tr>
+            <tr><td>Dob:</td><td><%= user.getDob()%></td></tr>
+            <tr><td>Gender:</td><td><%= user.getGender()%></td></tr>
         </div>
         
          

@@ -10,7 +10,6 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Login</title>
-        <link rel="stylesheet" href="css/form.css">
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <script src="js/bootstrap.min.js"></script>
     </head>
@@ -40,9 +39,15 @@
                 </li>
             </ul>
         </div>
-        
-        <div id="clock" class="footer">
-            
-        </div>
+        </nav>
+        <form action="" method="post">
+            <table class="table table-responsive">
+                <tr><td>Email</td><td><input type="text" name="email" id="email"/></td></tr>
+                <tr><td>Password</td><td><input type="password" name="password" id="password"/></td></tr>                
+                <tr><td>
+                <input type="submit" value="Submit" class="button" name = "submit" id="submit">
+                </td></tr>
+            </table>
+        </form>
     </body>
 </html>

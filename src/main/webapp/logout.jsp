@@ -16,7 +16,7 @@
         <%
             session.invalidate();
         %>
-          
+        <meta http-equiv="refresh" content="5;url=index.jsp" />
     </head>
      
     <body>
@@ -49,7 +49,7 @@
 
         <div class="container-fluid" style="margin-top:60px">
             <p>
-                You have successfully logged out!
+                You have successfully logged out! Redirecting in a few seconds...
             </p>
         </div>
     </body>
