@@ -8,24 +8,21 @@
 <!DOCTYPE html>
 <html>
     <head>
-         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <script src="js/bootstrap.min.js"></script>
     </head>
-        <title> Contact Us </title>
-        <%
-            User user = (User)session.getAttribute("user");
-        %>
-          
-    </head>
-     
-    <body>
-     <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <title> Contact Us </title>
+    <%
+        User user = (User) session.getAttribute("user");
+    %>
+</head>
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
         <a class="navbar-brand" href="index.jsp">IoTBay</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto topnav">
                 <li class="nav-item">
@@ -45,27 +42,18 @@
                 </li>
             </ul>
         </div>
-        </nav>
-        
-         
-
-        <div class="container-fluid">
-            <table class="table table-responsive" id="users">
+    </nav>
+    <div class="container-fluid">
+        <table class="table table-responsive" id="users">
             <tr><td>Name:</td><td><%= user.getName()%></td></tr>
             <tr><td>Email:</td><td><%= user.getEmail()%></td></tr>
             <tr><td>Password:</td><td><%= user.getPassword()%></td></tr>
             <tr><td>Dob:</td><td><%= user.getDob()%></td></tr>
             <tr><td>Gender:</td><td><%= user.getGender()%></td></tr>
-            </table>
-            <form action="edit.jsp">
-                <input type="submit" value="Edit Account" />
-            </form>
-        </div>
-        
-         
-        
- 
-
-        
-    </body>
+        </table>
+        <form action="edit.jsp">
+            <input type="submit" value="Edit Account" />
+        </form>
+    </div>
+</body>
 </html>

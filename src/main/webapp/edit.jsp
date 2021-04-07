@@ -8,19 +8,19 @@
 <!DOCTYPE html>
 <html>
     <head>
-         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <script src="js/bootstrap.min.js"></script>
     </head>
-        <title> Contact Us </title>
-        <%
-            User user = (User)session.getAttribute("user");
-        %>
-          
-    </head>
-     
-    <body>
-     <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <title> Contact Us </title>
+    <%
+        User user = (User) session.getAttribute("user");
+    %>
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
         <a class="navbar-brand" href="index.jsp">IoTBay</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -45,15 +45,15 @@
                 </li>
             </ul>
         </div>
-        </nav>
-        <div class="container-fluid">
-            <form action="edit_success.jsp" method="post">
+    </nav>
+    <div class="container-fluid">
+        <form action="edit_success.jsp" method="post">
             <table class="table table-responsive">
                 <tr><td>Name</td><td><input type="text" name="name"/></td></tr>
                 <tr><td>Email</td><td><input type="email" name="email"/></td></tr>
                 <tr><td>Password</td><td><input type="password" name="password"/></td></tr>                
                 <tr>
-    
+
                     <td>
                         <select class="select" name="gender">
                             <option value="empty">Gender</option>
@@ -66,13 +66,13 @@
                         <input class="date" type="date" name="dob"/>  
                     </td>
                 </tr>
-  
+
                 <tr><td>
-                    <input type="submit" value="Submit" class="button" name = "submit" id="submit">
-                </td></tr>
+                        <input type="submit" value="Submit" class="button" name = "submit" id="submit">
+                    </td></tr>
             </table>
         </form>
-        </div>
+    </div>
 
-    </body>
+</body>
 </html>

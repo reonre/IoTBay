@@ -43,10 +43,10 @@
         </nav>  
         <%
             String name = request.getParameter("name");
-            String email = request.getParameter("email");
-            String password = request.getParameter("password");
-            String dob = request.getParameter("dob");
-            String gender = request.getParameter("gender");
+                String email = request.getParameter("email");
+                String password = request.getParameter("password");
+                String dob = request.getParameter("dob");
+                String gender = request.getParameter("gender");
             String tos = request.getParameter("tos");
         %>
         <%if(!(email.equals("")) && tos != null){%>
