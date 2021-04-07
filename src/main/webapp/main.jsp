@@ -56,6 +56,10 @@
             <tr><td>Password:</td><td><%= user.getPassword()%></td></tr>
             <tr><td>Dob:</td><td><%= user.getDob()%></td></tr>
             <tr><td>Gender:</td><td><%= user.getGender()%></td></tr>
+            </table>
+            <form action="edit.jsp">
+                <input type="submit" value="Edit Account" />
+            </form>
         </div>
         
          
