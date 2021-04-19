@@ -8,19 +8,19 @@
 <!DOCTYPE html>
 <html>
     <head>
-         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <script src="js/bootstrap.min.js"></script>
     </head>
-        <title> Contact Us </title>
-        <%
-            session.invalidate();
-        %>
-        <meta http-equiv="refresh" content="5;url=index.jsp" />
-    </head>
-     
-    <body>
-     <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <title> Contact Us </title>
+    <%
+        session.invalidate();
+    %>
+    <meta http-equiv="refresh" content="5;url=index.jsp" />
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
         <a class="navbar-brand" href="index.jsp">IoTBay</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -45,12 +45,12 @@
                 </li>
             </ul>
         </div>
-        </nav>  
+    </nav>  
 
-        <div class="container-fluid">
-            <p>
-                You have successfully logged out! Redirecting in a few seconds...
-            </p>
-        </div>
-    </body>
+    <div class="container-fluid">
+        <p>
+            You have successfully logged out! Redirecting in a few seconds...
+        </p>
+    </div>
+</body>
 </html>
