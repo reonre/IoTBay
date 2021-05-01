@@ -60,7 +60,8 @@
                         <input class="date" type="date" name="dob"/>  
                     </td>
                 </tr>
-
+                <tr><td>Phone Number</td><td><input type="text" name="phone"/></td></tr>
+                <tr><td>Address</td><td><input type="text" name="address"/></td></tr>
                 <tr><td>Agree to Terms of Service</td><td><input type="checkbox" name="tos" id="tos"/></td></tr>
                 <tr><td>
                         <input type="submit" value="Submit" class="button" name = "submit" id="submit" disabled>

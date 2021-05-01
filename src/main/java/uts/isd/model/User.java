@@ -10,22 +10,30 @@ import java.io.*;
  * @author Charl
  */
 public class User implements Serializable {
-    private String name, email, password, gender, dob;
+    private String user_id, name, email, password, gender, dob, phone, address;
 
-    public User(String name, String email, String password, String gender, String dob) {
+    public User(String name, String email, String password, String gender, String dob, String phone, String address) {
         this.name = name;
         this.email = email;
         this.password = password;
         this.gender = gender;
         this.dob = dob;
+        this.phone = phone;
+        this.address = address;
     }
     
-    public void setUser(String name, String email, String password, String gender, String dob) {
+    public void setUser(String name, String email, String password, String gender, String dob, String phone, String address) {
         this.name = name;
         this.email = email;
         this.password = password;
         this.gender = gender;
         this.dob = dob;
+        this.phone = phone;
+        this.address = address;
+    }
+
+    public String getUser_id() {
+        return user_id;
     }
 
     public String getName() {
@@ -66,6 +74,22 @@ public class User implements Serializable {
 
     public void setDob(String dob) {
         this.dob = dob;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
     
 }

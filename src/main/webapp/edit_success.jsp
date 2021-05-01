@@ -20,7 +20,9 @@
         String password = request.getParameter("password");
         String dob = request.getParameter("dob");
         String gender = request.getParameter("gender");
-        user.setUser(name, email, password, dob, gender);
+        String phone = request.getParameter("phone");
+        String address = request.getParameter("address");
+        user.setUser(name, email, password, dob, gender, phone, address);
     %>
 
 </head>
