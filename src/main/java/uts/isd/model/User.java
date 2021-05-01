@@ -10,7 +10,7 @@ import java.io.*;
  * @author Charl
  */
 public class User implements Serializable {
-    private String user_id, name, email, password, gender, dob, phone, address;
+    private String userId, name, email, password, gender, dob, phone, address;
 
     public User(String name, String email, String password, String gender, String dob, String phone, String address) {
         this.name = name;
@@ -32,8 +32,12 @@ public class User implements Serializable {
         this.address = address;
     }
 
-    public String getUser_id() {
-        return user_id;
+    public String getUserId() {
+        return userId;
+    }
+    
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 
     public String getName() {
