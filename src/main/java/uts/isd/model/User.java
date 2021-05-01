@@ -22,6 +22,17 @@ public class User implements Serializable {
         this.address = address;
     }
     
+    public User(String userId, String name, String email, String password, String gender, String dob, String phone, String address) {
+        this.userId = userId;
+        this.name = name;
+        this.email = email;
+        this.password = password;
+        this.gender = gender;
+        this.dob = dob;
+        this.phone = phone;
+        this.address = address;
+    }
+    
     public void setUser(String name, String email, String password, String gender, String dob, String phone, String address) {
         this.name = name;
         this.email = email;
