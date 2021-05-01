@@ -38,7 +38,7 @@ public class DBManager {
                 String dob = rs.getString(7);
                 String address = rs.getString(8);
 
-                return new User(Integer.toString(USER_ID), name, email, password, phone, gender, dob, address);
+                return new User(USER_ID, name, email, password, phone, gender, dob, address);
             }
         }
         return null;
@@ -50,8 +50,8 @@ public class DBManager {
         st.executeUpdate(columns + values);
     }
     
-    public void updateUser(int ID, String name, String email, String pass, String phone, String gender, String dob, String address) throws SQLException {
-        String update = "UPDATE IOTUSER.\"USER\" SET \"NAME\"='" + name + "',EMAIL='" + email + "',PASSWORD='" + pass + "',PHONE='" + phone + "',GENDER='" + gender + "',DOB='" + dob + "' ,ADDRESS='" + address + "' WHERE ID=" + ID + " AND PASSWORD='" + pass + "'";
+    public void updateUser(int USER_ID, String name, String email, String pass, String phone, String gender, String dob, String address) throws SQLException {
+        String update = "UPDATE IOTUSER.\"USER\" SET \"NAME\"='" + name + "',EMAIL='" + email + "',PASSWORD='" + pass + "',PHONE='" + phone + "',GENDER='" + gender + "',DOB='" + dob + "' ,ADDRESS='" + address + "' WHERE ID=" + USER_ID + " AND PASSWORD='" + pass + "'";
         st.executeUpdate(update);
     }
     
@@ -74,7 +74,7 @@ public class DBManager {
         return false;
     }
     
-    public ArrayList<User> fecthUsers() throws SQLException {
+    public ArrayList<User> fetchUsers() throws SQLException {
         String fetch = "select * from IOTUSER.\"USER\"";
         ResultSet rs = st.executeQuery(fetch);
         ArrayList<User> temp = new ArrayList();
@@ -88,7 +88,7 @@ public class DBManager {
             String gender = rs.getString(6);
             String dob = rs.getString(7);
             String address = rs.getString(8);
-            temp.add(new User(Integer.toString(USER_ID),email,name,pass,phone,gender,dob,address));
+            temp.add(new User(USER_ID,email,name,pass,phone,gender,dob,address));
         }
         return temp;
     }

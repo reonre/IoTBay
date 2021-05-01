@@ -10,8 +10,11 @@ import java.io.*;
  * @author Charl
  */
 public class User implements Serializable {
-    private String userId, name, email, password, gender, dob, phone, address;
+    private int USER_ID;
+    private String name, email, password, gender, dob, phone, address;
 
+    public User(){}
+    
     public User(String name, String email, String password, String gender, String dob, String phone, String address) {
         this.name = name;
         this.email = email;
@@ -22,8 +25,8 @@ public class User implements Serializable {
         this.address = address;
     }
     
-    public User(String userId, String name, String email, String password, String gender, String dob, String phone, String address) {
-        this.userId = userId;
+    public User(int USER_ID, String name, String email, String password, String gender, String dob, String phone, String address) {
+        this.USER_ID = USER_ID;
         this.name = name;
         this.email = email;
         this.password = password;
@@ -33,7 +36,7 @@ public class User implements Serializable {
         this.address = address;
     }
     
-    public void setUser(String name, String email, String password, String gender, String dob, String phone, String address) {
+    public void updateInfo(String name, String email, String password, String gender, String dob, String phone, String address) {
         this.name = name;
         this.email = email;
         this.password = password;
@@ -43,12 +46,12 @@ public class User implements Serializable {
         this.address = address;
     }
 
-    public String getUserId() {
-        return userId;
+    public int getUserId() {
+        return USER_ID;
     }
     
-    public void setUserId(String userId) {
-        this.userId = userId;
+    public void setUserId(int userId) {
+        this.USER_ID = userId;
     }
 
     public String getName() {

@@ -8,7 +8,7 @@ import uts.isd.model.dao.*;
 
 /**
  *
- * @author george
+ * @author Charl
  */
 public class TestDB {
 
@@ -56,13 +56,13 @@ public class TestDB {
         System.out.println("User deleted successfully");
     }
     
-//    private void testFetch() throws SQLException {
-//        System.out.printf("%-15s %-15s %-25s %-15s %-15s %-10s %-15s %-15s \n","USER_ID","NAME", "EMAIL", "PASSWORD", "PHONE", "GENDER", "DATE OF BIRTH", "ADDRESS");
-//        ArrayList<User> users = manager.fecthUsers();
-//        users.forEach(user->System.out.printf("%-15s %-15s %-25s %-15s %-15s %-10s %-15s %-15s \n"
-//                + "",user.getUserId(),user.getName(),user.getEmail(),user.getPassword(),user.getPhone(),user.getGender(),user.getDob().user.getAddress()));
-//        System.out.println();
-//    }
+    private void testFetch() throws SQLException {
+        System.out.printf("%-15s %-15s %-25s %-15s %-15s %-10s %-15s %-20s \n","ID","NAME", "EMAIL", "PASSWORD", "PHONE", "GENDER", "DATE OF BIRTH", "ADDRESS");
+        ArrayList<User> users = manager.fetchUsers();
+//        users.forEach(user -> System.out.printf("%-15s %-15s %-25s %-15s %-15s %-10s %-15s %-20s \n" 
+//                + "",user.getUserId(),user.getName(),user.getEmail(),user.getPassword(),user.getPhone(),user.getGender(),user.getDob(),user.getAddress()));
+        System.out.println();
+    }
 
     private String read(String prompt) {
         System.out.print(prompt + ": ");
@@ -86,9 +86,9 @@ public class TestDB {
                 case 'd':
                     testDelete();
                     break;
-//                case 'f':
-//                    testFetch();
-//                    break;
+                case 'f':
+                    testFetch();
+                    break;
                 default:
                     help();
                     break;
@@ -101,7 +101,7 @@ public class TestDB {
                 + "c = Create User \n"
                 + "r = Read User by ID-Password \n"
                 + "u = Update User by ID \n"
-                + "d = Delete User by ID\n");
-//                + "f = Fetch all Users\n");
+                + "d = Delete User by ID\n"
+                + "f = Fetch all Users\n");
     }
 }
