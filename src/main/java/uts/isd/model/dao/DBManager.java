@@ -38,7 +38,7 @@ public class DBManager {
                 String dob = rs.getString(7);
                 String address = rs.getString(8);
 
-                return new User(USER_ID, name, email, password, phone, gender, dob, address);
+                return new User(Integer.toString(USER_ID), name, email, password, phone, gender, dob, address);
             }
         }
         return null;
@@ -80,7 +80,7 @@ public class DBManager {
         ArrayList<User> temp = new ArrayList();
 
         while (rs.next()) {
-            int ID = Integer.parseInt(rs.getString(1));
+            int USER_ID = Integer.parseInt(rs.getString(1));
             String name = rs.getString(2);
             String email = rs.getString(3);
             String pass = rs.getString(4);
@@ -88,7 +88,7 @@ public class DBManager {
             String gender = rs.getString(6);
             String dob = rs.getString(7);
             String address = rs.getString(8);
-            temp.add(new User(USER_ID,email,name,pass,phone,gender,dob,address));
+            temp.add(new User(Integer.toString(USER_ID),email,name,pass,phone,gender,dob,address));
         }
         return temp;
     }
