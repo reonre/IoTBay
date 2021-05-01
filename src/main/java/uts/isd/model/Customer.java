@@ -19,10 +19,4 @@ public class Customer extends User implements Serializable {
     public String getCustomerId() {
         return customerId;
     }
-
-    public void setCustomerId(String customerId) {
-        this.customerId = customerId;
-    }
-    
-    
 }
