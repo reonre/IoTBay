@@ -61,7 +61,7 @@ public class DBManager {
     }
     
     public boolean checkUser(int USER_ID, String password) throws SQLException{
-        String fetch = "SELECT * FROM IOTUSER.USER WHERE ID='"+USER_ID+"' and PASSWORD='"+password+"'";
+        String fetch = "SELECT * FROM IOTUSER.\"USER\" WHERE ID='"+USER_ID+"' and PASSWORD='"+password+"'";
         ResultSet rs = st.executeQuery(fetch);
         
         while(rs.next()){
