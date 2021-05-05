@@ -1,6 +1,3 @@
-
-
-
 -- The Invoice_ID and Order_ID need to completed before inserting these values.
 INSERT INTO SHIPMENT(SHIPMENT_TRACKING_NO,SHIPMENT_DATE,SHIPMENT_DETAILS)
 VALUES
@@ -50,7 +47,7 @@ VALUES
 ('349714273935797','07/23','602','Sheri Fletcher')
 
 -- this would be the SQL statement that would insert data into the User table 
-INSERT INTO "USER" (EMAIL, "NAME", PASSWORD, GENDER, DOB, ADDRESS)
+INSERT INTO "CUSTOMER"(EMAIL, "NAME", PASSWORD, GENDER, DOB, ADDRESS)
 VALUES
 ('BOB@gmail.com', 'Gilberto Boyd', 'Passworeed', 'male', '9/11/2021', '1 addel street'),
 ('mabel@gmail.com', 'Mabel Osborne',  'Passwowerwrd', 'male','23/12/2000', '2 addel street'),
@@ -74,29 +71,29 @@ VALUES
 ('nadinenic@gmail.com', 'Nadine Moran',  'pmin33', 'female', '11/12/2000', '23 nob street'),
 ('add@gmail.com', 'Sheri Fletcher','peda32min', 'female', '11/11/1989', '12 nector street')
 
-INSERT INTO CUSTOMER( "name", email, password, gender,  dob, address)
+INSERT INTO STAFF( "NAME", EMAIL, PASSWARD, GENDER, DOB, ADDRESS, "ROLE")
 VALUES 
-('Gilberto Boyd', 'BOB@gmail.com',  'Passworeed', 'male', '9/11/2021', '1 addel street'),
-('Mabel Osborne', 'mabel@gmail.com',  'Passwowerwrd', 'male','23/12/2000', '2 addel street'),
-('Frankie Wong', 'fank@gmail.com',  'P4%word', 'male', '19/1/1989', '3 addel street'),
-('Jenny Barton', 'jenny@gmail.com',  '366YH5%', 'male', '23/12/1898', '4 addel street'),
-('Jean Meyer', 'JEANious@gmail.com',  'u4655', 'female', '11/11/2011', '5 addel street'),
-('Amos Bryan', 'Amos@gmail.com', 'Pass44word', 'female', '14/11/1666', '6 batman street'),
-('Archie Adkins', 'archie@gmail.com', 'passwrdq2', 'male', '11/1/2001', '12 elm street'),
-('Craig Austin', '007@gmail.com', 'yey22#', 'male', '6/11/1989', '34 junk stree' ),
-('Michael Steele', 'yea@gmail.com','yesww34$$', 'female', '1/1/2000', '43 addell street'),
-('Pamela Ford', 'alderf2@gmail.com', '32sd235$', 'female', '11/11/1999', '45 teamFortress Steet'),
-('Beulah Curry', 'b322@gmail.com', '580jfj', 'male', '3/11/2000', '45 garden street'),
-('Percy Chambers', 'Percy34@gmail.com', '234dfjrn', 'male', '5/11/2000', '45 manwell street'),
-( 'Daisy Baker', 'daisey@gmail.com','yyed3#@22', 'female', '1/12/1990', '45 druid street'),
-('Kara Gibson', 'kmn45$gmial.com', 'rrwf234', 'male', '11/11/2000', '46 addrell street'),
-('Micheal Colon', 'thiIshell@gmail.com', 'ryyest$$#*6783', 'male', '11/11/2000', '67 patel street'),
-( 'Kayra bson', 'gmail@gmail.com','password123', 'male','11/11/2000', '4 book street'),
-('Micheal Colon', 'yes@gmail.com', 'pedc@2', 'male', '2/12/2000', '1 goodwell street'),
-('Nichole Perez', 'nic@gmail.com', 'peda5d', 'female','9/12/2000', '56 no street'),
-('Lela Jensen', 'LELA@gmail.con', 'peYuin3s', 'female', '11/11/2000', '34 boom street'),
-('Nadine Moran', 'nadinenic@gmail.com', 'pmin33', 'female', '11/12/2000', '23 nob street'),
-('Sheri Fletcher', 'add@gmail.com', 'peda32min', 'female', '11/11/1989', '12 nector street')
+('Gilberto Boyd', 'BOB@gmail.com',  'Passworeed', 'male', '9/11/2021', '1 addel street', 'Team member'),
+('Mabel Osborne', 'mabel@gmail.com',  'Passwowerwrd', 'male','23/12/2000', '2 addel street', 'Sales Person'),
+('Frankie Wong', 'fank@gmail.com',  'P4%word', 'male', '19/1/1989', '3 addel street', 'Team member'),
+('Jenny Barton', 'jenny@gmail.com',  '366YH5%', 'male', '23/12/1898', '4 addel street', 'Team member'),
+('Jean Meyer', 'JEANious@gmail.com',  'u4655', 'female', '11/11/2011', '5 addel street', 'Sales Person'),
+('Amos Bryan', 'Amos@gmail.com', 'Pass44word', 'female', '14/11/1666', '6 batman street', 'Team member'),
+('Archie Adkins', 'archie@gmail.com', 'passwrdq2', 'male', '11/1/2001', '12 elm street', 'Team member'),
+('Craig Austin', '007@gmail.com', 'yey22#', 'male', '6/11/1989', '34 junk stree' , 'Sales Person'),
+('Michael Steele', 'yea@gmail.com','yesww34$$', 'female', '1/1/2000', '43 addell street', 'Team member'),
+('Pamela Ford', 'alderf2@gmail.com', '32sd235$', 'female', '11/11/1999', '45 teamFortress Steet', 'Sales Person'),
+('Beulah Curry', 'b322@gmail.com', '580jfj', 'male', '3/11/2000', '45 garden street', 'Team member'),
+('Percy Chambers', 'Percy34@gmail.com', '234dfjrn', 'male', '5/11/2000', '45 manwell street', 'Sales Person'),
+('Daisy Baker', 'daisey@gmail.com','yyed3#@22', 'female', '1/12/1990', '45 druid street', 'Sales Person'),
+('Kara Gibson', 'kmn45$gmial.com', 'rrwf234', 'male', '11/11/2000', '46 addrell street', 'Team member'),
+('Micheal Colon', 'thiIshell@gmail.com', 'ryyest$$#*6783', 'male', '11/11/2000', '67 patel street', 'Manager'),
+('Kayra bson', 'gmail@gmail.com','password123', 'male','11/11/2000', '4 book street', 'Team member'),
+('Micheal Colon', 'yes@gmail.com', 'pedc@2', 'male', '2/12/2000', '1 goodwell street', 'Manager'),
+('Nichole Perez', 'nic@gmail.com', 'peda5d', 'female','9/12/2000', '56 no street', 'Team member'),
+('Lela Jensen', 'LELA@gmail.con', 'peYuin3s', 'female', '11/11/2000', '34 boom street', 'Sales Person'),
+('Nadine Moran', 'nadinenic@gmail.com', 'pmin33', 'female', '11/12/2000', '23 nob street', 'Team member'),
+('Sheri Fletcher', 'add@gmail.com', 'peda32min', 'female', '11/11/1989', '12 nector street', 'Sales Person')
 
 
 -- INSERT 20 instances into PRODUCT table
@@ -122,3 +119,4 @@ VALUES
 ('August Smart lock',89.99,'Be always in control of your door no matter where you are, right from your smartphone. Lock and unlock as you please and enjoy the safety of your home.','Home Security and Safetly',7),
 ('Eero Home WiFi System',49.99,'eero is the worlds first home WiFi system. A set of three eeros covers the typical home. They work in perfect unison to deliver hyper-fast, super-stable WiFi to every square foot of your house.','Information and Entertainment',23),
 ('Edyn Garden sensor',39.99,'Garden sensor which keeps you connected to your garden. It tracks light, nutrition, moisture, humidity and temperature. It is Wi-Fi connected and it sends notifications to your phone.','Home Appliances',1)
+
