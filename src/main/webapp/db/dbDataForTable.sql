@@ -73,3 +73,27 @@ VALUES
 ('LELA@gmail.con', 'Lela Jensen', '022 234 234', 'peYuin3s', 'female', '11/11/2000', '34 boom street'),
 ('nadinenic@gmail.com', 'Nadine Moran', '033 322 222', 'pmin33', 'female', '11/12/2000', '23 nob street'),
 ('add@gmail.com', 'Sheri Fletcher', '055 322 222', 'peda32min', 'female', '11/11/1989', '12 nector street')
+
+-- INSERT 20 instances into PRODUCT table
+INSERT INTO PRODUCT(PRODUCT_NAME, PRODUCT_PRICE, PRODUCT_DESC, PRODUCT_TYPE, PRODUCT_QUANT)
+VALUES
+('Google Home',50.14,'Google Home, the connected voice controller from Google. Besides controlling your home it also comes with Google Assistant, helping with lists, translation, news, music, calendar and many many more.','Home Appliances',56),
+('Amazon Echo Voice Controller',79.99,'Amazon Echo, the connected voice controller from Amazon, can give you information, music, news, weather, add things to todo lists, wake you up and, of course, control your home.','Home Appliances',67),
+('Smart Coffee Maker',329.98,'Mr. Coffee 10-Cup Smart Optimal Brew Coffeemaker makes it easy to schedule, monitor, and modify your brew from anywhere.','Kitchen Appliances',21),
+('Philips Hue Go',137.99,'With Hue Go the possibilities are endless. Connect light to your daily life and move it around the way you like it. Lift your gaming experience to the next level via third party apps.','Indoor Lighting',39),
+('Bluetooth Tracking Sensor',19.98,'Linquet is the cloud powered tracking device you can attach to anything. Link them to the app and share their location with those interested so nothing gets left behind.','Home Security and Safetly',40),
+('BB8 SE Droid with force band',30.00,'BB-8 is the loyal droid of Resistance pilot Poe Dameron. Control it with the force band or with your smart device and see it roll just like on screen. Immerse yourself in the Star Wars galaxy.','Information and Entertainment',8),
+('Smart Thermostat',99.99,'The Nest Thermostat learns what temperature you like and builds a schedule around yours. Also, it will send you an alert when the temperatures are threatening to ruin your belongings and appliances.','Home Automation',11),
+('Smart button controller',20.00,'POP Home Switch lets everyone in the home control smart lighting, music, and more with the push of a button. Program each switch with up to three custom commands to add creativity throughout your smart home.','Home Automation',40),
+('Nest Outdoor Camera',90.99,'With one app for all your Nest products, the unique magnetic mount, full 1080p HD video streaming and advanced Night Vision, Nest Cam Outdoor enables you to take care of what matters 24/7.','Home Security and Safetly',33),
+('Awair Smart Air Quality Monitor',110.00,'Awair is the first complete device to let you communicate with your air. Awair analyzes your indoor air quality, learns your routines and can communicate with other home devices to help you achieve optimal air quality.','Home Automation',12),
+('Nest Protect Smoke and CO detector',60.00,'Nest Protect is the smoke alarm other alarms look up to. With an industrial-grade smoke sensor, automatic self testing, its the first home alarm you can hush from your phone without any extra hardware.','Home Security and Safetly',27),
+('Navdy Smart navigation system',47.98,'Navdy combines a high quality projection display with voice and gesture controls to create a safer driving experience. Drivers no longer need to use their phone to navigate, communicate or control their music.','Automotive',41),
+('Sync Smartband Activity Tracker',50.00,'Sync Smartband is the chic solution that appeals to families and adults as well, with a variety of health tracking functions, including a fitness tracker and sleep tracker, in addition to location tracking.','Health and Fitness',62),
+('June Intelligent oven',219.99,'June is a modern oven prepared to fit in every kitchen in order to satisfy even the most exquisite tastes. It saves a lot of the time youd normally spend cooking when connected to your phone.','Kitchen Appliances',22),
+('Nest Cam Indoor camera',44.99,'Nest Cam Outdoor is the monitoring tool youve been waiting for. It brings all the benefits of modern streaming technology and a sleek design so you can watch your home from anywhere.','Home Security and Safetly',55),
+('Withings Blood Pressure Monitor',39.99,'Wireless Blood Pressure Monitor makes it easy to check your blood pressure & heart rate, anytime and anywhere with an instant feedback and access to all your readings.','Health and Fitness',19),
+('Fitbit Surge Smart Watch',60.00,'Reach your peak performance with built-in GPS, continuous heart rate and all-day activity tracking and sleep monitoring. And stay connected with text & call notifications, music control and more.','Health and Fitness',34),
+('August Smart lock',89.99,'Be always in control of your door no matter where you are, right from your smartphone. Lock and unlock as you please and enjoy the safety of your home.','Home Security and Safetly',7),
+('Eero Home WiFi System',49.99,'eero is the worlds first home WiFi system. A set of three eeros covers the typical home. They work in perfect unison to deliver hyper-fast, super-stable WiFi to every square foot of your house.','Information and Entertainment',23),
+('Edyn Garden sensor',39.99,'Garden sensor which keeps you connected to your garden. It tracks light, nutrition, moisture, humidity and temperature. It is Wi-Fi connected and it sends notifications to your phone.','Home Appliances',1)
