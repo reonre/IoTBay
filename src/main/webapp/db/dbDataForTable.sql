@@ -20,7 +20,7 @@ VALUES
 ('129VV3IDKJWR','04/03/2021 20:42:26','No of Items: 1 | Total Weight: 6898g | Box Size: Large'),
 ('EK5CDCTHC38D','11/01/2021 02:50:11','No of Items: 1 | Total Weight: 634g  | Box Size: Small'),
 ('RTLU5BM9AMWK','06/04/2021 19:17:32','No of Items: 2 | Total Weight: 953g  | Box Size: Large'),
-('53OIERPAA23P','22/02/2021 13:15:20','No of Items: 3 | Total Weight: 905g  | Box Size: Medium')
+('53OIERPAA23P','22/02/2021 13:15:20','No of Items: 3 | Total Weight: 905g  | Box Size: Medium');
 
 -- These names could be used for the CUSTOMER or STAFF
 INSERT INTO PAYMENT(CREDIT_CARD_NO,EXPIRY_DATE,SECURITY_NO,OWNER_NAME)
@@ -44,7 +44,7 @@ VALUES
 ('342275735127842','04/24','810','Nichole Perez'),
 ('6011970342978788','05/22','865','Lela Jensen'),
 ('343247561690929','03/22','284','Nadine Moran'),
-('349714273935797','07/23','602','Sheri Fletcher')
+('349714273935797','07/23','602','Sheri Fletcher');
 
 -- this would be the SQL statement that would insert data into the User table 
 INSERT INTO "CUSTOMER"(EMAIL, "NAME", PASSWORD, GENDER, DOB, ADDRESS)
@@ -69,9 +69,9 @@ VALUES
 ('nic@gmail.com', 'Nichole Perez', 'peda5d', 'female','9/12/2000', '56 no street'),
 ('LELA@gmail.con', 'Lela Jensen',  'peYuin3s', 'female', '11/11/2000', '34 boom street'),
 ('nadinenic@gmail.com', 'Nadine Moran',  'pmin33', 'female', '11/12/2000', '23 nob street'),
-('add@gmail.com', 'Sheri Fletcher','peda32min', 'female', '11/11/1989', '12 nector street')
+('add@gmail.com', 'Sheri Fletcher','peda32min', 'female', '11/11/1989', '12 nector street');
 
-INSERT INTO STAFF( "NAME", EMAIL, PASSWARD, GENDER, DOB, ADDRESS, "ROLE")
+INSERT INTO STAFF( "NAME", EMAIL, PASSWORD, GENDER, DOB, ADDRESS, "ROLE")
 VALUES 
 ('Gilberto Boyd', 'BOB@gmail.com',  'Passworeed', 'male', '9/11/2021', '1 addel street', 'Team member'),
 ('Mabel Osborne', 'mabel@gmail.com',  'Passwowerwrd', 'male','23/12/2000', '2 addel street', 'Sales Person'),
@@ -93,7 +93,7 @@ VALUES
 ('Nichole Perez', 'nic@gmail.com', 'peda5d', 'female','9/12/2000', '56 no street', 'Team member'),
 ('Lela Jensen', 'LELA@gmail.con', 'peYuin3s', 'female', '11/11/2000', '34 boom street', 'Sales Person'),
 ('Nadine Moran', 'nadinenic@gmail.com', 'pmin33', 'female', '11/12/2000', '23 nob street', 'Team member'),
-('Sheri Fletcher', 'add@gmail.com', 'peda32min', 'female', '11/11/1989', '12 nector street', 'Sales Person')
+('Sheri Fletcher', 'add@gmail.com', 'peda32min', 'female', '11/11/1989', '12 nector street', 'Sales Person');
 
 
 -- INSERT 20 instances into PRODUCT table
@@ -118,5 +118,5 @@ VALUES
 ('Fitbit Surge Smart Watch',60.00,'Reach your peak performance with built-in GPS, continuous heart rate and all-day activity tracking and sleep monitoring. And stay connected with text & call notifications, music control and more.','Health and Fitness',34),
 ('August Smart lock',89.99,'Be always in control of your door no matter where you are, right from your smartphone. Lock and unlock as you please and enjoy the safety of your home.','Home Security and Safetly',7),
 ('Eero Home WiFi System',49.99,'eero is the worlds first home WiFi system. A set of three eeros covers the typical home. They work in perfect unison to deliver hyper-fast, super-stable WiFi to every square foot of your house.','Information and Entertainment',23),
-('Edyn Garden sensor',39.99,'Garden sensor which keeps you connected to your garden. It tracks light, nutrition, moisture, humidity and temperature. It is Wi-Fi connected and it sends notifications to your phone.','Home Appliances',1)
+('Edyn Garden sensor',39.99,'Garden sensor which keeps you connected to your garden. It tracks light, nutrition, moisture, humidity and temperature. It is Wi-Fi connected and it sends notifications to your phone.','Home Appliances',1);
 
