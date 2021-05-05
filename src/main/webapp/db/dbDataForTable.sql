@@ -97,3 +97,4 @@ VALUES
 ('August Smart lock',89.99,'Be always in control of your door no matter where you are, right from your smartphone. Lock and unlock as you please and enjoy the safety of your home.','Home Security and Safetly',7),
 ('Eero Home WiFi System',49.99,'eero is the worlds first home WiFi system. A set of three eeros covers the typical home. They work in perfect unison to deliver hyper-fast, super-stable WiFi to every square foot of your house.','Information and Entertainment',23),
 ('Edyn Garden sensor',39.99,'Garden sensor which keeps you connected to your garden. It tracks light, nutrition, moisture, humidity and temperature. It is Wi-Fi connected and it sends notifications to your phone.','Home Appliances',1)
+
