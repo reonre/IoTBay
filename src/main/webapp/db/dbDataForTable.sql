@@ -50,29 +50,54 @@ VALUES
 ('349714273935797','07/23','602','Sheri Fletcher')
 
 -- this would be the SQL statement that would insert data into the User table 
-INSERT INTO "USER" (EMAIL, "NAME",PHONE, PASSWORD, GENDER, DOB, ADDRESS)
+INSERT INTO "USER" (EMAIL, "NAME", PASSWORD, GENDER, DOB, ADDRESS)
 VALUES
-('BOB@gmail.com', 'Gilberto Boyd', ' 123 213 212', 'Passworeed', 'male', '9/11/2021', '1 addel street'),
-('mabel@gmail.com', 'Mabel Osborne', '451 342 212', 'Passwowerwrd', 'male','23/12/2000', '2 addel street'),
-('fank@gmail.com', 'Frankie Wong', '324 213 212', 'P4%word', 'male', '19/1/1989', '3 addel street'),
-('jenny@gmail.com', 'Jenny Barton', '1128 213 212', '366YH5%', 'male', '23/12/1898', '4 addel street'),
-('JEANious@gmail.com', 'Jean Meyer', '882 213 212', 'u4655', 'female', '11/11/2011', '5 addel street'),
-('Amos@gmail.com', 'Amos Bryan', '678 213 212', 'Pass44word', 'female', '14/11/1666', '6 batman street'),
-('archie@gmail.com', 'Archie Adkins', '045 633 798', 'passwrdq2', 'male', '11/1/2001', '12 elm street'),
-('007@gmail.com', 'Craig Austin', '070 323 441', 'yey22#', 'male', '6/11/1989', '34 junk stree' ),
-('yea@gmail.com','Michael Steele',  '034 234 245', 'yesww34$$', 'female', '1/1/2000', '43 addell street'),
-('alderf2@gmail.com', 'Pamela Ford',  '322 232 232', '32sd235$', 'female', '11/11/1999', '45 teamFortress Steet'),
-('b322@gmail.com', 'Beulah Curry', '042 154 124', '580jfj', 'male', '3/11/2000', '45 garden street'),
-('Percy34@gmail.com', 'Percy Chambers','053 224 123', '234dfjrn', 'male', '5/11/2000', '45 manwell street'),
-('daisey@gmail.com', 'Daisy Baker', '023 444 225', 'yyed3#@22', 'female', '1/12/1990', '45 druid street'),
-('kmn45$gmial.com', 'Kara Gibson', '325 233 443', 'rrwf234', 'male', '11/11/2000', '46 addrell street'),
-('thiIshell@gmail.com', 'Micheal Colon', '233 252 512', 'ryyest$$#*6783', 'male', '11/11/2000', '67 patel street'),
-('gmail@gmail.com', 'Kayra bson', '324 234 255', 'password123', 'male','11/11/2000', '4 book street'),
-('yes@gmail.com', 'Micheal Colon', '055 133 123', 'pedc@2', 'male', '2/12/2000', '1 goodwell street'),
-('nic@gmail.com', 'Nichole Perez', '022 322 222', 'peda5d', 'female','9/12/2000', '56 no street'),
-('LELA@gmail.con', 'Lela Jensen', '022 234 234', 'peYuin3s', 'female', '11/11/2000', '34 boom street'),
-('nadinenic@gmail.com', 'Nadine Moran', '033 322 222', 'pmin33', 'female', '11/12/2000', '23 nob street'),
-('add@gmail.com', 'Sheri Fletcher', '055 322 222', 'peda32min', 'female', '11/11/1989', '12 nector street')
+('BOB@gmail.com', 'Gilberto Boyd', 'Passworeed', 'male', '9/11/2021', '1 addel street'),
+('mabel@gmail.com', 'Mabel Osborne',  'Passwowerwrd', 'male','23/12/2000', '2 addel street'),
+('fank@gmail.com', 'Frankie Wong', 'P4%word', 'male', '19/1/1989', '3 addel street'),
+('jenny@gmail.com', 'Jenny Barton', '366YH5%', 'male', '23/12/1898', '4 addel street'),
+('JEANious@gmail.com', 'Jean Meyer', 'u4655', 'female', '11/11/2011', '5 addel street'),
+('Amos@gmail.com', 'Amos Bryan', 'Pass44word', 'female', '14/11/1666', '6 batman street'),
+('archie@gmail.com', 'Archie Adkins', 'passwrdq2', 'male', '11/1/2001', '12 elm street'),
+('007@gmail.com', 'Craig Austin', 'yey22#', 'male', '6/11/1989', '34 junk stree' ),
+('yea@gmail.com','Michael Steele', 'yesww34$$', 'female', '1/1/2000', '43 addell street'),
+('alderf2@gmail.com', 'Pamela Ford', '32sd235$', 'female', '11/11/1999', '45 teamFortress Steet'),
+('b322@gmail.com', 'Beulah Curry', '580jfj', 'male', '3/11/2000', '45 garden street'),
+('Percy34@gmail.com', 'Percy Chambers', '234dfjrn', 'male', '5/11/2000', '45 manwell street'),
+('daisey@gmail.com', 'Daisy Baker', 'yyed3#@22', 'female', '1/12/1990', '45 druid street'),
+('kmn45$gmial.com', 'Kara Gibson', 'rrwf234', 'male', '11/11/2000', '46 addrell street'),
+('thiIshell@gmail.com', 'Micheal Colon', 'ryyest$$#*6783', 'male', '11/11/2000', '67 patel street'),
+('gmail@gmail.com', 'Kayra bson',  'password123', 'male','11/11/2000', '4 book street'),
+('yes@gmail.com', 'Micheal Colon', 'pedc@2', 'male', '2/12/2000', '1 goodwell street'),
+('nic@gmail.com', 'Nichole Perez', 'peda5d', 'female','9/12/2000', '56 no street'),
+('LELA@gmail.con', 'Lela Jensen',  'peYuin3s', 'female', '11/11/2000', '34 boom street'),
+('nadinenic@gmail.com', 'Nadine Moran',  'pmin33', 'female', '11/12/2000', '23 nob street'),
+('add@gmail.com', 'Sheri Fletcher','peda32min', 'female', '11/11/1989', '12 nector street')
+
+INSERT INTO CUSTOMER( "name", email, password, gender,  dob, address)
+VALUES 
+('Gilberto Boyd', 'BOB@gmail.com',  'Passworeed', 'male', '9/11/2021', '1 addel street'),
+('Mabel Osborne', 'mabel@gmail.com',  'Passwowerwrd', 'male','23/12/2000', '2 addel street'),
+('Frankie Wong', 'fank@gmail.com',  'P4%word', 'male', '19/1/1989', '3 addel street'),
+('Jenny Barton', 'jenny@gmail.com',  '366YH5%', 'male', '23/12/1898', '4 addel street'),
+('Jean Meyer', 'JEANious@gmail.com',  'u4655', 'female', '11/11/2011', '5 addel street'),
+('Amos Bryan', 'Amos@gmail.com', 'Pass44word', 'female', '14/11/1666', '6 batman street'),
+('Archie Adkins', 'archie@gmail.com', 'passwrdq2', 'male', '11/1/2001', '12 elm street'),
+('Craig Austin', '007@gmail.com', 'yey22#', 'male', '6/11/1989', '34 junk stree' ),
+('Michael Steele', 'yea@gmail.com','yesww34$$', 'female', '1/1/2000', '43 addell street'),
+('Pamela Ford', 'alderf2@gmail.com', '32sd235$', 'female', '11/11/1999', '45 teamFortress Steet'),
+('Beulah Curry', 'b322@gmail.com', '580jfj', 'male', '3/11/2000', '45 garden street'),
+('Percy Chambers', 'Percy34@gmail.com', '234dfjrn', 'male', '5/11/2000', '45 manwell street'),
+( 'Daisy Baker', 'daisey@gmail.com','yyed3#@22', 'female', '1/12/1990', '45 druid street'),
+('Kara Gibson', 'kmn45$gmial.com', 'rrwf234', 'male', '11/11/2000', '46 addrell street'),
+('Micheal Colon', 'thiIshell@gmail.com', 'ryyest$$#*6783', 'male', '11/11/2000', '67 patel street'),
+( 'Kayra bson', 'gmail@gmail.com','password123', 'male','11/11/2000', '4 book street'),
+('Micheal Colon', 'yes@gmail.com', 'pedc@2', 'male', '2/12/2000', '1 goodwell street'),
+('Nichole Perez', 'nic@gmail.com', 'peda5d', 'female','9/12/2000', '56 no street'),
+('Lela Jensen', 'LELA@gmail.con', 'peYuin3s', 'female', '11/11/2000', '34 boom street'),
+('Nadine Moran', 'nadinenic@gmail.com', 'pmin33', 'female', '11/12/2000', '23 nob street'),
+('Sheri Fletcher', 'add@gmail.com', 'peda32min', 'female', '11/11/1989', '12 nector street')
+
 
 -- INSERT 20 instances into PRODUCT table
 INSERT INTO PRODUCT(PRODUCT_NAME, PRODUCT_PRICE, PRODUCT_DESC, PRODUCT_TYPE, PRODUCT_QUANT)
