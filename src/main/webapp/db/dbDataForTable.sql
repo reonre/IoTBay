@@ -1,6 +1,3 @@
-
-
-
 -- The Invoice_ID and Order_ID need to completed before inserting these values.
 INSERT INTO SHIPMENT(SHIPMENT_TRACKING_NO,SHIPMENT_DATE,SHIPMENT_DETAILS)
 VALUES
@@ -50,7 +47,7 @@ VALUES
 ('349714273935797','07/23','602','Sheri Fletcher')
 
 -- this would be the SQL statement that would insert data into the User table 
-INSERT INTO "USER" (EMAIL, "NAME", PASSWORD, GENDER, DOB, ADDRESS)
+INSERT INTO "CUSTOMER"(EMAIL, "NAME", PASSWORD, GENDER, DOB, ADDRESS)
 VALUES
 ('BOB@gmail.com', 'Gilberto Boyd', 'Passworeed', 'male', '9/11/2021', '1 addel street'),
 ('mabel@gmail.com', 'Mabel Osborne',  'Passwowerwrd', 'male','23/12/2000', '2 addel street'),
@@ -74,7 +71,7 @@ VALUES
 ('nadinenic@gmail.com', 'Nadine Moran',  'pmin33', 'female', '11/12/2000', '23 nob street'),
 ('add@gmail.com', 'Sheri Fletcher','peda32min', 'female', '11/11/1989', '12 nector street')
 
-INSERT INTO CUSTOMER( "name", email, password, gender,  dob, address)
+INSERT INTO STAFF( "NAME", EMAIL, PASSWARD, GENDER, DOB, ADDRESS, "ROLE")
 VALUES 
 ('Gilberto Boyd', 'BOB@gmail.com',  'Passworeed', 'male', '9/11/2021', '1 addel street'),
 ('Mabel Osborne', 'mabel@gmail.com',  'Passwowerwrd', 'male','23/12/2000', '2 addel street'),
