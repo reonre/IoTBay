@@ -12,8 +12,15 @@ import java.io.*;
  *
  */
  public class Admin extends User implements Serializable {
-
+ private String adminid;
+ 
  public Admin(String name, String email, String password, String gender, String dob, String phone, String address) {
         super(name, email, password, gender, dob, phone, address);
+ 
+    
+    }
+    public String getAdminid(){
+           return adminid;
     }
  }
+ 
