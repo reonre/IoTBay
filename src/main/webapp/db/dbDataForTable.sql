@@ -120,3 +120,26 @@ VALUES
 ('Eero Home WiFi System',49.99,'eero is the worlds first home WiFi system. A set of three eeros covers the typical home. They work in perfect unison to deliver hyper-fast, super-stable WiFi to every square foot of your house.','Information and Entertainment',23),
 ('Edyn Garden sensor',39.99,'Garden sensor which keeps you connected to your garden. It tracks light, nutrition, moisture, humidity and temperature. It is Wi-Fi connected and it sends notifications to your phone.','Home Appliances',1);
 
+-- INSERT 20 instances into ORDER table
+INSERT INTO ORDER(CUST_ID, DATE_ORDER_PLACED, ORDER_DETAILS, ORDERER_NAME, ADDRESS)
+VALUES
+(100,'27/04/2021 10:41:46','','Adam M Addis','84 Avondale Drive'),
+(100,'18/04/2021 09:44:03','','Adam M Addis','84 Avondale Drive'),
+(100,'11/03/2021 17:53:31','','Adam M Addis','84 Avondale Drive'),
+(100,'10/01/2021 16:23:37','','Adam M Addis','84 Avondale Drive'),
+(101,'16/03/2021 07:47:18','','Chloe T Mayo','45 Tennyson Road'),
+(101,'22/02/2021 15:13:54','','Chloe T Mayo','45 Tennyson Road'),
+(101,'26/04/2021 00:30:07','','Chloe T Mayo','45 Tennyson Road'),
+(102,'08/02/2021 01:07:23','','Bailey L Eden','85 Lapko Road'),
+(102,'10/04/2021 05:26:15','','Bailey L Eden','85 Lapko Road'),
+(102,'05/03/2021 22:46:11','','Bailey L Eden','85 Lapko Road'),
+(103,'13/02/2021 18:56:10','','Edward E Gall','94 Argyle Street'),
+(103,'17/03/2021 02:40:12','','Edward E Gall','94 Argyle Street'),
+(103,'14/03/2021 08:43:19','','Edward E Gall','94 Argyle Street'),
+(103,'13/01/2021 07:20:41','','Edward E Gall','94 Argyle Street'),
+(103,'24/02/2021 05:14:36','','Edward E Gall','94 Argyle Street'),
+(104,'17/04/2021 18:27:31','','Nate B Elizabeth','21 Mills Street'),
+(108,'13/01/2021 23:43:35','','Levi A Howitt','10 Bayview Road'),
+(108,'05/03/2021 15:38:34','','Levi A Howitt','10 Bayview Road'),
+(110,'09/04/2021 20:10:31','','Christian C Kay','56 Brentwood Drive'),
+(112,'10/02/2021 19:10:33','','Dominic A Were','3 Barker Street')
