@@ -43,6 +43,29 @@ public class DBManager {
         }
         return null;
     }
+    //Test for demo.
+    public User findUser(String email, String password) throws SQLException {
+        String fetch = "SELECT * FROM IOTUSER.\"USER\" WHERE EMAIL=" + email + " AND PASSWORD='" + password + "'";//read from where ID = and password = 
+
+        ResultSet rs = st.executeQuery(fetch);
+
+        while (rs.next()) {
+            String userEmail = rs.getString(1);
+            String userPass = rs.getString(4);
+
+            if (userEmail == email && userPass.equals(password)) {
+                String name = rs.getString(2);
+                int ID = Integer.parseInt(rs.getString(3));
+                String phone = rs.getString(5);
+                String gender = rs.getString(6);
+                String dob = rs.getString(7);
+                String address = rs.getString(8);
+
+                return new User(ID,email, name, password, phone, gender, dob, address);
+            }
+        }
+        return null;
+    }
     
     public void addUser(String name, String email, String pass, String phone, String gender, String dob, String address) throws SQLException {
         String columns = "INSERT INTO IOTUSER.\"USER\"(\"NAME\",EMAIL,PASSWORD,PHONE,GENDER,DOB,ADDRESS)";
