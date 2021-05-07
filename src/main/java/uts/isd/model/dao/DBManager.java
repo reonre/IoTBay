@@ -21,47 +21,24 @@ public class DBManager {
         st = conn.createStatement();
     }
     
-    public User readUser(int USER_ID, String password) throws SQLException {
-        String fetch = "SELECT * FROM IOTUSER.\"USER\" WHERE ID=" + USER_ID + " AND PASSWORD='" + password + "'";//read from where ID = and password = 
+    public User readUser(String email, String password) throws SQLException {
+        String fetch = "SELECT * FROM IOTUSER.\"USER\" WHERE EMAIL=" + email + " AND PASSWORD='" + password + "'";//read from where Emal = and password = 
 
         ResultSet rs = st.executeQuery(fetch);
 
         while (rs.next()) {
-            int userID = Integer.parseInt(rs.getString(1));
-            String userPass = rs.getString(4);
-
-            if (userID == USER_ID && userPass.equals(password)) {
-                String name = rs.getString(2);
-                String email = rs.getString(3);
-                String phone = rs.getString(5);
-                String gender = rs.getString(6);
-                String dob = rs.getString(7);
-                String address = rs.getString(8);
-
-                return new User(USER_ID, name, email, password, phone, gender, dob, address);
-            }
-        }
-        return null;
-    }
-    //Test for demo.
-    public User findUser(String email, String password) throws SQLException {
-        String fetch = "SELECT * FROM IOTUSER.\"USER\" WHERE EMAIL=" + email + " AND PASSWORD='" + password + "'";//read from where ID = and password = 
-
-        ResultSet rs = st.executeQuery(fetch);
-
-        while (rs.next()) {
-            String userEmail = rs.getString(1);
+            String userEmail = rs.getString(3);
             String userPass = rs.getString(4);
 
             if (userEmail == email && userPass.equals(password)) {
                 String name = rs.getString(2);
-                int ID = Integer.parseInt(rs.getString(3));
+                int ID = Integer.parseInt(rs.getString(1));
                 String phone = rs.getString(5);
                 String gender = rs.getString(6);
                 String dob = rs.getString(7);
                 String address = rs.getString(8);
 
-                return new User(ID,email, name, password, phone, gender, dob, address);
+                return new User(ID, name, email, password, phone, gender, dob, address);
             }
         }
         return null;

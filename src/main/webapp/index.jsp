@@ -76,6 +76,6 @@
             Welcome to IoTBay!
         </p>
     </div>
-
+    <jsp:include page="/ConnServlet" flush="true"/>
 </body>
 </html>

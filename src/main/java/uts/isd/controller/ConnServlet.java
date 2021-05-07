@@ -31,12 +31,12 @@ public class ConnServlet extends HttpServlet {
 
     public void init() {
         try {
-            db = new DBConnector();
+            db = new DBConnector(); //Create a database wen the application.
         } catch (ClassNotFoundException | SQLException ex) {
             Logger.getLogger(ConnServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-
+    @Override //Add the DBManager instance to the session
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         response.setContentType("text/html;charset=UTF-8");

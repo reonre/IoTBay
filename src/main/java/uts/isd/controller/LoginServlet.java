@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import uts.isd.model.User;
+import uts.isd.model.dao.DBConnector;
 import uts.isd.model.dao.DBManager;
 
 /**
@@ -25,7 +26,7 @@ public class LoginServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        
+     
         //1- retrieve the current session
         HttpSession session = request.getSession();
         //2- create an instance of the Validator class
