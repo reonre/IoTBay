@@ -12,6 +12,7 @@ import java.io.*;
 public class User implements Serializable {
     private int USER_ID;
     private String name, email, password, gender, dob, phone, address;
+    private boolean active;
 
     public User(){}
     
@@ -110,4 +111,22 @@ public class User implements Serializable {
         this.address = address;
     }
     
+    public boolean isActive() {
+        return active;
+    }
+    public void setActive(boolean active) {
+        this.active = active;
+    }
+
+    public char getAccountType() {
+        return this.getClass().getSimpleName().charAt(0);
+    }
+
+    // Used in sub classes
+    public boolean isStaff() {
+        return getAccountType() == 'S';
+    }
+    public boolean isCustomer() {
+        return getAccountType() == 'C';
+    }
 }
