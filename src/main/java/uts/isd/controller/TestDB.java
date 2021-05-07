@@ -35,9 +35,9 @@ public class TestDB {
     }
 
     private void testRead() throws SQLException {
-        int ID = Integer.parseInt(read("ID"));
+        String email = read("Email");
         String pass = read("Password");
-        User user = manager.readUser(ID, pass);
+        User user = manager.readUser(email, pass);
         String exist = (user != null) ? "User exists in the database" : "User does not exist!!!";
         System.out.println(exist);
     }

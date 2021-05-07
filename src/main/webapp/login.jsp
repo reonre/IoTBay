@@ -53,9 +53,8 @@
                 <tr><td>Email</td><td><input type="email" name="email" id="email" placeholder="<%=(emailErr != null ? emailErr : "Enter email")%>" required/></td></tr>
                 <tr><td>Password</td><td><input type="password" name="password" id="password" placeholder="<%=(passwordErr != null ? passwordErr : "Enter password")%>" required/></td></tr>                
                 <tr><td></td>
-                    <td><a href="CancelServlet" class="button"> Cancel</a>
-                        <input class="button" type="submit" value="Sign Up">
-                        <input >
+                    <tr><td>
+                        <input type="submit" value="Submit" class="button" name = "submit" id="submit">
                     </td></tr>
             </table>
         </form>
