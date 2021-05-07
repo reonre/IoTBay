@@ -143,3 +143,51 @@ VALUES
 (108,'05/03/2021 15:38:34','','Levi A Howitt','10 Bayview Road'),
 (110,'09/04/2021 20:10:31','','Christian C Kay','56 Brentwood Drive'),
 (112,'10/02/2021 19:10:33','','Dominic A Were','3 Barker Street')
+
+-- INSERT 20 instances into STAFF table
+INSERT INTO STAFF(EMAIL, "NAME", PASSWORD, GENDER, DOB, ADDRESS, "ROLE")
+VALUES
+('john.doe@hotmail.com', 'John Doe', 'password123', 'M', '01/01/2000', '123 Wall Street 2100, NSW', 'Customer Representative'),
+('jane.doe@hotmail.com', 'Jane Doe', 'password', 'F', '02/01/2000', '124 Wall Street 2100, NSW', 'Customer Representative'),
+('nicholas@hotmail.com', 'Nicholas Glass', 'abc123', 'M', '03/04/1996', '543 Him Avenue 2100, NSW', 'Customer Representative'),
+('abc@gmail.com', 'abc def', 'abcdef', 'M', '06/03/2000', '345 abc Street 2100, NSW', 'Customer Representative'),
+('cde@gmail.com', 'cde def', 'xyz', 'F', '12/07/1990', '345 abcd Street 2100, NSW', 'Customer Representative'),
+('xd@gmail.com', 'x d', 'xdxdxd', 'M', '01/03/2000', '345 xd Street 2100, NSW', 'Customer Representative'),
+('loltyler1@gmail.com', 'tyler1', 'loltyler1.com', 'M', '06/03/2000', '1 tyler Street 2100, NSW', 'System Administrator'),
+('discountcodealpha@gmail.com', 'alpha', 'alpha', 'M', '06/03/2000', '2 tyler Street 2100, NSW', 'System Administrator'),
+('xqc@gmail.com', 'xqc', 'sadge', 'M', '05/03/2000', '10 xqc Street 2100, NSW', 'System Administrator'),
+('sadge@gmail.com', 'sage', 'omegalul', 'F', '06/03/2000', '132 sadge Street 2100, NSW', 'System Administrator'),
+('omegalul@hotmail.com', 'omegalul', 'XDXD', 'F', '06/03/2000', '111 omega Street 2100, NSW', 'System Administrator'),
+('macaiyla@gmail.com', 'macaiyla', 'tyler1gf', 'F', '30/03/2000', '1 tyler Street 2100, NSW', 'Receptionist'),
+('girl@gmail.com', 'girl', 'password321', 'F', '30/03/2000', '133 tyler Street 2100, NSW', 'Receptionist'),
+('guy@gmail.com', 'guy', 'password12345', 'M', '30/03/2000', '122 tyler Street 2100, NSW', 'Receptionist'),
+('helpme@gmail.com', 'helpme', 'password213', 'F', '30/03/2000', '1555 tyler Street 2100, NSW', 'Receptionist'),
+('helphim@gmail.com', 'helphim', 'whatsup', 'M', '16/03/2000', '1 his Street 2100, NSW', 'Receptionist'),
+('getmeout@gmail.com', 'getmeout', 'XD123', 'F', '30/03/2000', '1 tyler Street 2100, NSW', 'Receptionist'),
+('bro@gmail.com', 'bro', 'pass123', 'M', '31/03/2000', '1 tyler Street 2100, NSW', 'Manager'),
+('bruv@gmail.com', 'bruv', 'pass1234', 'M', '31/03/2000', '5 tyler Street 2100, NSW', 'Manager'),
+('hehe@gmail.com', 'hehe', 'pass321', 'M', '31/03/2000', '1 tyler Street 2100, NSW', 'Manager');
+
+--INSERT 20 instances into ACCESS_LOG table
+INSERT INTO ACCESS_LOG("DATE", USER_ID)
+VALUES
+('02/03/2021', 1000),
+('02/03/2021', 1001),
+('02/03/2021', 1002),
+('02/03/2021', 1003),
+('02/03/2021', 1004),
+('02/03/2021', 1005),
+('04/03/2021', 1000),
+('04/03/2021', 1002),
+('04/03/2021', 1005),
+('04/04/2021', 1004),
+('04/04/2021', 1002),
+('04/04/2021', 1008),
+('04/04/2021', 1009),
+('28/04/2021', 1000),
+('28/04/2021', 1002),
+('28/04/2021', 1003),
+('28/04/2021', 1004),
+('28/04/2021', 1005),
+('28/04/2021', 1006),
+('28/04/2021', 1007);
