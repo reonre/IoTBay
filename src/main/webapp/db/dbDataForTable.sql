@@ -121,28 +121,28 @@ VALUES
 ('Edyn Garden sensor',39.99,'Garden sensor which keeps you connected to your garden. It tracks light, nutrition, moisture, humidity and temperature. It is Wi-Fi connected and it sends notifications to your phone.','Home Appliances',1);
 
 -- INSERT 20 instances into ORDER table
-INSERT INTO ORDER(CUST_ID, DATE_ORDER_PLACED, ORDER_DETAILS, ORDERER_NAME, ADDRESS)
+INSERT INTO "ORDER"(CUST_ID, DATE_ORDER_PLACED, ORDER_DETAILS, ORDERER_NAME, ADDRESS)
 VALUES
-(100,'27/04/2021 10:41:46','','Adam M Addis','84 Avondale Drive'),
-(100,'18/04/2021 09:44:03','','Adam M Addis','84 Avondale Drive'),
-(100,'11/03/2021 17:53:31','','Adam M Addis','84 Avondale Drive'),
-(100,'10/01/2021 16:23:37','','Adam M Addis','84 Avondale Drive'),
-(101,'16/03/2021 07:47:18','','Chloe T Mayo','45 Tennyson Road'),
-(101,'22/02/2021 15:13:54','','Chloe T Mayo','45 Tennyson Road'),
-(101,'26/04/2021 00:30:07','','Chloe T Mayo','45 Tennyson Road'),
-(102,'08/02/2021 01:07:23','','Bailey L Eden','85 Lapko Road'),
-(102,'10/04/2021 05:26:15','','Bailey L Eden','85 Lapko Road'),
-(102,'05/03/2021 22:46:11','','Bailey L Eden','85 Lapko Road'),
-(103,'13/02/2021 18:56:10','','Edward E Gall','94 Argyle Street'),
-(103,'17/03/2021 02:40:12','','Edward E Gall','94 Argyle Street'),
-(103,'14/03/2021 08:43:19','','Edward E Gall','94 Argyle Street'),
-(103,'13/01/2021 07:20:41','','Edward E Gall','94 Argyle Street'),
-(103,'24/02/2021 05:14:36','','Edward E Gall','94 Argyle Street'),
-(104,'17/04/2021 18:27:31','','Nate B Elizabeth','21 Mills Street'),
-(108,'13/01/2021 23:43:35','','Levi A Howitt','10 Bayview Road'),
-(108,'05/03/2021 15:38:34','','Levi A Howitt','10 Bayview Road'),
-(110,'09/04/2021 20:10:31','','Christian C Kay','56 Brentwood Drive'),
-(112,'10/02/2021 19:10:33','','Dominic A Were','3 Barker Street')
+(10000,'27/04/2021 10:41:46','','Adam M Addis','84 Avondale Drive'),
+(10000,'18/04/2021 09:44:03','','Adam M Addis','84 Avondale Drive'),
+(10000,'11/03/2021 17:53:31','','Adam M Addis','84 Avondale Drive'),
+(10000,'10/01/2021 16:23:37','','Adam M Addis','84 Avondale Drive'),
+(10001,'16/03/2021 07:47:18','','Chloe T Mayo','45 Tennyson Road'),
+(10001,'22/02/2021 15:13:54','','Chloe T Mayo','45 Tennyson Road'),
+(10001,'26/04/2021 00:30:07','','Chloe T Mayo','45 Tennyson Road'),
+(10002,'08/02/2021 01:07:23','','Bailey L Eden','85 Lapko Road'),
+(10002,'10/04/2021 05:26:15','','Bailey L Eden','85 Lapko Road'),
+(10002,'05/03/2021 22:46:11','','Bailey L Eden','85 Lapko Road'),
+(10003,'13/02/2021 18:56:10','','Edward E Gall','94 Argyle Street'),
+(10003,'17/03/2021 02:40:12','','Edward E Gall','94 Argyle Street'),
+(10003,'14/03/2021 08:43:19','','Edward E Gall','94 Argyle Street'),
+(10003,'13/01/2021 07:20:41','','Edward E Gall','94 Argyle Street'),
+(10003,'24/02/2021 05:14:36','','Edward E Gall','94 Argyle Street'),
+(10004,'17/04/2021 18:27:31','','Nate B Elizabeth','21 Mills Street'),
+(10008,'13/01/2021 23:43:35','','Levi A Howitt','10 Bayview Road'),
+(10008,'05/03/2021 15:38:34','','Levi A Howitt','10 Bayview Road'),
+(10012,'09/04/2021 20:10:31','','Christian C Kay','56 Brentwood Drive'),
+(10009,'10/02/2021 19:10:33','','Dominic A Were','3 Barker Street');
 
 -- INSERT 20 instances into STAFF table
 INSERT INTO STAFF(EMAIL, "NAME", PASSWORD, GENDER, DOB, ADDRESS, "ROLE")
@@ -191,3 +191,52 @@ VALUES
 ('28/04/2021', 1005),
 ('28/04/2021', 1006),
 ('28/04/2021', 1007);
+
+-INSERT 20 ORDERS IN ORDERLINE 
+INSERT INTO ORDER_LINE(PROD_ID,ORDER_ID,ORDER_LINE_PRICE,ORDER_LINE_QUANT)
+VALUES
+(100,101,50.14,1),
+(100,110,100.28,2),
+(101,119,79.99,1),
+(101,106,799.9,10),
+(100,109,50.14,1),
+(100,105,50.14,1),
+(113,102,219.99,1),
+(115,104,39.99,1),
+(118,108,49.99,1),
+(101,110,799.9,10),
+(100,118,50.14,1),
+(103,112,137.99,1),
+(113,105,219.99,1),
+(115,107,39.99,1),
+(117,111,89.99,1),
+(113,112,219.99,1),
+(113,116,219.99,1),
+(115,103,39.99,1),
+(104,112,19.98,1),
+(109,101,110,1);
+
+
+--INSERT 20 INVOICE SUBSTANCE CHANGE ORDERID TO THE SAME AS ORDERLINE
+INSERT INTO INVOICE(ORDER_ID,ORDER_LINE_ID,INVOICE_DATE,INVOICE_DETAILS)
+VALUES
+(101,100,'28/04/2021',''),
+(110,101,'28/04/2021',''),
+(119,102,'29/04/2021',''),
+(106,103,'29/04/2021',''),
+(109,104,'29/04/2021',''),
+(105,105,'30/04/2021',''),
+(102,106,'30/04/2021',''),
+(104,107,'30/04/2021',''),
+(108,108,'02/05/2021',''),
+(110,109,'02/05/2021',''),
+(118,110,'02/05/2021',''),
+(112,111,'02/05/2021',''),
+(105,112,'04/05/2021',''),
+(107,113,'04/05/2021',''),
+(111,114,'06/05/2021',''),
+(112,115,'07/05/2021',''),
+(116,116,'07/05/2021',''),
+(103,117,'07/05/2021',''),
+(112,118,'09/05/2021',''),
+(101,119,'12/05/2021','');
