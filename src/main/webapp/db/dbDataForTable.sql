@@ -49,6 +49,7 @@ VALUES
 -- this would be the SQL statement that would insert data into the User table 
 INSERT INTO "CUSTOMER"(EMAIL, "NAME", PASSWORD, GENDER, DOB, ADDRESS)
 VALUES
+('customer@gmail.com', 'customer', 'password', 'male', '9/11/2010', '1 Customer St')
 ('BOB@gmail.com', 'Gilberto Boyd', 'Passworeed', 'male', '9/11/2021', '1 addel street'),
 ('mabel@gmail.com', 'Mabel Osborne',  'Passwowerwrd', 'male','23/12/2000', '2 addel street'),
 ('fank@gmail.com', 'Frankie Wong', 'P4%word', 'male', '19/1/1989', '3 addel street'),
@@ -73,6 +74,7 @@ VALUES
 
 INSERT INTO STAFF( "NAME", EMAIL, PASSWORD, GENDER, DOB, ADDRESS, "ROLE")
 VALUES 
+('staff', 'staff@gmail.com', 'password', 'male', '9/11/2021', '45 Staff Road', 'Team member'),
 ('Gilberto Boyd', 'BOB@gmail.com',  'Passworeed', 'male', '9/11/2021', '1 addel street', 'Team member'),
 ('Mabel Osborne', 'mabel@gmail.com',  'Passwowerwrd', 'male','23/12/2000', '2 addel street', 'Sales Person'),
 ('Frankie Wong', 'fank@gmail.com',  'P4%word', 'male', '19/1/1989', '3 addel street', 'Team member'),
