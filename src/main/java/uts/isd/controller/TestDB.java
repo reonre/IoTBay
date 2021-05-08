@@ -13,15 +13,15 @@ import uts.isd.model.dao.*;
 public class TestDB {
 
     public static Scanner in = new Scanner(System.in);
-    
+
     public static void main(String[] args) throws ClassNotFoundException, SQLException {
         new TestDB().menu();
     }
-    
+
     private DBConnector connector;
     private Connection conn;
     private DBManager manager;
-    
+
     public TestDB() throws ClassNotFoundException, SQLException {
         connector = new DBConnector();
         conn = connector.openConnection();
@@ -37,7 +37,7 @@ public class TestDB {
     private void testRead() throws SQLException {
         String email = read("Email");
         String pass = read("Password");
-        User user = manager.findUser(email, pass);
+        User user = manager.readUser(email, pass);
         String exist = (user != null) ? "User exists in the database" : "User does not exist!!!";
         System.out.println(exist);
     }
@@ -45,7 +45,7 @@ public class TestDB {
     private void testUpdate() throws SQLException {
         int ID = Integer.parseInt(read("ID"));
         String pass = read("Password");
-        manager.updateUser(ID, read("Name"), read("Email"), pass, read("Phone"), read("Gender"), read("Dob"), read("Address"));
+        manager.updateUser(ID, read("Name"), read("Email"), pass, read("Phone"), read("Gender"), read("Date of birth"), read("Address"));
         System.out.println("User details updated successfully ");
     }
 
@@ -55,11 +55,12 @@ public class TestDB {
         manager.deleteUser(ID, pass);
         System.out.println("User deleted successfully");
     }
+    
     private void testFetch() throws SQLException {
-        System.out.printf("%-15s %-15s %-15s %-15s %-15s %-15s %-15s %-15s \n", "ID", "NAME", "EMAIL", "PASSWORD", "PHONE", "GENDER", "DOB", "ADDRESS");
+        System.out.printf("%-15s %-15s %-25s %-15s %-15s %-10s %-15s %-20s \n","ID","NAME", "EMAIL", "PASSWORD", "PHONE", "GENDER", "DATE OF BIRTH", "ADDRESS");
         ArrayList<User> users = manager.fetchUsers();
-        users.forEach(user -> System.out.printf("%-15s %-15s %-15s %-15s %-15s %-15s %-15s %-15s \n" 
-                + "",user.getUSER_ID(),user.getName(),user.getEmail(),user.getPassword(),user.getPhone(),user.getGender(),user.getDob(),user.getAddress()));
+//        users.forEach(user -> System.out.printf("%-15s %-15s %-25s %-15s %-15s %-10s %-15s %-20s \n" 
+//                + "",user.getUserId(),user.getName(),user.getEmail(),user.getPassword(),user.getPhone(),user.getGender(),user.getDob(),user.getAddress()));
         System.out.println();
     }
 
@@ -71,7 +72,7 @@ public class TestDB {
     private void menu() throws SQLException {
         char c;
         help();
-        while ((c = read("Command [c/r/u/d/f/x]").charAt(0)) != 'x') {
+        while ((c = read("Command [c/r/u/d/x]").charAt(0)) != 'x') {
             switch (c) {
                 case 'c':
                     testCreate();
