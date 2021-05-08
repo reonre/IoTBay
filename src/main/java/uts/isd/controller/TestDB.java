@@ -64,7 +64,7 @@ public class TestDB {
     }
 
     private String read(String prompt) {
-        System.out.print(prompt + ": ");
+        System.out.print(prompt+": ");
         return in.nextLine();
     }
 
