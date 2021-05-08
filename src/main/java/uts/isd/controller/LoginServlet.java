@@ -50,7 +50,7 @@ public class LoginServlet extends HttpServlet {
         }
         else{
             try {
-                user = manager.readUser(email, password);
+                user = manager.findUser(email, password);
                 if (user != null){
                     session.setAttribute("user",user);
                     request.getRequestDispatcher("main.jsp").include(request,response);
