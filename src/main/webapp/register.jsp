@@ -39,7 +39,7 @@
                     </li>
                 </ul>
             </div>
-        </nav> 
+        </nav>
 
         <form action="welcome.jsp" method="post">
             <table class="table table-responsive">
