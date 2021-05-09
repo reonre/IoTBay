@@ -5,7 +5,7 @@
  */
 package uts.isd.model.dao;
 
-import uts.isd.model.User;
+import uts.isd.model.*;
 import java.sql.*;
 import java.util.ArrayList;
 
@@ -37,8 +37,14 @@ public class DBManager {
                 String gender = rs.getString(6);
                 String dob = rs.getString(7);
                 String address = rs.getString(8);
-
-                return new User(userID, name, email, password, phone, gender, dob, address);
+                String role = rs.getString(9);
+                if (role.equals("S")) {
+                    return new Staff(userID, name, email, password, phone, gender, dob, address);
+                }
+                else {
+                    return new Customer(userID, name, email, password, phone, gender, dob, address);
+                }
+                
             }
         }
         return null;

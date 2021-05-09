@@ -52,9 +52,13 @@
             <tr><td>Gender:</td><td><%= user.getGender()%></td></tr>
             <tr><td>Phone Number:</td><td><%= user.getPhone()%></td></tr>
             <tr><td>Address:</td><td><%= user.getAddress()%></td></tr>
+            <tr><td>Account Type:</td><td><%= user.getClass().getSimpleName()%></td></tr>
         </table>
         <form action="edit.jsp">
             <input type="submit" value="Edit Account" />
+        </form>
+        <form action="DeleteServlet" method="post">
+            <input type="submit" value="Delete Account" />
         </form>
     </div>
 </body>

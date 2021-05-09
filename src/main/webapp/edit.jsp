@@ -48,7 +48,7 @@
     </nav>
     <div class="container-fluid">
         <h1> Edit student information <span><%= (updated != null) ?  "Update was successful":""%></span></h1>
-        <form action="edit.jsp" method="post">
+        <form action="EditServlet" method="post">
             <table class="table table-responsive">
                 <tr><td>Name</td><td><input type="text" name="name" value="${user.name}"/></td></tr>
                 <tr><td>Email</td><td><input type="email" name="email" value="${user.email}"/></td></tr>
@@ -84,8 +84,6 @@
         String gender = request.getParameter("gender");
         String phone = request.getParameter("phone");
         String address = request.getParameter("address");
-        user = new User(name,email,password,dob,gender,phone,address);
-        session.setAttribute("user", user);
     %>
     </div>
 </body>
