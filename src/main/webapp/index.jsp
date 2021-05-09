@@ -46,6 +46,7 @@
                 </ul>
             </div>
         </nav>
+            <p>You are logged in as ${user.name} &lt;${user.email}&gt;</p>
 
         <%} else {
         %>
@@ -76,6 +77,6 @@
             Welcome to IoTBay!
         </p>
     </div>
-
+    <jsp:include page="/ConnServlet" flush="true"/>
 </body>
 </html>

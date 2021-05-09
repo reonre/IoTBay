@@ -13,13 +13,13 @@
         <script src="js/bootstrap.min.js"></script>
     </head>
     <title> Contact Us </title>
-    <%
-        User user = (User) session.getAttribute("user");
-    %>
-
 </head>
 
 <body>
+    <%
+        User user = (User) session.getAttribute("user");
+        String updated = request.getParameter("updated");
+    %>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark">
         <a class="navbar-brand" href="index.jsp">IoTBay</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -47,15 +47,16 @@
         </div>
     </nav>
     <div class="container-fluid">
-        <form action="edit_success.jsp" method="post">
+        <h1> Edit student information <span><%= (updated != null) ?  "Update was successful":""%></span></h1>
+        <form action="edit.jsp" method="post">
             <table class="table table-responsive">
-                <tr><td>Name</td><td><input type="text" name="name"/></td></tr>
-                <tr><td>Email</td><td><input type="email" name="email"/></td></tr>
-                <tr><td>Password</td><td><input type="password" name="password"/></td></tr>                
+                <tr><td>Name</td><td><input type="text" name="name" value="${user.name}"/></td></tr>
+                <tr><td>Email</td><td><input type="email" name="email" value="${user.email}"/></td></tr>
+                <tr><td>Password</td><td><input type="password" name="password" value="${user.password}"/></td></tr>                
                 <tr>
 
                     <td>
-                        <select class="select" name="gender">
+                        <select class="select" name="gender" value="${user.gender}">
                             <option value="empty">Gender</option>
                             <option value="male">Male</option>
                             <option value="female">Female</option>
@@ -63,17 +64,31 @@
                         </select>                                   
                     </td>
                     <td>
-                        <input class="date" type="date" name="dob"/>  
+                        <input class="date" type="date" name="dob"value="${user.dob}"/>  
                     </td>
                 </tr>
-                <tr><td>Phone Number</td><td><input type="text" name="phone"/></td></tr>
-                <tr><td>Address</td><td><input type="text" name="address"/></td></tr>
+                <tr><td>Phone Number</td><td><input type="text" name="phone"value="${user.phone}"/></td></tr>
+                <tr><td>Address</td><td><input type="text" name="address" value="${user.address}"/></td></tr>
 
                 <tr><td>
                         <input type="submit" value="Submit" class="button" name = "submit" id="submit">
+                        <input type="hidden" name="updated" value="updated">
                     </td></tr>
             </table>
         </form>
+        <%
+        String name = request.getParameter("name");
+        String email = request.getParameter("email");
+        String password = request.getParameter("password");
+        String dob = request.getParameter("dob");
+        String gender = request.getParameter("gender");
+        String phone = request.getParameter("phone");
+        String address = request.getParameter("address");
+        user = new User(name,email,password,dob,gender,phone,address);
+        session.setAttribute("user", user);
+//        user.setUser(name, email, password, dob, gender, phone, address);
+    %>
+
     </div>
 
 </body>
