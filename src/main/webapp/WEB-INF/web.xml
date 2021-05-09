@@ -20,6 +20,16 @@
         <url-pattern>/LoginServlet</url-pattern>
     </servlet-mapping>
     
+    <!--Register-->
+    <servlet>
+        <servlet-name>RegisterServlet</servlet-name>
+        <servlet-class>uts.isd.controller.RegisterServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RegisterServlet</servlet-name>
+        <url-pattern>/RegisterServlet</url-pattern>
+    </servlet-mapping>
+    
     <!--Logout-->
     <servlet>
         <servlet-name>LogoutServlet</servlet-name>

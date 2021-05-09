@@ -41,7 +41,7 @@
             </div>
         </nav>
 
-        <form action="welcome.jsp" method="post">
+        <form action="RegisterServlet" method="post">
             <table class="table table-responsive">
                 <tr><td>Name</td><td><input type="text" name="name"/></td></tr>
                 <tr><td>Email</td><td><input type="email" name="email"/></td></tr>
@@ -62,6 +62,12 @@
                 </tr>
                 <tr><td>Phone Number</td><td><input type="text" name="phone"/></td></tr>
                 <tr><td>Address</td><td><input type="text" name="address"/></td></tr>
+                <td>
+                        <select class="select" name="role">
+                            <option value="Customer">Customer</option>
+                            <option value="Staff">Staff</option>                                                              
+                        </select>                                   
+                    </td>
                 <tr><td>Agree to Terms of Service</td><td><input type="checkbox" name="tos" id="tos"/></td></tr>
                 <tr><td>
                         <input type="submit" value="Submit" class="button" name = "submit" id="submit" disabled>

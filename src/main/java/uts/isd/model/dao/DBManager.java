@@ -50,9 +50,9 @@ public class DBManager {
         return null;
     }
     
-    public void addUser(String name, String email, String pass, String phone, String gender, String dob, String address) throws SQLException {
-        String columns = "INSERT INTO IOTUSER.\"USER\"(\"NAME\",EMAIL,PASSWORD,PHONE,GENDER,DOB,ADDRESS)";
-        String values = "VALUES('" + name + "','" + email + "','" + pass + "','" + phone + "','" + gender + "','" + dob + "','" + address + "')";
+    public void addUser(String name, String email, String pass, String phone, String gender, String dob, String address, String role) throws SQLException {
+        String columns = "INSERT INTO IOTUSER.\"USER\"(\"NAME\",EMAIL,PASSWORD,PHONE,GENDER,DOB,ADDRESS,\"ROLE\")";
+        String values = "VALUES('" + name + "','" + email + "','" + pass + "','" + phone + "','" + gender + "','" + dob + "','" + address + "','" + role + "')";
         st.executeUpdate(columns + values);
     }
     

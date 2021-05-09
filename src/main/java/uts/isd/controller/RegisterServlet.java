@@ -22,7 +22,7 @@ import uts.isd.model.dao.DBManager;
  *
  * @author Charl
  */
-public class LoginServlet extends HttpServlet {
+public class RegisterServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -35,25 +35,43 @@ public class LoginServlet extends HttpServlet {
         String email = request.getParameter("email");
         //4- capture the posted password
         String password = request.getParameter("password");
+        String name = request.getParameter("name");
+        String gender = request.getParameter("gender");
+        String phone = request.getParameter("phone");
+        String dob = request.getParameter("dob");
+        String address = request.getParameter("address");
+        String role = request.getParameter("role");
+        System.out.println(role);
+        if (role.equals("Staff")) {
+            role = "S";
+        }
+        else {
+            role = "C";
+        }
         //5- retrieve the manager instance from session    
         DBManager manager = (DBManager) session.getAttribute("manager");
-        User user = null;
+        User user;
         validator.clear(session);
         
         if (!validator.validateEmail(email)){
             session.setAttribute("emailErr","Error: Email format incorrect");
-            request.getRequestDispatcher("login.jsp").include(request,response);
+            request.getRequestDispatcher("register.jsp").include(request,response);
+        }
+        else if (!validator.validatePassword(password)){
+            session.setAttribute("passErr","Error: Password format incorrect");
+            request.getRequestDispatcher("register.jsp").include(request,response);
         }
         else{
             try {
                 user = manager.findUser(email, password);
                 if (user != null){
-                    session.setAttribute("user",user);
                     request.getRequestDispatcher("main.jsp").include(request,response);
                 }
                 else {
-                    session.setAttribute("existErr","User does not exist in the Database!");
-                    request.getRequestDispatcher("login.jsp").include(request,response);
+                    manager.addUser(name, email, password, phone, gender, dob, address, role);
+                    user = manager.findUser(email, password);
+                    session.setAttribute("user", user);
+                    request.getRequestDispatcher("main.jsp").include(request,response);
                 }
                 
             } catch (SQLException | NullPointerException ex){
