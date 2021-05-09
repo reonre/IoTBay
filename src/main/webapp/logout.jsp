@@ -49,7 +49,8 @@
 
     <div class="container-fluid">
         <p>
-            You have successfully logged out! Redirecting in a few seconds...
+            You have successfully logged out!
+            <a href="index.jsp" role="button" class="btn btn-primary btn-lg mt-2">Return to Home</a>
         </p>
     </div>
 </body>

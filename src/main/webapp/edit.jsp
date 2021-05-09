@@ -86,10 +86,7 @@
         String address = request.getParameter("address");
         user = new User(name,email,password,dob,gender,phone,address);
         session.setAttribute("user", user);
-//        user.setUser(name, email, password, dob, gender, phone, address);
     %>
-
     </div>
-
 </body>
 </html>
