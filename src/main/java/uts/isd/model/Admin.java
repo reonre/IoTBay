@@ -6,10 +6,12 @@ import java.io.*;
 public class Admin implements Serializable {
 
     private String username, password;
+ 
 
     public Admin(String username, String password) {
         this.username = username;
         this.password = password;
+       
     }
 
     public String getUsername() {
@@ -27,4 +29,6 @@ public class Admin implements Serializable {
     public void setPassword(String password) {
         this.password = password;
     }
+     
+
 }
