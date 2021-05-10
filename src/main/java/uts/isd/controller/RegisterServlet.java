@@ -70,6 +70,7 @@ public class RegisterServlet extends HttpServlet {
                 else {
                     manager.addUser(name, email, password, phone, gender, dob, address, role);
                     user = manager.findUser(email, password);
+                    manager.addLogLogin(user.getUSER_ID());
                     session.setAttribute("user", user);
                     request.getRequestDispatcher("main.jsp").include(request,response);
                 }

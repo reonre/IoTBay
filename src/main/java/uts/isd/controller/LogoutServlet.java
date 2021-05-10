@@ -26,7 +26,16 @@ public class LogoutServlet extends HttpServlet{
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
-        session.invalidate();
-        request.getRequestDispatcher("logout.jsp").include(request, response);
+        DBManager manager = (DBManager) session.getAttribute("manager");
+        User user = (User) session.getAttribute("user");
+        try {
+            manager.addLogLogout(user.getUSER_ID());
+            session.invalidate();
+            request.getRequestDispatcher("logout.jsp").include(request, response);
+        }
+        catch (SQLException e) {
+            
+        }
+        
     }
 }

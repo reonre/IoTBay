@@ -61,6 +61,16 @@
         <url-pattern>/DeleteServlet</url-pattern>
     </servlet-mapping>
     
+    <!--Access Log-->
+    <servlet>
+        <servlet-name>LogServlet</servlet-name>
+        <servlet-class>uts.isd.controller.LogServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LogServlet</servlet-name>
+        <url-pattern>/LogServlet</url-pattern>
+    </servlet-mapping>
+    
     
     <!--Product -->
     <servlet>

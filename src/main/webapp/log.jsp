@@ -5,6 +5,8 @@
 --%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="uts.isd.model.*"%>
+<%@page import="java.util.*"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -44,25 +46,19 @@
         </div>
     </nav>
     <div class="container-fluid">
-        <table class="table table-responsive" id="users">
-            <tr><td>Name:</td><td><%= user.getName()%></td></tr>
-            <tr><td>Email:</td><td><%= user.getEmail()%></td></tr>
-            <tr><td>Password:</td><td><%= user.getPassword()%></td></tr>
-            <tr><td>Dob:</td><td><%= user.getDob()%></td></tr>
-            <tr><td>Gender:</td><td><%= user.getGender()%></td></tr>
-            <tr><td>Phone Number:</td><td><%= user.getPhone()%></td></tr>
-            <tr><td>Address:</td><td><%= user.getAddress()%></td></tr>
-            <tr><td>Account Type:</td><td><%= user.getClass().getSimpleName()%></td></tr>
-        </table>
-        <form action="edit.jsp">
-            <input type="submit" value="Edit Account" />
-        </form>
-        <form action="DeleteServlet" method="post">
-            <input type="submit" value="Delete Account" />
-        </form>
         <form action="LogServlet" method="post">
-            <input type="submit" value="Access Logs"/>
+            <input type="submit" value="Sort"/>
         </form>
+        <table class="table table-bordered">
+            <th>Date</th>
+            <th>Type</th>
+            <c:forEach items="${log}" var="obj">
+                <tr>
+                    <td>${obj.dateTime}</td>
+                    <td>${obj.type}</td>
+                </tr>
+            </c:forEach>
+        </table>
     </div>
 </body>
 </html>

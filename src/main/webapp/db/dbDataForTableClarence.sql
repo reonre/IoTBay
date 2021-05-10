@@ -47,30 +47,30 @@
 -- ('349714273935797','07/23','602','Sheri Fletcher');
 
 -- this would be the SQL statement that would insert data into the User table 
-INSERT INTO "USER"(EMAIL, "NAME", PASSWORD, PHONE, GENDER, DOB, ADDRESS, "ROLE")
+INSERT INTO "USER"(EMAIL, "NAME", PASSWORD, PHONE, GENDER, DOB, ADDRESS, "ROLE", ACTIVATED)
 VALUES
-('customer@gmail.com', 'customer', 'password',  'male', '12345','9/11/2010', '1 Customer St', 'S'),
-('BOB@gmail.com', 'Gilberto Boyd', 'Passworeed',  'male', '12345','9/11/2021', '1 addel street', 'S'),
-('mabel@gmail.com', 'Mabel Osborne',  'Passwowerwrd', 'male', '12345','23/12/2000', '2 addel street', 'S'),
-('fank@gmail.com', 'Frankie Wong', 'P4%word', 'male', '12345', '19/1/1989', '3 addel street', 'S'),
-('jenny@gmail.com', 'Jenny Barton', '366YH5%', 'male', '12345', '23/12/1898', '4 addel street', 'S'),
-('JEANious@gmail.com', 'Jean Meyer', 'u4655', 'female', '12345', '11/11/2011', '5 addel street', 'S'),
-('Amos@gmail.com', 'Amos Bryan', 'Pass44word', 'female', '12345', '14/11/1666', '6 batman street', 'S'),
-('archie@gmail.com', 'Archie Adkins', 'passwrdq2', 'male', '12345', '11/1/2001', '12 elm street', 'S'),
-('007@gmail.com', 'Craig Austin', 'yey22#', 'male', '12345', '6/11/1989', '34 junk stree' , 'S'),
-('yea@gmail.com','Michael Steele', 'yesww34$$', 'female', '12345', '1/1/2000', '43 addell street', 'S'),
-('alderf2@gmail.com', 'Pamela Ford', '32sd235$', 'female', '12345', '11/11/1999', '45 teamFortress Steet', 'S'),
-('b322@gmail.com', 'Beulah Curry', '580jfj', 'male', '12345', '3/11/2000', '45 garden street', 'S'),
-('Percy34@gmail.com', 'Percy Chambers', '234dfjrn', 'male', '12345', '5/11/2000', '45 manwell street', 'C'),
-('daisey@gmail.com', 'Daisy Baker', 'yyed3#@22', 'female', '12345', '1/12/1990', '45 druid street', 'C'),
-('kmn45$gmial.com', 'Kara Gibson', 'rrwf234', 'male', '12345', '11/11/2000', '46 addrell street', 'C'),
-('thiIshell@gmail.com', 'Micheal Colon', 'ryyest$$#*6783', 'male', '12345', '11/11/2000', '67 patel street', 'C'),
-('gmail@gmail.com', 'Kayra bson',  'password123', 'male','12345', '11/11/2000', '4 book street', 'C'),
-('yes@gmail.com', 'Micheal Colon', 'pedc@2', 'male', '12345', '2/12/2000', '1 goodwell street', 'C'),
-('nic@gmail.com', 'Nichole Perez', 'peda5d', 'female','12345', '9/12/2000', '56 no street', 'C'),
-('LELA@gmail.con', 'Lela Jensen',  'peYuin3s', 'female', '12345', '11/11/2000', '34 boom street', 'C'),
-('nadinenic@gmail.com', 'Nadine Moran',  'pmin33', 'female', '12345', '11/12/2000', '23 nob street', 'C'),
-('add@gmail.com', 'Sheri Fletcher','peda32min', 'female', '12345', '11/11/1989', '12 nector street', 'C');
+('customer@gmail.com', 'customer', 'password',  'male', '12345','9/11/2010', '1 Customer St', 'S', true),
+('BOB@gmail.com', 'Gilberto Boyd', 'Passworeed',  'male', '12345','9/11/2021', '1 addel street', 'S', true),
+('mabel@gmail.com', 'Mabel Osborne',  'Passwowerwrd', 'male', '12345','23/12/2000', '2 addel street', 'S', true),
+('fank@gmail.com', 'Frankie Wong', 'P4%word', 'male', '12345', '19/1/1989', '3 addel street', 'S', true),
+('jenny@gmail.com', 'Jenny Barton', '366YH5%', 'male', '12345', '23/12/1898', '4 addel street', 'S', true),
+('JEANious@gmail.com', 'Jean Meyer', 'u4655', 'female', '12345', '11/11/2011', '5 addel street', 'S', true),
+('Amos@gmail.com', 'Amos Bryan', 'Pass44word', 'female', '12345', '14/11/1666', '6 batman street', 'S', true),
+('archie@gmail.com', 'Archie Adkins', 'passwrdq2', 'male', '12345', '11/1/2001', '12 elm street', 'S', true),
+('007@gmail.com', 'Craig Austin', 'yey22#', 'male', '12345', '6/11/1989', '34 junk stree' , 'S', true),
+('yea@gmail.com','Michael Steele', 'yesww34$$', 'female', '12345', '1/1/2000', '43 addell street', 'S', true),
+('alderf2@gmail.com', 'Pamela Ford', '32sd235$', 'female', '12345', '11/11/1999', '45 teamFortress Steet', 'S', true),
+('b322@gmail.com', 'Beulah Curry', '580jfj', 'male', '12345', '3/11/2000', '45 garden street', 'S', true),
+('Percy34@gmail.com', 'Percy Chambers', '234dfjrn', 'male', '12345', '5/11/2000', '45 manwell street', 'C', true),
+('daisey@gmail.com', 'Daisy Baker', 'yyed3#@22', 'female', '12345', '1/12/1990', '45 druid street', 'C', true),
+('kmn45$gmial.com', 'Kara Gibson', 'rrwf234', 'male', '12345', '11/11/2000', '46 addrell street', 'C', true),
+('thiIshell@gmail.com', 'Micheal Colon', 'ryyest$$#*6783', 'male', '12345', '11/11/2000', '67 patel street', 'C', true),
+('gmail@gmail.com', 'Kayra bson',  'password123', 'male','12345', '11/11/2000', '4 book street', 'C', true),
+('yes@gmail.com', 'Micheal Colon', 'pedc@2', 'male', '12345', '2/12/2000', '1 goodwell street', 'C', true),
+('nic@gmail.com', 'Nichole Perez', 'peda5d', 'female','12345', '9/12/2000', '56 no street', 'C', true),
+('LELA@gmail.con', 'Lela Jensen',  'peYuin3s', 'female', '12345', '11/11/2000', '34 boom street', 'C', true),
+('nadinenic@gmail.com', 'Nadine Moran',  'pmin33', 'female', '12345', '11/12/2000', '23 nob street', 'C', true),
+('add@gmail.com', 'Sheri Fletcher','peda32min', 'female', '12345', '11/11/1989', '12 nector street', 'C', true);
 
 
 -- INSERT 20 instances into PRODUCT table
@@ -122,28 +122,28 @@ VALUES
 (10009,'10/02/2021 19:10:33','','Dominic A Were','3 Barker Street');
 
 --INSERT 20 instances into ACCESS_LOG table
-INSERT INTO ACCESS_LOG("DATE", USER_ID)
-VALUES
-('02/03/2021', 1000),
-('02/03/2021', 1001),
-('02/03/2021', 1002),
-('02/03/2021', 1003),
-('02/03/2021', 1004),
-('02/03/2021', 1005),
-('04/03/2021', 1000),
-('04/03/2021', 1002),
-('04/03/2021', 1005),
-('04/04/2021', 1004),
-('04/04/2021', 1002),
-('04/04/2021', 1008),
-('04/04/2021', 1009),
-('28/04/2021', 1000),
-('28/04/2021', 1002),
-('28/04/2021', 1003),
-('28/04/2021', 1004),
-('28/04/2021', 1005),
-('28/04/2021', 1006),
-('28/04/2021', 1007);
+-- INSERT INTO ACCESS_LOG("DATE", USER_ID)
+-- VALUES
+-- ('02/03/2021', 1000),
+-- ('02/03/2021', 1001),
+-- ('02/03/2021', 1002),
+-- ('02/03/2021', 1003),
+-- ('02/03/2021', 1004),
+-- ('02/03/2021', 1005),
+-- ('04/03/2021', 1000),
+-- ('04/03/2021', 1002),
+-- ('04/03/2021', 1005),
+-- ('04/04/2021', 1004),
+-- ('04/04/2021', 1002),
+-- ('04/04/2021', 1008),
+-- ('04/04/2021', 1009),
+-- ('28/04/2021', 1000),
+-- ('28/04/2021', 1002),
+-- ('28/04/2021', 1003),
+-- ('28/04/2021', 1004),
+-- ('28/04/2021', 1005),
+-- ('28/04/2021', 1006),
+-- ('28/04/2021', 1007);
 
 --INSERT 20 ORDERS IN ORDERLINE 
 INSERT INTO ORDER_LINE(PROD_ID,ORDER_ID,ORDER_LINE_PRICE,ORDER_LINE_QUANT)

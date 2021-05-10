@@ -38,12 +38,16 @@ public class DBManager {
                 String dob = rs.getString(7);
                 String address = rs.getString(8);
                 String role = rs.getString(9);
-                if (role.equals("S")) {
-                    return new Staff(userID, name, email, password, phone, gender, dob, address);
+                boolean activated = rs.getBoolean(10);
+                if (activated) {
+                    if (role.equals("S")) {
+                        return new Staff(userID, name, email, password, phone, gender, dob, address);
+                    }
+                    else {
+                        return new Customer(userID, name, email, password, phone, gender, dob, address);
+                    }
                 }
-                else {
-                    return new Customer(userID, name, email, password, phone, gender, dob, address);
-                }
+                
                 
             }
         }
@@ -51,8 +55,22 @@ public class DBManager {
     }
     
     public void addUser(String name, String email, String pass, String phone, String gender, String dob, String address, String role) throws SQLException {
-        String columns = "INSERT INTO IOTUSER.\"USER\"(\"NAME\",EMAIL,PASSWORD,PHONE,GENDER,DOB,ADDRESS,\"ROLE\")";
-        String values = "VALUES('" + name + "','" + email + "','" + pass + "','" + phone + "','" + gender + "','" + dob + "','" + address + "','" + role + "')";
+        String columns = "INSERT INTO IOTUSER.\"USER\"(\"NAME\",EMAIL,PASSWORD,PHONE,GENDER,DOB,ADDRESS,\"ROLE\",ACTIVATED)";
+        String values = "VALUES('" + name + "','" + email + "','" + pass + "','" + phone + "','" + gender + "','" + dob + "','" + address + "','" + role + "',true)";
+        st.executeUpdate(columns + values);
+    }
+    
+    public void addLogLogin(int userId) throws SQLException {
+        java.util.Date date = new java.util.Date();
+        String columns = "INSERT INTO IOTUSER.ACCESS_LOG(DATE, USER_ID, TYPE)";
+        String values = "VALUES('" + date.toString() + "'," + userId + ",'" + "LOGIN" + "')";
+        st.executeUpdate(columns + values);
+    }
+    
+    public void addLogLogout(int userId) throws SQLException {
+        java.util.Date date = new java.util.Date();
+        String columns = "INSERT INTO IOTUSER.ACCESS_LOG(DATE, USER_ID, TYPE)";
+        String values = "VALUES('" + date.toString() + "'," + userId + ",'" + "LOGOUT" + "')";
         st.executeUpdate(columns + values);
     }
     
@@ -62,7 +80,7 @@ public class DBManager {
     }
     
     public void deleteUser(int USER_ID, String password) throws SQLException {
-        String delete = "DELETE FROM IOTUSER.\"USER\" WHERE ID=" + USER_ID + " AND PASSWORD='" + password + "'";
+        String delete = "UPDATE IOTUSER.\"USER\" SET ACTIVATED=false WHERE ID=" + USER_ID + " AND PASSWORD='" + password + "'";
         st.executeUpdate(delete);
     }
     
@@ -97,6 +115,20 @@ public class DBManager {
             temp.add(new User(USER_ID,name,email,pass,phone,gender,dob,address));
         }
         return temp;
+    }
+    
+    public ArrayList<AccessLog> fetchLogs(int userId) throws SQLException{
+        String fetch = "SELECT * FROM IOTUSER.ACCESS_LOG WHERE USER_ID = " + userId + "";
+        ArrayList<AccessLog> temp = new ArrayList();
+        ResultSet rs = st.executeQuery(fetch);
+        
+        while (rs.next()) {
+            String date = rs.getString(1);
+            String type = rs.getString(3);
+            temp.add(new AccessLog(userId, date, type));
+        }
+        return temp;
+        
     }
     
 }
