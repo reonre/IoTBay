@@ -47,7 +47,7 @@
 -- ('349714273935797','07/23','602','Sheri Fletcher');
 
 -- this would be the SQL statement that would insert data into the User table 
-INSERT INTO "USER"(EMAIL, "NAME", PASSWORD, PHONE, GENDER, DOB, ADDRESS, "ROLE", ACTIVATED)
+INSERT INTO "USER"(EMAIL, "NAME", PASSWORD, GENDER, PHONE, DOB, ADDRESS, "ROLE", ACTIVATED)
 VALUES
 ('customer@gmail.com', 'customer', 'password',  'male', '12345','9/11/2010', '1 Customer St', 'S', true),
 ('BOB@gmail.com', 'Gilberto Boyd', 'Passworeed',  'male', '12345','9/11/2021', '1 addel street', 'S', true),
@@ -71,6 +71,10 @@ VALUES
 ('LELA@gmail.con', 'Lela Jensen',  'peYuin3s', 'female', '12345', '11/11/2000', '34 boom street', 'C', true),
 ('nadinenic@gmail.com', 'Nadine Moran',  'pmin33', 'female', '12345', '11/12/2000', '23 nob street', 'C', true),
 ('add@gmail.com', 'Sheri Fletcher','peda32min', 'female', '12345', '11/11/1989', '12 nector street', 'C', true);
+
+INSERT INTO "STAFF"(ID, "POSITION")
+VALUES
+(10000, 'Pedo');
 
 
 -- INSERT 20 instances into PRODUCT table
