@@ -20,6 +20,58 @@
         <url-pattern>/LoginServlet</url-pattern>
     </servlet-mapping>
     
+    <!--Register-->
+    <servlet>
+        <servlet-name>RegisterServlet</servlet-name>
+        <servlet-class>uts.isd.controller.RegisterServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RegisterServlet</servlet-name>
+        <url-pattern>/RegisterServlet</url-pattern>
+    </servlet-mapping>
+    
+    <!--Logout-->
+    <servlet>
+        <servlet-name>LogoutServlet</servlet-name>
+        <servlet-class>uts.isd.controller.LogoutServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LogoutServlet</servlet-name>
+        <url-pattern>/LogoutServlet</url-pattern>
+    </servlet-mapping>
+    
+    <!--Edit User-->
+    <servlet>
+        <servlet-name>EditServlet</servlet-name>
+        <servlet-class>uts.isd.controller.EditServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EditServlet</servlet-name>
+        <url-pattern>/EditServlet</url-pattern>
+    </servlet-mapping>
+    
+    
+    <!--Delete User-->
+    <servlet>
+        <servlet-name>DeleteServlet</servlet-name>
+        <servlet-class>uts.isd.controller.DeleteServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DeleteServlet</servlet-name>
+        <url-pattern>/DeleteServlet</url-pattern>
+    </servlet-mapping>
+    
+    <!--Access Log-->
+    <servlet>
+        <servlet-name>LogServlet</servlet-name>
+        <servlet-class>uts.isd.controller.LogServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LogServlet</servlet-name>
+        <url-pattern>/LogServlet</url-pattern>
+    </servlet-mapping>
+    
+    
     <!--Product -->
     <servlet>
         <servlet-name>AddProductServlet</servlet-name>
@@ -29,6 +81,7 @@
         <servlet-name>AddProductServlet</servlet-name>
         <url-pattern>/AddProductServlet</url-pattern>
     </servlet-mapping>
+    
     
     <session-config>
         <session-timeout>

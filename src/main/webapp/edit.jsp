@@ -41,14 +41,14 @@
                     <a class="nav-link btn btn-primary text-white" type="button" href="main.jsp" data-toggle="modal" data-target="#myModal">Profile<span class="sr-only">(current)</a>                  
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link btn btn-danger text-white" type="button" href="logout.jsp" data-toggle="modal" data-target="#myModal">Logout</a>
+                    <a class="nav-link btn btn-danger text-white" type="button" href="LogoutServlet" data-toggle="modal" data-target="#myModal">Logout</a>
                 </li>
             </ul>
         </div>
     </nav>
     <div class="container-fluid">
         <h1> Edit student information <span><%= (updated != null) ?  "Update was successful":""%></span></h1>
-        <form action="edit.jsp" method="post">
+        <form action="EditServlet" method="post">
             <table class="table table-responsive">
                 <tr><td>Name</td><td><input type="text" name="name" value="${user.name}"/></td></tr>
                 <tr><td>Email</td><td><input type="email" name="email" value="${user.email}"/></td></tr>
@@ -84,12 +84,7 @@
         String gender = request.getParameter("gender");
         String phone = request.getParameter("phone");
         String address = request.getParameter("address");
-        user = new User(name,email,password,dob,gender,phone,address);
-        session.setAttribute("user", user);
-//        user.setUser(name, email, password, dob, gender, phone, address);
     %>
-
     </div>
-
 </body>
 </html>

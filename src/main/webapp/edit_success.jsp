@@ -14,9 +14,17 @@
     </head>
     <title> Contact Us </title>
     <%
-        session.invalidate();
+        User user = (User) session.getAttribute("user");
+        String name = request.getParameter("name");
+        String email = request.getParameter("email");
+        String password = request.getParameter("password");
+        String dob = request.getParameter("dob");
+        String gender = request.getParameter("gender");
+        String phone = request.getParameter("phone");
+        String address = request.getParameter("address");
+        user.setUser(name, email, password, dob, gender, phone, address);
     %>
-    <meta http-equiv="refresh" content="5;url=index.jsp" />
+
 </head>
 
 <body>
@@ -28,8 +36,8 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto topnav">
-                <li class="nav-item active">
-                    <a class="nav-link" href="index.jsp">Home <span class="sr-only">(current)</span></a>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.jsp">Home</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="about_us.jsp">About</a>
@@ -37,21 +45,19 @@
                 <li class="nav-item">
                     <a class="nav-link" href="contact_us.jsp">Contact</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link btn btn-primary text-white" type="button" href="login.jsp" data-toggle="modal" data-target="#myModal">Sign In</a>                  
+                <li class="nav-item active">
+                    <a class="nav-link btn btn-primary text-white" type="button" href="main.jsp" data-toggle="modal" data-target="#myModal">Profile<span class="sr-only">(current)</a>                  
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link btn btn-danger text-white" type="button" href="register.jsp" data-toggle="modal" data-target="#myModal">Register</a>
+                    <a class="nav-link btn btn-danger text-white" type="button" href="logout.jsp" data-toggle="modal" data-target="#myModal">Logout</a>
                 </li>
             </ul>
         </div>
-    </nav>  
-
+    </nav>
     <div class="container-fluid">
         <p>
-            You have successfully logged out!
-            <a href="index.jsp" role="button" class="btn btn-primary btn-lg mt-2">Return to Home</a>
+            You have successfully edited your account!
         </p>
-    </div>
+    </div>  
 </body>
 </html>

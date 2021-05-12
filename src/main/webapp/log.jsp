@@ -5,6 +5,8 @@
 --%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="uts.isd.model.*"%>
+<%@page import="java.util.*"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -14,22 +16,19 @@
     </head>
     <title> Contact Us </title>
     <%
-        session.invalidate();
+        User user = (User) session.getAttribute("user");
     %>
-    <meta http-equiv="refresh" content="5;url=index.jsp" />
 </head>
-
-<body>
+<body onload="startTime(); resetSearch();">
     <nav class="navbar navbar-expand-md navbar-dark bg-dark">
         <a class="navbar-brand" href="index.jsp">IoTBay</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto topnav">
-                <li class="nav-item active">
-                    <a class="nav-link" href="index.jsp">Home <span class="sr-only">(current)</span></a>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.jsp">Home</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="about_us.jsp">About</a>
@@ -37,21 +36,29 @@
                 <li class="nav-item">
                     <a class="nav-link" href="contact_us.jsp">Contact</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link btn btn-primary text-white" type="button" href="login.jsp" data-toggle="modal" data-target="#myModal">Sign In</a>                  
+                <li class="nav-item active">
+                    <a class="nav-link btn btn-primary text-white" type="button" href="main.jsp" data-toggle="modal" data-target="#myModal">Profile<span class="sr-only">(current)</a>                  
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link btn btn-danger text-white" type="button" href="register.jsp" data-toggle="modal" data-target="#myModal">Register</a>
+                    <a class="nav-link btn btn-danger text-white" type="button" href="LogoutServlet" data-toggle="modal" data-target="#myModal">Logout</a>
                 </li>
             </ul>
         </div>
-    </nav>  
-
+    </nav>
     <div class="container-fluid">
-        <p>
-            You have successfully logged out!
-            <a href="index.jsp" role="button" class="btn btn-primary btn-lg mt-2">Return to Home</a>
-        </p>
+        <form action="LogServlet" method="post">
+            <input type="submit" value="Sort"/>
+        </form>
+        <table class="table table-bordered">
+            <th>Date</th>
+            <th>Type</th>
+            <c:forEach items="${log}" var="obj">
+                <tr>
+                    <td>${obj.dateTime}</td>
+                    <td>${obj.type}</td>
+                </tr>
+            </c:forEach>
+        </table>
     </div>
 </body>
 </html>

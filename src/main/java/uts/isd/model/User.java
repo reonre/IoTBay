@@ -119,16 +119,15 @@ public class User implements Serializable {
         this.active = active;
     }
     
-
     public char getAccountType() {
         return this.getClass().getSimpleName().charAt(0);
     }
 
-    // Used in sub classes
     public boolean isStaff() {
         return getAccountType() == 'S';
     }
     public boolean isCustomer() {
         return getAccountType() == 'C';
     }
+    
 }
