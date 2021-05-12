@@ -40,18 +40,14 @@ public class RegisterServlet extends HttpServlet {
         String phone = request.getParameter("phone");
         String dob = request.getParameter("dob");
         String address = request.getParameter("address");
-        String role = (String)request.getAttribute("role");
+        String role = (String)request.getSession().getAttribute("role");
         String type = request.getParameter("type");
         String position = request.getParameter("position");
-        
-        System.out.println("fsfssdfsddfsdfsdfsdsffsfsfsdfsdfsdfsdfsfdfsdfdfsd");
-        
+               
         if (role.equals("Staff")) {
-            System.out.print("YES");
             role = "S";
         }
         else {
-            System.out.print("NO");
             role = "C";
         }
         //5- retrieve the manager instance from session    
@@ -74,7 +70,8 @@ public class RegisterServlet extends HttpServlet {
                     request.getRequestDispatcher("main.jsp").include(request,response);
                 }
                 else if (role.equals("S")){
-                    manager.addStaff(name, email, name, phone, gender, dob, address, role, position);
+                    manager.addStaff(name, email, password, phone, gender, dob, address, role, position);
+                    System.out.println("yes");
                     user = manager.findUser(email, password);
                     manager.addLogLogin(user.getUSER_ID());
                     session.setAttribute("user", user);
