@@ -22,7 +22,7 @@
     <body>
         <div class="main-component">
             <div class="dashboard-form-container with-bg has-subheading">
-           <h1 class="form-title">Login</h1>
+            <h1 class="form-title">Login</h1>
            <form method="post" action="checkLogin">
                <table>
                    <tr>
@@ -35,7 +35,7 @@
                        </td>
                    <tr>
                        <td>
-                            <label for="password">Password</label>                     
+                            <label for="password">Password</label>                  
                        </td>
 
                        <td>
