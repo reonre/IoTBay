@@ -30,7 +30,7 @@ public class TestDB {
 
     private void testCreate() throws SQLException {
         System.out.println("Adding user to the database: ");
-        manager.addUser(read("Name"), read("Email"), read("Password"), read("Phone"), read("Gender"), read("Dob"), read("Address"));
+        manager.addUser(read("Name"), read("Email"), read("Password"), read("Phone"), read("Gender"), read("Dob"), read("Address"), read("Role"));
         System.out.println("User added successfully ");
     }
 
