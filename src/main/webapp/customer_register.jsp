@@ -11,7 +11,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <script src="js/bootstrap.min.js"></script>
-        <title>Register</title>
+        <title>Customer Register</title>
     </head>
     <body>
         <nav class="navbar navbar-expand-md navbar-dark bg-dark">
@@ -40,16 +40,8 @@
                 </ul>
             </div>
         </nav>
-        
-        <form action="customer_register.jsp" method="post">
-            <input type="submit" value="Customer Register"/>
-        </form>
-        
-        <form action="staff_register.jsp" method="post">
-            <input type="submit" value="Staff Register"/>
-        </form>
 
-<!--        <form action="RegisterServlet" method="post">
+        <form action="RegisterServlet" method="post">
             <table class="table table-responsive">
                 <tr><td>Name</td><td><input type="text" name="name"/></td></tr>
                 <tr><td>Email</td><td><input type="email" name="email"/></td></tr>
@@ -70,10 +62,11 @@
                 </tr>
                 <tr><td>Phone Number</td><td><input type="text" name="phone"/></td></tr>
                 <tr><td>Address</td><td><input type="text" name="address"/></td></tr>
-                <td>
-                    <select class="select" name="role">
-                        <option value="Customer">Customer</option>
-                        <option value="Staff">Staff</option>                                                              
+                <tr><td>Role:</td><td>Customer<text value="Customer" name="role" /></td></tr>
+                <td>Type:</td><td> 
+                    <select class="select" name="type">
+                        <option value="Individual">Individual</option>
+                        <option value="Company">Company</option>                                                              
                     </select>                                   
                 </td>
                 <tr><td>Agree to Terms of Service</td><td><input type="checkbox" name="tos" id="tos"/></td></tr>
@@ -81,6 +74,9 @@
                         <input type="submit" value="Submit" class="button" name = "submit" id="submit" disabled>
                     </td></tr>
             </table>
+        </form>
+        <form action="register.jsp">
+            <input type="submit" value="Back"/>
         </form>
         <script>
             var checker = document.getElementById("tos");
@@ -92,6 +88,6 @@
                     send.disabled = true;
                 }
             }
-        </script>-->
+        </script>
     </body>
 </html>
