@@ -19,14 +19,14 @@ import uts.isd.model.Staff;
 
 /**
  *
- * @author ben's pc
+ * @author clarence
  */
 
-public class AdminDBmanager {
+public class StaffDBManager {
     
     private Statement st;
     
-    public AdminDBmanager(Connection conn) throws SQLException {
+    public StaffDBManager(Connection conn) throws SQLException {
         st = conn.createStatement();
     }
     
