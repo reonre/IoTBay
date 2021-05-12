@@ -41,22 +41,36 @@ public class DBManager {
                 boolean activated = rs.getBoolean(10);
                 if (activated) {
                     if (role.equals("S")) {
-                        return new Staff(userID, name, email, password, phone, gender, dob, address);
+                        String staffQu = "SELECT POSITION FROM IOTUSER.STAFF WHERE ID=" + userID + "";
+                        ResultSet stff = st.executeQuery(staffQu);
+                        stff.next();
+                        String position = stff.getString(1);
+                        return new Staff(userID, name, email, password, phone, gender, dob, address, position);
                     }
                     else {
-                        return new Customer(userID, name, email, password, phone, gender, dob, address);
+                        String custQu = "SELECT TYPE FROM IOTUSER.CUSTOMER WHERE ID=" + userID + "";
+                        ResultSet custt = st.executeQuery(custQu);
+                        custt.next();
+                        String type = custt.getString(1);
+                        return new Customer(userID, name, email, password, phone, gender, dob, address, type);
                     }
                 }
-                
-                
             }
         }
         return null;
     }
     
-    public void addUser(String name, String email, String pass, String phone, String gender, String dob, String address, String role) throws SQLException {
+//    public void addUser(String name, String email, String pass, String phone, String gender, String dob, String address, String role) throws SQLException {
+//        String columns = "INSERT INTO IOTUSER.\"USER\"(\"NAME\",EMAIL,PASSWORD,PHONE,GENDER,DOB,ADDRESS,\"ROLE\",ACTIVATED)";
+//        String values = "VALUES('" + name + "','" + email + "','" + pass + "','" + phone + "','" + gender + "','" + dob + "','" + address + "','" + role + "',true)";
+//        st.executeUpdate(columns + values);
+//    }
+    
+    public void addStaff(String name, String email, String pass, String phone, String gender, String dob, String address, String role, String position) throws SQLException {
         String columns = "INSERT INTO IOTUSER.\"USER\"(\"NAME\",EMAIL,PASSWORD,PHONE,GENDER,DOB,ADDRESS,\"ROLE\",ACTIVATED)";
         String values = "VALUES('" + name + "','" + email + "','" + pass + "','" + phone + "','" + gender + "','" + dob + "','" + address + "','" + role + "',true)";
+        
+        String fjk = "INSERT INTO IOTUSER.\"STAFF\"(POSITION)";
         st.executeUpdate(columns + values);
     }
     
