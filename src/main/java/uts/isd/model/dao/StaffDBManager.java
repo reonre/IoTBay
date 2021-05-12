@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import uts.isd.model.User;
 import java.sql.*;
 import java.util.ArrayList;
+import uts.isd.model.AccessLog;
 import uts.isd.model.Customer;
 import uts.isd.model.Staff;
 
@@ -71,8 +72,9 @@ public class StaffDBManager {
     }
     
     public void addStaff(String name, String email, String pass, String phone, String gender, String dob, String address, String position) throws SQLException {
-        String columns = "INSERT INTO IOTUSER.\"USER\"(\"NAME\",EMAIL,PASSWORD,PHONE,GENDER,DOB,ADDRESS)";
-        String values = "VALUES('" + name + "','" + email + "','" + pass + "','" + phone + "','" + gender + "','" + dob + "','" + address + "')";
+        String columns = "INSERT INTO IOTUSER.\"USER\"(\"NAME\",EMAIL,PASSWORD,PHONE,GENDER,DOB,ADDRESS,\"ROLE\",ACTIVATED)";
+        String values = "VALUES('" + name + "','" + email + "','" + pass + "','" + phone + "','" + gender + "','" + dob
+                + "','" + address + "','" + "S" + "',true)";
         st.executeUpdate(columns + values);
         columns = "INSERT INTO IOTUSER.STAFF(ID, POSITION)";
         values = "VALUES(" + findUser(email, pass) + ",'" + position + "')"; 
@@ -80,10 +82,12 @@ public class StaffDBManager {
     }
     
     public ArrayList<Staff> fetchStaff() throws SQLException{
-        String fetch = "SELECT a.*, b.POSITION from IOTUSER.\"USER\", IOTUSER.STAFF;";
-        ResultSet rs = st.executeQuery(fetch);
+        String fetch = "SELECT a.*, b.POSITION FROM IOTUSER.\"USER\" a, IOTUSER.\"STAFF\" b WHERE a.ID=b.ID";
+        System.out.println(fetch);
         ArrayList<Staff> temp = new ArrayList();
-
+        System.out.println("here");
+        ResultSet rs = st.executeQuery(fetch);
+        System.out.println("after");
         while (rs.next()) {
             int Admin_ID = Integer.parseInt(rs.getString(1));
             String name = rs.getString(2);
@@ -93,8 +97,8 @@ public class StaffDBManager {
             String gender = rs.getString(6);
             String dob = rs.getString(7);
             String address = rs.getString(8);
-            String position = rs.getString(9);
-            temp.add(new Staff(Admin_ID,email,name,pass,phone,gender,dob,address, position));
+            String position = rs.getString(11);
+            temp.add(new Staff(Admin_ID,name,email,pass,phone,gender,dob,address, position));
         }
         return temp;
     }

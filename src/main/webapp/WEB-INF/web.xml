@@ -61,7 +61,7 @@
         <url-pattern>/DeleteServlet</url-pattern>
     </servlet-mapping>
     
-    <!--Access Log-->
+     <!--Access Log-->
     <servlet>
         <servlet-name>LogServlet</servlet-name>
         <servlet-class>uts.isd.controller.LogServlet</servlet-class>
@@ -69,6 +69,48 @@
     <servlet-mapping>
         <servlet-name>LogServlet</servlet-name>
         <url-pattern>/LogServlet</url-pattern>
+    </servlet-mapping>
+    
+    <!--Admin Logout-->
+     <servlet>
+        <servlet-name>AdminLogoutServlet</servlet-name>
+        <servlet-class>uts.isd.controller.AdminLogoutServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminLogoutServlet</servlet-name>
+        <url-pattern>/AdminLogoutServlet</url-pattern>
+    </servlet-mapping>
+    
+    <!--Admin Create Staff-->
+     <servlet>
+        <servlet-name>AdminCreateStaffServlet</servlet-name>
+        <servlet-class>uts.isd.controller.AdminCreateStaffServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AdminCreateStaffServlet</servlet-name>
+        <url-pattern>/AdminCreateStaffServlet</url-pattern>
+    </servlet-mapping>
+    
+    
+    <!--Staff Conn Servlet-->
+    <servlet>
+        <servlet-name>StaffConnServlet</servlet-name>
+        <servlet-class>uts.isd.controller.StaffConnServlet</servlet-class>
+        <load-on-startup>0</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>StaffConnServlet</servlet-name>
+        <url-pattern>/StaffConnServlet</url-pattern>
+    </servlet-mapping>
+    
+        <!--Admin View Servlet-->
+    <servlet>
+        <servlet-name>StaffViewServlet</servlet-name>
+        <servlet-class>uts.isd.controller.StaffViewServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>StaffViewServlet</servlet-name>
+        <url-pattern>/StaffViewServlet</url-pattern>
     </servlet-mapping>
     
     
