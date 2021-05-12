@@ -40,15 +40,18 @@ public class RegisterServlet extends HttpServlet {
         String phone = request.getParameter("phone");
         String dob = request.getParameter("dob");
         String address = request.getParameter("address");
-        String role = request.getParameter("role");
+        String role = (String)request.getAttribute("role");
         String type = request.getParameter("type");
         String position = request.getParameter("position");
         
-        System.out.println(role);
+        System.out.println("fsfssdfsddfsdfsdfsdsffsfsfsdfsdfsdfsdfsfdfsdfdfsd");
+        
         if (role.equals("Staff")) {
+            System.out.print("YES");
             role = "S";
         }
         else {
+            System.out.print("NO");
             role = "C";
         }
         //5- retrieve the manager instance from session    

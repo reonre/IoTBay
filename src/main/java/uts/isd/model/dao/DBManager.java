@@ -48,13 +48,15 @@ public class DBManager {
                 boolean activated = rs.getBoolean(10);
                 if (activated) {
                     if (role.equals("S")) {
-                        String staffQu = "SELECT POSITION FROM IOTUSER.\"STAFF\" WHERE ID=" + userID + "";
+                        System.out.println("STAFFFFFFF");
+                        String staffQu = "SELECT POSITION FROM IOTUSER.STAFF WHERE ID=" + userID + "";
                         ResultSet stff = st.executeQuery(staffQu);
                         stff.next();
                         String position = stff.getString(1);
                         return new Staff(userID, name, email, password, phone, gender, dob, address, position);
                     } else {
-                        String custQu = "SELECT TYPE FROM IOTUSER.\"CUSTOMER\" WHERE ID=" + userID + "";
+                        System.out.println("cuss");
+                        String custQu = "SELECT TYPE FROM IOTUSER.CUSTOMER WHERE ID=" + userID + "";
                         ResultSet custt = st.executeQuery(custQu);
                         custt.next();
                         String type = custt.getString(1);
@@ -106,7 +108,7 @@ public class DBManager {
         String values = "VALUES('" + name + "','" + email + "','" + pass + "','" + phone + "','" + gender + "','" + dob
                 + "','" + address + "','" + role + "',true)";
         st.executeUpdate(columns + values);
-        String staffColumn = "INSERT INTO IOTUSER.\"STAFF\"(ID,POSITION)";
+        String staffColumn = "INSERT INTO IOTUSER.STAFF(ID,POSITION)";
         String staffValues = "VALUES(" + findSC(email, pass) + ",'" + position + "')";
         st.executeUpdate(staffColumn + staffValues);
     }
@@ -196,11 +198,11 @@ public class DBManager {
         return temp;
     }
 
-    public void addUser(String name, String EMAIL, String ADDRESS, String PASSWORD, String GENDER, String PHONE,
-            String DOB) {
-        String query = "INSERT INTO uts.dbTableforUser.sql (NAME, EMAIL, ADDRESS, PASSWORD, GENDER, PHONE, DOB) VALUES ('"
-                + name + "', '" + EMAIL + "','" + ADDRESS + "', '" + PASSWORD + "', '" + GENDER + "', '" + PHONE
-                + "', '" + DOB + "')";
-    }
+//    public void addUser(String name, String EMAIL, String ADDRESS, String PASSWORD, String GENDER, String PHONE,
+//            String DOB) {
+//        String query = "INSERT INTO uts.dbTableforUser.sql (NAME, EMAIL, ADDRESS, PASSWORD, GENDER, PHONE, DOB) VALUES ('"
+//                + name + "', '" + EMAIL + "','" + ADDRESS + "', '" + PASSWORD + "', '" + GENDER + "', '" + PHONE
+//                + "', '" + DOB + "')";
+//    }
 
 }

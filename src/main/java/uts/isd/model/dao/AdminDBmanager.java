@@ -94,7 +94,7 @@ public class AdminDBmanager {
             String dob = rs.getString(7);
             String address = rs.getString(8);
             String position = rs.getString(9);
-            temp.add(new Staff(Admin_ID,email,name,pass,phone,gender,dob,address));
+//            temp.add(new Staff(Admin_ID,email,name,pass,phone,gender,dob,address));
         }
         return temp;
     }
@@ -114,7 +114,7 @@ public class AdminDBmanager {
             String dob = rs.getString(7);
             String address = rs.getString(8);
             String position = rs.getString(9);
-            temp.add(new Staff(Admin_ID,email,name,pass,phone,gender,dob,address));
+//            temp.add(new Staff(Admin_ID,email,name,pass,phone,gender,dob,address));
         }
         return temp;
     }

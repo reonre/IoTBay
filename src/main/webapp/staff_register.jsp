@@ -40,7 +40,7 @@
                 </ul>
             </div>
         </nav>
-
+        <% session.setAttribute("role", "Staff"); %>
         <form action="RegisterServlet" method="post">
             <table class="table table-responsive">
                 <tr><td>Name</td><td><input type="text" name="name"/></td></tr>
@@ -62,7 +62,7 @@
                 </tr>
                 <tr><td>Phone Number</td><td><input type="text" name="phone"/></td></tr>
                 <tr><td>Address</td><td><input type="text" name="address"/></td></tr>
-                <tr><td>Role:</td><td>Staff<text value="Staff" name="role" /></td></tr>
+                <tr><td>Role:</td><td>Staff<text value="Staff"/></td></tr>
                 <tr><td>Position</td><td><input type="text" name="position"/></td></tr>
                 <tr><td>Agree to Terms of Service</td><td><input type="checkbox" name="tos" id="tos"/></td></tr>
                 <tr><td>

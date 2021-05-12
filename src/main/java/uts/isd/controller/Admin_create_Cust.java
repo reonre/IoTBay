@@ -46,7 +46,7 @@ public class Admin_create_Cust extends HttpServlet {
         }
 
 
-            Query.addUser("NAME",EMAIL,ADDRESS,PASSWORD,GENDER,PHONE,DOB);
+//            Query.addUser("NAME",EMAIL,ADDRESS,PASSWORD,GENDER,PHONE,DOB);
         //Connector.closeConnection();
         }
     }

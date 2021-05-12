@@ -22,19 +22,19 @@ import javax.servlet.http.HttpServlet;
 
 public class LoginAdmin extends HttpServlet {
 
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-      
-        String username = request.getParameter("username");
-        String password = request.getParameter("password");
-        
-        HttpSession session = request.getSession();
-        Validator validator = new Validator();
-        
-        
-      //  DBManager manager = (DBManager) session.getAttribute("manager");
-       // LoginAdmin manager = (LoginAdmin) session.getAttribute("adminManager");
-        Admin admin = null;
-        validator.clear(session);
-            if username =admin
+//    @Override
+//    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//      
+//        String username = request.getParameter("username");
+//        String password = request.getParameter("password");
+//        
+//        HttpSession session = request.getSession();
+//        Validator validator = new Validator();
+//        
+//        
+//      //  DBManager manager = (DBManager) session.getAttribute("manager");
+//       // LoginAdmin manager = (LoginAdmin) session.getAttribute("adminManager");
+//        Admin admin = null;
+//        validator.clear(session);
+//            if username =admin
    }
