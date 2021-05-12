@@ -53,6 +53,19 @@
             <tr><td>Phone Number:</td><td><%= user.getPhone()%></td></tr>
             <tr><td>Address:</td><td><%= user.getAddress()%></td></tr>
             <tr><td>Account Type:</td><td><%= user.getClass().getSimpleName()%></td></tr>
+            <%
+                if (user.getClass().getSimpleName().equals("Staff")) {
+            %>
+            <tr><td>Position:</td><td>${user.position}</td></tr>
+            <%
+                }
+                else if (user.getClass().getSimpleName().equals("Customer")){
+            %> 
+            <tr><td>Type:</td><td>${user.type}</td></tr>
+            <%
+                }
+            %>
+
         </table>
         <form action="edit.jsp">
             <input type="submit" value="Edit Account" />

@@ -39,31 +39,51 @@ public class EditServlet extends HttpServlet {
         String dob = request.getParameter("dob");
         String address = request.getParameter("address");
         String email = request.getParameter("email");
+         String type = request.getParameter("type");
+        String position = request.getParameter("position");
         //4- capture the posted password
         String password = request.getParameter("password");
         
         //5- retrieve the manager instance from session    
         String role = ((User)session.getAttribute("user")).getClass().getSimpleName();
-        DBManager manager = (DBManager) session.getAttribute("manager");
-        User user;
+//        String role = (String)request.getSession().getAttribute("role");
+        
+
         if (role.equals("Staff")) {
-            String position = request.getParameter("position");
-            user = new Staff(id, name, email, password, phone, gender, dob, address, position);
+            role = "S";
         }
         else {
-            String type = request.getParameter("type");
-            user = new Customer(id, name, email, password, phone, gender, dob, address, type);
+            role = "C";
         }
         
-        try {
-            session.setAttribute("user",user);
-            manager.updateUser(id, name, email, password, phone, gender, dob, address);
-            request.getRequestDispatcher("main.jsp").include(request,response);
-        }
-        catch (SQLException ex) {
-            System.out.println("fk");
-        }
+        DBManager manager = (DBManager) session.getAttribute("manager");
+        User user;
         
-        
+        if (!validator.validateEmail(email)){
+            session.setAttribute("emailErr","Error: Email format incorrect");
+            request.getRequestDispatcher("register.jsp").include(request,response);
+        }
+        else if (!validator.validatePassword(password)){
+            session.setAttribute("passErr","Error: Password format incorrect");
+            request.getRequestDispatcher("register.jsp").include(request,response);
+        } else {
+            try {
+                if (role.equals("S")) {
+                    System.out.print("Before");
+                    manager.updateStaff(id, name, email, password, phone, gender, dob, address, position);
+                    System.out.print("updatedStaff");
+                    session.setAttribute("user", new Staff(id, name, email, password, phone, gender, dob, address, position));
+                    request.getRequestDispatcher("main.jsp").include(request, response);
+                } else {
+                    System.out.print("After");
+                    manager.updateCustomer(id, name, email, password, phone, gender, dob, address, type);
+                    System.out.print("updatedCustomer");
+                    session.setAttribute("user", new Customer(id, name, email, password, phone, gender, dob, address, type));
+                    request.getRequestDispatcher("main.jsp").include(request, response);
+                }
+            } catch (SQLException ex) {
+                System.out.println("Error in EditServlet");
+            }
+        }
     }
 }

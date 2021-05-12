@@ -30,4 +30,10 @@ public class Customer extends User {
     public String getType() {
         return type;
     }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+    
+    
 }

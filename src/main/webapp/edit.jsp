@@ -87,7 +87,7 @@
                         <input type="hidden" name="updated" value="updated">
                     </td></tr>
             </table>
-        </form>>
+        </form>
     </div>
     <%
         }
