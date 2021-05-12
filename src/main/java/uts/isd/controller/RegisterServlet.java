@@ -71,7 +71,6 @@ public class RegisterServlet extends HttpServlet {
                 }
                 else if (role.equals("S")){
                     manager.addStaff(name, email, password, phone, gender, dob, address, role, position);
-                    System.out.println("yes");
                     user = manager.findUser(email, password);
                     manager.addLogLogin(user.getUSER_ID());
                     session.setAttribute("user", user);
@@ -86,6 +85,12 @@ public class RegisterServlet extends HttpServlet {
                 }
                 
             } catch (SQLException | NullPointerException ex){
+                if (role.equals("S")){
+                    request.getRequestDispatcher("staff_register.jsp").include(request,response);
+                }
+                else {
+                    request.getRequestDispatcher("customer_register.jsp").include(request,response);
+                }
                 System.out.println(ex.getMessage() == null ? "User does not exist" : "Welcomelaksjdflkjasdf");
             }
         }

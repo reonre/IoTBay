@@ -103,7 +103,7 @@
                 <tr>
                     <td>
                         <select class="select" name="gender" value="${user.gender}">
-                            <option value="empty">Gender</option>
+                            <option value="empty">${user.gender}</option>
                             <option value="male">Male</option>
                             <option value="female">Female</option>
                             <option value="other">Other</option>                                                                
@@ -117,8 +117,7 @@
                 <tr><td>Address</td><td><input type="text" name="address" value="${user.address}"/></td></tr>
                 <tr>
                     <td>
-                        <select class="select" name="gender" value="${user.type}">
-                            <option value="empty">Select</option>
+                        <select class="select" name="type" value="${user.type}">
                             <option value="individual">Individual</option>
                             <option value="company">Company</option>                                                           
                         </select>                                   
@@ -136,5 +135,6 @@
     <%
         }
     %>
+    <jsp:include page="/ConnServlet" flush="true"/>
 </body>
 </html>

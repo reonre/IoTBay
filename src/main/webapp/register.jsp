@@ -90,8 +90,9 @@
                     send.disabled = false;
                 } else {
                     send.disabled = true;
-                }
-            }
-        </script>-->
+                        }
+                    }
+                </script>-->
+        <jsp:include page="/ConnServlet" flush="true"/>
     </body>
 </html>

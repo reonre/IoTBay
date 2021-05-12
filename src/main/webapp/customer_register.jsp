@@ -40,7 +40,7 @@
                 </ul>
             </div>
         </nav>
-
+        <% session.setAttribute("role", "Customer"); %>
         <form action="RegisterServlet" method="post">
             <table class="table table-responsive">
                 <tr><td>Name</td><td><input type="text" name="name"/></td></tr>

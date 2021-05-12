@@ -119,7 +119,7 @@ public class DBManager {
         String values = "VALUES('" + name + "','" + email + "','" + pass + "','" + phone + "','" + gender + "','" + dob
                 + "','" + address + "','" + role + "',true)";
         st.executeUpdate(columns + values);
-        String staffColumn = "INSERT INTO IOTUSER.\"STAFF\"(ID,TYPE)";
+        String staffColumn = "INSERT INTO IOTUSER.CUSTOMER(ID,TYPE)";
         String staffValues = "VALUES(" + findSC(email, pass) + ",'" + type + "')";
         st.executeUpdate(staffColumn + staffValues);
     }
