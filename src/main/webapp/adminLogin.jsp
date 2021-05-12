@@ -35,7 +35,7 @@
                        </td>
                    <tr>
                        <td>
-                            <label for="password">Password</label>                  
+                            <label for="password">password</label>                  
                        </td>
 
                        <td>
