@@ -41,14 +41,14 @@ public class DBManager {
                 boolean activated = rs.getBoolean(10);
                 if (activated) {
                     if (role.equals("S")) {
-                        String staffQu = "SELECT POSITION FROM IOTUSER.STAFF WHERE ID=" + userID + "";
+                        String staffQu = "SELECT POSITION FROM IOTUSER.\"STAFF\" WHERE ID=" + userID + "";
                         ResultSet stff = st.executeQuery(staffQu);
                         stff.next();
                         String position = stff.getString(1);
                         return new Staff(userID, name, email, password, phone, gender, dob, address, position);
                     }
                     else {
-                        String custQu = "SELECT TYPE FROM IOTUSER.CUSTOMER WHERE ID=" + userID + "";
+                        String custQu = "SELECT TYPE FROM IOTUSER.\"CUSTOMER\" WHERE ID=" + userID + "";
                         ResultSet custt = st.executeQuery(custQu);
                         custt.next();
                         String type = custt.getString(1);
@@ -60,6 +60,23 @@ public class DBManager {
         return null;
     }
     
+    public int findSC(String email, String password) throws SQLException{
+        String fetch = "SELECT * FROM IOTUSER.\"USER\" WHERE EMAIL='" + email + "' AND PASSWORD='" + password + "'";//read from where Emal = and password = 
+
+        ResultSet rs = st.executeQuery(fetch);
+
+        while (rs.next()) {
+            String userEmail = rs.getString(3);
+            String userPass = rs.getString(4);
+
+            if (userEmail.equals(email) && userPass.equals(password)) {
+                int staffID = Integer.parseInt(rs.getString(1));
+                return staffID;
+            }
+        }
+        return -1;
+    }
+    
 //    public void addUser(String name, String email, String pass, String phone, String gender, String dob, String address, String role) throws SQLException {
 //        String columns = "INSERT INTO IOTUSER.\"USER\"(\"NAME\",EMAIL,PASSWORD,PHONE,GENDER,DOB,ADDRESS,\"ROLE\",ACTIVATED)";
 //        String values = "VALUES('" + name + "','" + email + "','" + pass + "','" + phone + "','" + gender + "','" + dob + "','" + address + "','" + role + "',true)";
@@ -69,9 +86,19 @@ public class DBManager {
     public void addStaff(String name, String email, String pass, String phone, String gender, String dob, String address, String role, String position) throws SQLException {
         String columns = "INSERT INTO IOTUSER.\"USER\"(\"NAME\",EMAIL,PASSWORD,PHONE,GENDER,DOB,ADDRESS,\"ROLE\",ACTIVATED)";
         String values = "VALUES('" + name + "','" + email + "','" + pass + "','" + phone + "','" + gender + "','" + dob + "','" + address + "','" + role + "',true)";
-        
-        String fjk = "INSERT INTO IOTUSER.\"STAFF\"(POSITION)";
         st.executeUpdate(columns + values);
+        String staffColumn = "INSERT INTO IOTUSER.\"STAFF\"(ID,POSITION)";
+        String staffValues = "VALUES("+ findSC(email,pass) + ",'"+ position +"')";
+        st.executeUpdate(staffColumn + staffValues);
+    }
+    
+    public void addCustomer(String name, String email, String pass, String phone, String gender, String dob, String address, String role, String type) throws SQLException {
+        String columns = "INSERT INTO IOTUSER.\"USER\"(\"NAME\",EMAIL,PASSWORD,PHONE,GENDER,DOB,ADDRESS,\"ROLE\",ACTIVATED)";
+        String values = "VALUES('" + name + "','" + email + "','" + pass + "','" + phone + "','" + gender + "','" + dob + "','" + address + "','" + role + "',true)";
+        st.executeUpdate(columns + values);
+        String staffColumn = "INSERT INTO IOTUSER.\"STAFF\"(ID,TYPE)";
+        String staffValues = "VALUES("+ findSC(email,pass) + ",'"+ type +"')";
+        st.executeUpdate(staffColumn + staffValues);
     }
     
     public void addLogLogin(int userId) throws SQLException {
@@ -142,7 +169,5 @@ public class DBManager {
             temp.add(new AccessLog(userId, date, type));
         }
         return temp;
-        
     }
-    
 }

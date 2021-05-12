@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import uts.isd.model.User;
+import uts.isd.model.*;
 import uts.isd.model.dao.DBConnector;
 import uts.isd.model.dao.DBManager;
 
@@ -41,6 +41,9 @@ public class RegisterServlet extends HttpServlet {
         String dob = request.getParameter("dob");
         String address = request.getParameter("address");
         String role = request.getParameter("role");
+        String type = request.getParameter("type");
+        String position = request.getParameter("position");
+        
         System.out.println(role);
         if (role.equals("Staff")) {
             role = "S";
@@ -67,8 +70,15 @@ public class RegisterServlet extends HttpServlet {
                 if (user != null){
                     request.getRequestDispatcher("main.jsp").include(request,response);
                 }
+                else if (role.equals("S")){
+                    manager.addStaff(name, email, name, phone, gender, dob, address, role, position);
+                    user = manager.findUser(email, password);
+                    manager.addLogLogin(user.getUSER_ID());
+                    session.setAttribute("user", user);
+                    request.getRequestDispatcher("main.jsp").include(request,response);
+                }
                 else {
-                    manager.addUser(name, email, password, phone, gender, dob, address, role);
+                    manager.addCustomer(name, email, password, phone, gender, dob, address, role, type);
                     user = manager.findUser(email, password);
                     manager.addLogLogin(user.getUSER_ID());
                     session.setAttribute("user", user);
