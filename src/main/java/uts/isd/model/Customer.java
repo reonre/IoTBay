@@ -10,16 +10,24 @@ public class Customer extends User {
 //    private LinkedList<Order> orders;
 //    add paymentinfo here for payment
 //    private PaymentClass paymentInfo;
-  
     
-    public Customer(int USER_ID, String name, String email, String password, String phone, String gender, String dob, String address) {
+    private String type;
+    
+    public Customer(int USER_ID, String name, String email, String password, String phone, String gender, String dob, String address, String type) {
         super(USER_ID, name, email, password, phone, gender, dob, address);
+        this.type = type;
     }
     
+    
+
 //    public LinkedList<Order> getOrders() {
 //        return orders;
 //    }
 //    public void setOrders(LinkedList<Order> orders) {
 //        this.orders = orders;
 //    }
+
+    public String getType() {
+        return type;
+    }
 }

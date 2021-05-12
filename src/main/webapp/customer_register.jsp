@@ -65,8 +65,8 @@
                 <tr><td>Role:</td><td>Customer<text value="Customer" name="role" /></td></tr>
                 <td>Type:</td><td> 
                     <select class="select" name="type">
-                        <option value="Individual">Individual</option>
-                        <option value="Company">Company</option>                                                              
+                        <option value="individual">Individual</option>
+                        <option value="company">Company</option>                                                              
                     </select>                                   
                 </td>
                 <tr><td>Agree to Terms of Service</td><td><input type="checkbox" name="tos" id="tos"/></td></tr>

@@ -41,15 +41,18 @@ public class EditServlet extends HttpServlet {
         String email = request.getParameter("email");
         //4- capture the posted password
         String password = request.getParameter("password");
+        
         //5- retrieve the manager instance from session    
         String role = ((User)session.getAttribute("user")).getClass().getSimpleName();
         DBManager manager = (DBManager) session.getAttribute("manager");
         User user;
         if (role.equals("Staff")) {
-            user = new Staff(id, name, email, password, phone, gender, dob, address);
+            String position = request.getParameter("position");
+            user = new Staff(id, name, email, password, phone, gender, dob, address, position);
         }
         else {
-            user = new Customer(id, name, email, password, phone, gender, dob, address);
+            String type = request.getParameter("type");
+            user = new Customer(id, name, email, password, phone, gender, dob, address, type);
         }
         
         try {
