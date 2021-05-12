@@ -90,6 +90,7 @@
         </form>>
     </div>
     <%
+        }
         else if (user.getClass().getSimpleName().equals("Customer")){
     %>
     <div class="container-fluid">
@@ -132,5 +133,8 @@
             </table>
         </form>
     </div>
+    <%
+        }
+    %>
 </body>
 </html>
