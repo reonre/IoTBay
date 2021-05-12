@@ -64,7 +64,11 @@ public class Validator implements Serializable {
     public boolean validateQuantity(String quantity) {
         return validate(prod_quantPattern, quantity);
     }
-
+    
+    public boolean validateAdminUsername(String username) {
+       return validate(prod_NamePattern, username);
+    }
+    
     public void clear(HttpSession session) {
         session.setAttribute("emailErr", "Enter email");
         session.setAttribute("passErr", "Enter password");
