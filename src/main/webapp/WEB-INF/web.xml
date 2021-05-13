@@ -123,6 +123,26 @@
         <url-pattern>/StaffSearchServlet</url-pattern>
     </servlet-mapping>
     
+    <!--Admin View Servlet-->
+    <servlet>
+        <servlet-name>StaffEditServlet</servlet-name>
+        <servlet-class>uts.isd.controller.StaffEditServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>StaffEditServlet</servlet-name>
+        <url-pattern>/StaffEditServlet</url-pattern>
+    </servlet-mapping>
+    
+    <!--Admin View Servlet-->
+    <servlet>
+        <servlet-name>StaffDeleteServlet</servlet-name>
+        <servlet-class>uts.isd.controller.StaffDeleteServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>StaffDeleteServlet</servlet-name>
+        <url-pattern>/StaffDeleteServlet</url-pattern>
+    </servlet-mapping>
+    
     
     <!--Product -->
     <servlet>

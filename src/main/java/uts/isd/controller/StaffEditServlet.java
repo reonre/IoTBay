@@ -25,19 +25,41 @@ import uts.isd.model.dao.StaffDBManager;
  *
  * @author Charl
  */
-public class StaffViewServlet extends HttpServlet {
+public class StaffEditServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
      
         //1- retrieve the current session
         HttpSession session = request.getSession();
-        //5- retrieve the manager instance from session    
+        int id = ((Staff)session.getAttribute("staff")).getUSER_ID();
+        String name = request.getParameter("name");
+        String gender = request.getParameter("gender");
+        String phone = request.getParameter("phone");
+        String dob = request.getParameter("dob");
+        String address = request.getParameter("address");
+        String email = request.getParameter("email");
+        String position = request.getParameter("position");
+        String password = request.getParameter("password");
         StaffDBManager manager = (StaffDBManager) session.getAttribute("manager");
+        String activated = request.getParameter("activated");
+        boolean activate;
+        if (activated != null) {
+            activate = true;
+        }
+        else {
+            activate = false;
+        }
         try {
-            ArrayList<Staff> log = manager.fetchStaff();
-            session.setAttribute("staff", log);
-            request.getRequestDispatcher("view_staff.jsp").include(request,response);
+            manager.updateStaff(id, name, email, password, phone, gender, dob, address, position);
+            if (activate) {
+                manager.activateStaff(id);
+            }
+            else {
+                manager.deactivateStaff(id);
+            }
+            session.removeAttribute("staff");
+            request.getRequestDispatcher("admin_home.jsp").include(request,response);
         }
         catch (SQLException e) {
             System.out.println("yes");

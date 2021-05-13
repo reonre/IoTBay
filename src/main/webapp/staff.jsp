@@ -40,7 +40,7 @@
                 <input type="submit" value="View Staff">
             </form>
             <tr><td>
-                    <form action="StaffEditServlet" method="post">
+                    <form action="edit_staff.jsp" method="post">
                         Staff ID <input type="text" name="id"value=""/>
                         <input type="submit" value="Edit Staff">
                     </form>
