@@ -83,11 +83,8 @@ public class StaffDBManager {
     
     public ArrayList<Staff> fetchStaff() throws SQLException{
         String fetch = "SELECT a.*, b.POSITION FROM IOTUSER.\"USER\" a, IOTUSER.\"STAFF\" b WHERE a.ID=b.ID";
-        System.out.println(fetch);
         ArrayList<Staff> temp = new ArrayList();
-        System.out.println("here");
         ResultSet rs = st.executeQuery(fetch);
-        System.out.println("after");
         while (rs.next()) {
             int Admin_ID = Integer.parseInt(rs.getString(1));
             String name = rs.getString(2);
@@ -104,8 +101,9 @@ public class StaffDBManager {
     }
     
     public ArrayList<Staff> searchStaff(String staffname, String staffposition) throws SQLException{
-        String fetch = "SELECT a.*, b.POSITION from IOTUSER.\"USER\", IOTUSER.STAFF WHERE a.\"NAME\"='" + staffname + "'AND b.POSITION='" + staffposition + "';";
+        String fetch = "SELECT a.*, b.POSITION FROM IOTUSER.\"USER\" a, IOTUSER.STAFF b WHERE a.\"NAME\"='" + staffname + "' AND b.POSITION='" + staffposition + "' AND a.ID=b.ID";
         ResultSet rs = st.executeQuery(fetch);
+        System.out.println("he");
         ArrayList<Staff> temp = new ArrayList();
 
         while (rs.next()) {
@@ -117,8 +115,8 @@ public class StaffDBManager {
             String gender = rs.getString(6);
             String dob = rs.getString(7);
             String address = rs.getString(8);
-            String position = rs.getString(9);
-            temp.add(new Staff(Admin_ID,email,name,pass,phone,gender,dob,address, position));
+            String position = rs.getString(11);
+            temp.add(new Staff(Admin_ID,name,email,pass,phone,gender,dob,address, position));
         }
         return temp;
     }

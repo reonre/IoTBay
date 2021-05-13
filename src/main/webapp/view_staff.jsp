@@ -43,7 +43,7 @@
             <th>Date of Birth</th>
             <th>Address</th>
             <th>Position</th>
-            <c:forEach items="${staff}" var="obj">
+                <c:forEach items="${staff}" var="obj">
                 <tr>
                     <td>${obj.USER_ID}</td>
                     <td>${obj.name}</td>
@@ -57,6 +57,15 @@
                 </tr>
             </c:forEach>
         </table>
+        <form action="StaffSearchServlet" method="post">
+            <table class="table table-responsive">
+                <tr><td>Name</td><td><input type="text" name="name"/></td></tr>
+                <tr><td>Position</td><td><input type="text" name="position"/></td></tr>
+                <tr><td>
+                        <input type="submit" value="Search" class="button" name = "submit" id="submit">
+                    </td></tr>
+            </table>
+        </form>
     </div>
     <jsp:include page="/StaffConnServlet" flush="true"/>
 </body>

@@ -39,8 +39,20 @@
             <form action="StaffViewServlet" method="post">
                 <input type="submit" value="View Staff">
             </form>
+            <tr><td>
+                    <form action="StaffEditServlet" method="post">
+                        Staff ID <input type="text" name="id"value=""/>
+                        <input type="submit" value="Edit Staff">
+                    </form>
+                </td></tr>
+            <tr><td>
+                    <form action="StaffDeleteServlet" method="post">
+                        Staff ID <input type="text" name="id"value=""/>
+                        <input type="submit" value="Delete Staff">
+                    </form>
+                </td></tr>
         </table>
-            
+
     </div>
     <jsp:include page="/StaffConnServlet" flush="true"/>
 </body>

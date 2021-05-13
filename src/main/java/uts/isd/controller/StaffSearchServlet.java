@@ -25,18 +25,19 @@ import uts.isd.model.dao.StaffDBManager;
  *
  * @author Charl
  */
-public class StaffViewServlet extends HttpServlet {
+public class StaffSearchServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
      
         //1- retrieve the current session
         HttpSession session = request.getSession();
+        String name = request.getParameter("name");
+        String position = request.getParameter("position");
         //5- retrieve the manager instance from session    
         StaffDBManager manager = (StaffDBManager) session.getAttribute("manager");
         try {
-            System.out.println("why ");
-            ArrayList<Staff> log = manager.fetchStaff();
+            ArrayList<Staff> log = manager.searchStaff(name, position);
             session.setAttribute("staff", log);
             request.getRequestDispatcher("view_staff.jsp").include(request,response);
         }
