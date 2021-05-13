@@ -29,7 +29,25 @@
         <servlet-name>RegisterServlet</servlet-name>
         <url-pattern>/RegisterServlet</url-pattern>
     </servlet-mapping>
-    
+    <!--PaymentConn-->
+    <servlet>
+        <servlet-name>PaymentConnServlet</servlet-name>
+        <servlet-class>uts.isd.controller.PaymentConnServlet</servlet-class>
+        <load-on-startup>0</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PaymentConnServlet</servlet-name>
+        <url-pattern>/PaymentConnServlet</url-pattern>
+    </servlet-mapping>
+    <!--PaymentServlet-->
+    <servlet>
+        <servlet-name>PaymentServlet</servlet-name>
+        <servlet-class>uts.isd.controller.PaymentServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PaymentServlet</servlet-name>
+        <url-pattern>/PaymentServlet</url-pattern>
+    </servlet-mapping>
     <!--Logout-->
     <servlet>
         <servlet-name>LogoutServlet</servlet-name>

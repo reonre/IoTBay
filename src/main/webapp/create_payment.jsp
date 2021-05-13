@@ -1,17 +1,17 @@
 <%-- 
-    Document   : register
-    Created on : 15/03/2021, 3:55:19 PM
-    Author     : team 43
+    Document   : create_payment
+    Created on : 12 May 2021, 12:06:28
+    Author     : casio
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>  
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <script src="js/bootstrap.min.js"></script>
-        <title>Customer Register</title>
+        <title> Payment Create Page</title>
     </head>
     <body>
         <nav class="navbar navbar-expand-md navbar-dark bg-dark">
@@ -40,43 +40,33 @@
                 </ul>
             </div>
         </nav>
-        <% session.setAttribute("role", "Customer"); %>
-        <form action="RegisterServlet" method="post">
-            <table class="table table-responsive">
-                <tr><td>Name</td><td><input type="text" name="name"/></td></tr>
-                <tr><td>Email</td><td><input type="email" name="email"/></td></tr>
-                <tr><td>Password</td><td><input type="password" name="password"/></td></tr>                
-                <tr>
 
+        <form action="PaymentServlet" method="post">
+            <table class="table table-responsive">          
+                <tr><td>Order #${invoiceId}</td><td>
+                <tr><td>Total Amount A$${order.getAmount()}</td><td>
+                <tr>
                     <td>
-                        <select class="select" name="gender">
-                            <option value="empty">Gender</option>
-                            <option value="male">Male</option>
-                            <option value="female">Female</option>
+                        <select class="select" name="paymentMethod">
+                            <option value="empty">Payment Method</option>
+                            <option value="card">Credit Card</option>
+                            <option value="cash">Cash</option>
                             <option value="other">Other</option>                                                                
                         </select>                                   
                     </td>
                     <td>
-                        <input class="date" type="date" name="dob"/>  
+                        <input class="date" type="date" name="datePaid"/>  
                     </td>
                 </tr>
-                <tr><td>Phone Number</td><td><input type="text" name="phone"/></td></tr>
-                <tr><td>Address</td><td><input type="text" name="address"/></td></tr>
-                <tr><td>Role:</td><td>Customer<text value="Customer" name="role" /></td></tr>
-                <td>Type:</td><td> 
-                    <select class="select" name="type">
-                        <option value="individual">Individual</option>
-                        <option value="company">Company</option>                                                              
-                    </select>                                   
-                </td>
+                <tr><td>Card Number</td><td><input type="text" name="cardNumber"/></td></tr>
+                <tr><td>Expiry Date</td><td><input type="text" name="expiryDate"/></td></tr>
+                <tr><td>CVV</td><td><input type="text" name="cvv"/></td></tr>
+                <tr><td>Name On Card</td><td><input type="text" name="nameOnCard"/></td></tr>
                 <tr><td>Agree to Terms of Service</td><td><input type="checkbox" name="tos" id="tos"/></td></tr>
                 <tr><td>
-                        <input type="submit" value="Submit" class="button" name = "submit" id="submit" disabled>
+                        <input type="submit" value="Pay" class="button" name = "submit" id="submit" disabled>
                     </td></tr>
             </table>
-        </form>
-        <form action="register.jsp">
-            <input type="submit" value="Back"/>
         </form>
         <script>
             var checker = document.getElementById("tos");
@@ -89,6 +79,7 @@
                 }
             }
         </script>
+        <jsp:include page="/PaymentConnServlet" flush="true"/>
     </body>
 </html>
 

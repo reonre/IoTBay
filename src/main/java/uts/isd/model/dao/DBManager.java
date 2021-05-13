@@ -205,6 +205,8 @@ public class DBManager {
         }
         return temp;
     }
+    
+    
 
 //    public void addUser(String name, String EMAIL, String ADDRESS, String PASSWORD, String GENDER, String PHONE,
 //            String DOB) {
