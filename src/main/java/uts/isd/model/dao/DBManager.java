@@ -142,7 +142,7 @@ public class DBManager {
         String update = "UPDATE IOTUSER.\"USER\" SET \"NAME\"='" + name + "',EMAIL='" + email + "',PASSWORD='" + pass + "',PHONE='" + phone + "',GENDER='" 
                 + gender + "',DOB='" + dob + "' ,ADDRESS='" + address + "' WHERE ID=" + userId + " AND PASSWORD='" + pass + "'";
         st.executeUpdate(update);
-        String Custup = "UPDATE IOTUSER.CUSTOMER SET TYPE='" + type + "' WHERE ID=" + userId + ";";
+        String Custup = "UPDATE IOTUSER.CUSTOMER SET TYPE='" + type + "' WHERE ID=" + userId + "";
         st.executeUpdate(Custup);
     }
     
@@ -150,11 +150,8 @@ public class DBManager {
         String update = "UPDATE IOTUSER.\"USER\" SET \"NAME\"='" + name + "',EMAIL='" + email + "',PASSWORD='" + pass + "',PHONE='" + phone + "',GENDER='" 
                 + gender + "',DOB='" + dob + "' ,ADDRESS='" + address + "' WHERE ID=" + userId + " AND PASSWORD='" + pass + "'";
         st.executeUpdate(update);
-        System.out.println("FUCK YOU");
-        String stffup = "UPDATE IOTUSER.STAFF SET POSITION='" + position + "' WHERE ID=" + userId + ";";
-        System.out.println("CUNT");
+        String stffup = "UPDATE IOTUSER.STAFF SET POSITION='" + position + "' WHERE ID=" + userId + "";
         st.executeUpdate(stffup);
-        System.out.println("ASSHOLE");
     }
 
     public void deleteUser(int USER_ID, String password) throws SQLException {
