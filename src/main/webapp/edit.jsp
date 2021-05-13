@@ -118,8 +118,8 @@
                 <tr>
                     <td>
                         <select class="select" name="type" value="${user.type}">
-                            <option value="individual">Individual</option>
-                            <option value="company">Company</option>                                                           
+                            <option value="Individual">Individual</option>
+                            <option value="Company">Company</option>                                                           
                         </select>                                   
                     </td>
                 </tr>
