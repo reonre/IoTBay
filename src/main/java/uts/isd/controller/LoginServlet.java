@@ -44,7 +44,7 @@ public class LoginServlet extends HttpServlet {
             session.setAttribute("emailErr","Error: Email format incorrect");
             request.getRequestDispatcher("login.jsp").include(request,response);
         }
-        if (email.equals("admin@admin") && password.equals("admin")) {
+        else if (email.equals("admin@admin") && password.equals("admin")) {
             session.setAttribute("admin", "admin");
             request.getRequestDispatcher("admin_home.jsp").include(request,response);
         } 
