@@ -22,7 +22,7 @@
         String gender = request.getParameter("gender");
         String phone = request.getParameter("phone");
         String address = request.getParameter("address");
-        user.setUser(name, email, password, dob, gender, phone, address);
+        user.updateInfo(name, email, password, dob, gender, phone, address);
     %>
 
 </head>
@@ -38,6 +38,9 @@
             <ul class="navbar-nav ml-auto topnav">
                 <li class="nav-item">
                     <a class="nav-link" href="index.jsp">Home</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="ProductListServlet">Products</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="about_us.jsp">About</a>

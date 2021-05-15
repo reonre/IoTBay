@@ -32,6 +32,9 @@
                         <a class="nav-link" href="index.jsp">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="ProductListServlet">Products</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="about_us.jsp">About</a>
                     </li>
                     <li class="nav-item">
@@ -54,6 +57,9 @@
             <ul class="navbar-nav ml-auto topnav">
                 <li class="nav-item active">
                     <a class="nav-link" href="index.jsp">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                        <a class="nav-link" href="ProductListServlet">Products</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="about_us.jsp">About</a>

@@ -40,6 +40,9 @@
                     <a class="nav-link" href="index.jsp">Home</span></a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="ProductListServlet">Products</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="about_us.jsp">About</a>
                 </li>
                 <li class="nav-item">
