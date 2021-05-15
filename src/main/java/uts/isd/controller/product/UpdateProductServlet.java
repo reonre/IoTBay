@@ -1,8 +1,8 @@
+
 package uts.isd.controller.product;
 
-import uts.isd.controller.Validator;
-
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -11,17 +11,17 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import uts.isd.controller.Validator;
 import uts.isd.model.dao.ProductDBManager;
 
 /**
  *
  * @author oneilrangiuira
  */
-public class AddProductServlet extends HttpServlet {
+public class UpdateProductServlet extends HttpServlet {
     ProductDBManager productDBManager;
     HttpSession session;
     Validator validator;
-    
     
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -29,6 +29,7 @@ public class AddProductServlet extends HttpServlet {
         session = request.getSession();
         productDBManager = (ProductDBManager)session.getAttribute("productDBManager");
 
+        String id = request.getParameter("PROD_ID");
         String name = request.getParameter("PRODUCT_NAME");
         String price = request.getParameter("PRODUCT_PRICE");
         String desc = request.getParameter("PRODUCT_DESC");
@@ -56,12 +57,14 @@ public class AddProductServlet extends HttpServlet {
             request.getRequestDispatcher("/product/addProduct.jsp").include(request, response);
         } else {
             try {
-                productDBManager.addProduct(name, price, desc, type, quantity);
+                productDBManager.updateProduct(id, name, price, desc, type, quantity);
+                session.setAttribute("productUpdate", "Update was Successful");
+                response.sendRedirect("EditProductServlet?id=" + id);
             } catch (SQLException ex) {
                 Logger.getLogger(AddProductServlet.class.getName()).log(Level.SEVERE, null, ex);
+                session.setAttribute("productUpdate", "Update was Unsuccessful");
             }
-
-            response.sendRedirect("ProductListServlet");
         }
     }
+
 }

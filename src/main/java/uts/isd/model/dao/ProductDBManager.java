@@ -23,9 +23,27 @@ public class ProductDBManager {
     public ProductDBManager(Connection conn) throws SQLException {
         st = conn.createStatement();
     }
-   
+    
+    public Product findProduct(int id) throws SQLException {
+        String query = "SELECT * FROM IOTUSER.PRODUCT WHERE PROD_ID= " + id;
+        ResultSet rs = st.executeQuery(query);
+        
+        while(rs.next()) {
+            String name = rs.getString("PRODUCT_NAME");
+            double price = rs.getDouble("PRODUCT_PRICE");
+            String desc = rs.getString("PRODUCT_DESC");
+            String type = rs.getString("PRODUCT_TYPE");
+            int quant = rs.getInt("PRODUCT_QUANT");
+            
+            Product product = new Product(id, name, price, desc, type, quant);
+            return product;
+        }
+        return null;
+    } 
+    
+    
     // Create - add a new product
-    public void addProduct(String name, double price, String desc, String type, int quant) throws SQLException{
+    public void addProduct(String name, String price, String desc, String type, String quant) throws SQLException{
         String query = 
                 "INSERT INTO IOTUSER.PRODUCT(PRODUCT_NAME, PRODUCT_PRICE, PRODUCT_DESC, PRODUCT_TYPE, PRODUCT_QUANT) " +
                 "VALUES('" + name + "', " + price + ", '" + desc + "', '" + type + "', " + quant + ")";
@@ -121,7 +139,7 @@ public class ProductDBManager {
     }
 
     // Update - Update a single product
-    public void updateProduct(String id, String name, double price, String desc, String type, int quant) throws SQLException {
+    public void updateProduct(String id, String name, String price, String desc, String type, String quant) throws SQLException {
         String query = 
                 "UPDATE IOTUSER.PRODUCT SET " +
                 "PRODUCT_NAME = '" + name + "', " +

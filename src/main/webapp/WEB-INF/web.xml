@@ -5,11 +5,14 @@
         <servlet-class>uts.isd.controller.ConnServlet</servlet-class>
         <load-on-startup>0</load-on-startup>
     </servlet>
+    <servlet>
+        <servlet-name>EditProductServlet</servlet-name>
+        <servlet-class>uts.isd.controller.product.EditProductServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ConnServlet</servlet-name>
         <url-pattern>/ConnServlet</url-pattern>
     </servlet-mapping>
-    
     <!--Login-->
     <servlet>
         <servlet-name>LoginServlet</servlet-name>
@@ -19,7 +22,6 @@
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/LoginServlet</url-pattern>
     </servlet-mapping>
-    
     <!--Register-->
     <servlet>
         <servlet-name>RegisterServlet</servlet-name>
@@ -29,6 +31,7 @@
         <servlet-name>RegisterServlet</servlet-name>
         <url-pattern>/RegisterServlet</url-pattern>
     </servlet-mapping>
+<<<<<<< Updated upstream
     <!--PaymentConn-->
     <servlet>
         <servlet-name>PaymentConnServlet</servlet-name>
@@ -48,6 +51,8 @@
         <servlet-name>PaymentServlet</servlet-name>
         <url-pattern>/PaymentServlet</url-pattern>
     </servlet-mapping>
+=======
+>>>>>>> Stashed changes
     <!--Logout-->
     <servlet>
         <servlet-name>LogoutServlet</servlet-name>
@@ -57,7 +62,6 @@
         <servlet-name>LogoutServlet</servlet-name>
         <url-pattern>/LogoutServlet</url-pattern>
     </servlet-mapping>
-    
     <!--Edit User-->
     <servlet>
         <servlet-name>EditServlet</servlet-name>
@@ -67,8 +71,6 @@
         <servlet-name>EditServlet</servlet-name>
         <url-pattern>/EditServlet</url-pattern>
     </servlet-mapping>
-    
-    
     <!--Delete User-->
     <servlet>
         <servlet-name>DeleteServlet</servlet-name>
@@ -78,8 +80,12 @@
         <servlet-name>DeleteServlet</servlet-name>
         <url-pattern>/DeleteServlet</url-pattern>
     </servlet-mapping>
+<<<<<<< Updated upstream
     
      <!--Access Log-->
+=======
+    <!--Access Log-->
+>>>>>>> Stashed changes
     <servlet>
         <servlet-name>LogServlet</servlet-name>
         <servlet-class>uts.isd.controller.LogServlet</servlet-class>
@@ -88,6 +94,7 @@
         <servlet-name>LogServlet</servlet-name>
         <url-pattern>/LogServlet</url-pattern>
     </servlet-mapping>
+<<<<<<< Updated upstream
     
     <!--Admin Logout-->
      <servlet>
@@ -162,6 +169,8 @@
     </servlet-mapping>
     
     
+=======
+>>>>>>> Stashed changes
     <!--Product -->
     <servlet>
         <servlet-name>AddProductServlet</servlet-name>
@@ -171,8 +180,34 @@
         <servlet-name>AddProductServlet</servlet-name>
         <url-pattern>/AddProductServlet</url-pattern>
     </servlet-mapping>
-    
-    
+    <servlet>
+        <servlet-name>ProductListServlet</servlet-name>
+        <servlet-class>uts.isd.controller.product.ProductListServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ProductListServlet</servlet-name>
+        <url-pattern>/ProductListServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeleteProductServlet</servlet-name>
+        <url-pattern>/DeleteProductServlet</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>DeleteProductServlet</servlet-name>
+        <servlet-class>uts.isd.controller.product.DeleteProductServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>UpdateProductServlet</servlet-name>
+        <url-pattern>/UpdateProductServlet</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>UpdateProductServlet</servlet-name>
+        <servlet-class>uts.isd.controller.product.UpdateProductServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EditProductServlet</servlet-name>
+        <url-pattern>/EditProductServlet</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30
