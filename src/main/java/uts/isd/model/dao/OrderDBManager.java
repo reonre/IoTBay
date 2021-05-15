@@ -23,24 +23,28 @@ public class OrderDBManager {
         st = conn.createStatement();
     }
     
+    
     //finds order with order id and userid
     public Orders findOrder(int oID, int uID) throws SQLException {
-        String fetch = "select * from IOTUSER.ORDERS where orderID = " + oID + " and userID='" + uID + "'";
+        String fetch = "SELECT * FROM IOTUSER.ORDERS WHERE ORDER_ID = " + oID + " and USER_ID='" + uID + "'";
         ResultSet rs = st.executeQuery(fetch);
         
         
-        //reads data from Users Table, then stores them into ORDER
+        //reads data from Users Table, then stores them into ORDERS
         while (rs.next()) {  
-            int orderID = rs.getInt(1);
-            int userID = rs.getInt(2);
-            if (orderID == oID && userID == uID) {
-                String DATE_ORDER_PLACED = rs.getString(3);
-                double totalPrice = rs.getDouble(5);
-                String Address = rs.getString(6);
-                return new Orders(orderID, userID, DATE_ORDER_PLACED, totalPrice, Address);
-                
-            }
+            int ORDER_ID = rs.getInt(1);
+            int USER_ID = rs.getInt(2);
             
+        String ORDER_DATE = rs.getString(3);
+        String ORDER_DETAILS=rs.getString(4);
+        String ORDERER_NAME=rs.getString(5);
+        int QUANTITY=rs.getInt(6);
+        double PRICE=rs.getDouble(7);
+        double TOTAL_PRICE=rs.getDouble(8);
+        String BILLING_ADDRESS=rs.getString(9);
+        String SHIPPING_ADDRESS=rs.getString(10);
+    
+                return new Orders(ORDER_ID,USER_ID,ORDER_DATE,ORDER_DETAILS,ORDERER_NAME,QUANTITY,PRICE,TOTAL_PRICE,BILLING_ADDRESS,SHIPPING_ADDRESS);
         }
         return null;
     }
@@ -48,7 +52,6 @@ public class OrderDBManager {
     //adds order using order id and user id
     public void addOrder(int orderID, int userID) throws SQLException {
         st.executeUpdate("INSERT INTO IOTUSER.ORDERS VALUES ("+orderID+", '" +userID+"', null, null, null, null, null)");
-              
        
     }
     
@@ -74,7 +77,7 @@ public class OrderDBManager {
             String orderDate = rs.getString(3);
             double totalPrice = rs.getDouble(4);
             String Address = rs.getString(5);
-            temp.add(new Orders(orderID, userID, orderDate, totalPrice, Address));
+//            temp.add(new Orders(orderID, userID, orderDate, totalPrice, Address));
         }
         return temp;
     }
