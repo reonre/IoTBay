@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import uts.isd.model.Product;
 import uts.isd.model.dao.ProductDBManager;
 
 /**
@@ -20,6 +21,7 @@ import uts.isd.model.dao.ProductDBManager;
 public class EditProductServlet extends HttpServlet {
     HttpSession session;
     ProductDBManager productDBManager;
+    Product product;
     
     @Override   
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -27,15 +29,21 @@ public class EditProductServlet extends HttpServlet {
         productDBManager = (ProductDBManager)session.getAttribute("productDBManager");
 
         //Get ID from request
-        String id = request.getParameter("id");
+        int id = Integer.parseInt(request.getParameter("id"));
 
         try {
-            productDBManager.;
+            product = productDBManager.findProduct(id);
+            if (product != null) {
+                session.setAttribute("product", product);
+                request.getRequestDispatcher("editProduct.jsp").include(request, response);
+            } else {
+                session.setAttribute("productErr", "Product doesn't exist");
+                response.sendRedirect("ProductListServlet");
+            }
+            
         } catch (SQLException ex) {           
               Logger.getLogger(DeleteProductServlet.class.getName()).log(Level.SEVERE, null, ex);       
         }
-        
-        response.sendRedirect("ProductListServlet");
      }
 
 }
