@@ -23,11 +23,14 @@ public class OrderDBManager {
         st = conn.createStatement();
     }
     
+    //finds order with order id and userid
     public Orders findOrder(int oID, int uID) throws SQLException {
         String fetch = "select * from IOTUSER.ORDERS where orderID = " + oID + " and userID='" + uID + "'";
         ResultSet rs = st.executeQuery(fetch);
         
-        while (rs.next()) {  // reads every row in USERS table and gets the result by index and stores them into Strings
+        
+        //reads data from Users Table, then stores them into ORDER
+        while (rs.next()) {  
             int orderID = rs.getInt(1);
             int userID = rs.getInt(2);
             if (orderID == oID && userID == uID) {
@@ -42,27 +45,31 @@ public class OrderDBManager {
         return null;
     }
     
+    //adds order using order id and user id
     public void addOrder(int orderID, int userID) throws SQLException {
         st.executeUpdate("INSERT INTO IOTUSER.ORDERS VALUES ("+orderID+", '" +userID+"', null, null, null, null, null)");
               
        
     }
     
+    //updates order with all variables
     public void updateOrder(int orderID, int userID, String orderDate, double totalPrice, String Address) throws SQLException {
         st.executeUpdate("UPDATE IOTUSER.ORDERS SET ORDERDATE='"+orderDate+",TOTALPRICE="+totalPrice+",ADDRESS='"+
                 Address+"' WHERE ORDERID="+orderID + " AND USERID='"+userID+"'");
     }
     
+    //delete order using ORDERID from order table
     public void deleteOrder(int orderID) throws SQLException {
         st.executeUpdate("DELETE FROM IOTBAY.ORDERS WHERE ORDERID=" +orderID+"");
     }
-    
+    //fetches order using userID
     public ArrayList<Orders> fetchOrder(int userID) throws SQLException {
         String fetch = "select * from ORDER where USERID='"+userID+"'";
         ResultSet rs = st.executeQuery(fetch);
         ArrayList<Orders> temp = new ArrayList();
         
-        while (rs.next()) {
+        //reads data from user table, then stores into order. use controller and view to show order
+        while (rs.next()) { 
             int orderID = rs.getInt(1);
             String orderDate = rs.getString(3);
             double totalPrice = rs.getDouble(4);

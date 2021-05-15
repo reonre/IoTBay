@@ -11,7 +11,7 @@ import java.io.*;
  * @author leon
  */
 public class Orders implements Serializable{
-    private static int numberOfOrders = 0;
+    //private static int numberOfOrders = 0;
     private int orderID;
     private int userID;
     private double totalPrice;
@@ -25,9 +25,9 @@ public class Orders implements Serializable{
 
     public Orders(int userID) {
         
-        this.orderID = Orders.numberOfOrders;
-        Orders.numberOfOrders++;
-        this.userID = userID;
+//        this.orderID = Orders.numberOfOrders;
+//        Orders.numberOfOrders++;
+//        this.userID = userID;
     }
 
     public Orders(int orderID, int userID, String DATE_ORDER_PLACED, double totalPrice, String Address) {
