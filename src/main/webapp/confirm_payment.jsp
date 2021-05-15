@@ -16,6 +16,7 @@
     <title> Payment Confirmation</title>
     <%
         Payment payment = (Payment) session.getAttribute("payment");
+        User user = (User) session.getAttribute("user");
     %>
 </head>
 
@@ -47,7 +48,7 @@
     </nav>
     <div class="container-fluid">
         <table class="table table-responsive" id="users">
-            <p> userid #${userId}</p>
+            <tr><td>User id:#</td><td><%= user.getUSER_ID()%></td></tr>
             <tr><td>Payment Method:</td><td><%= payment.getPaymentMethod()%></td></tr>
             <tr><td>Date Paid:</td><td><%= payment.getDatePaid()%></td></tr>
             <tr><td>Card Number:</td><td><%= payment.getCardNumber()%></td></tr>

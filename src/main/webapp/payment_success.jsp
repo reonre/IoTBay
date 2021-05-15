@@ -12,6 +12,7 @@
     <%
     Payment payment = (Payment) session.getAttribute("payment");
     PaymentManager manager = (PaymentManager) session.getAttribute("manager");
+    User user = (User) session.getAttribute("user");
     %>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -46,12 +47,12 @@
         </div>
     </nav>
         <div class="container-fluid">
-        ${userId}
+        <tr><td>User id:#</td><td><%= user.getUSER_ID()%></td></tr>
         
         <tr><td>Purchase #</td><td><%= manager.getPaymentId(payment.getCardNumber())%></td></tr>                                                    
         <tr><td>Your order and payment are confirmed!</td></tr>                                  
         <tr><td> We will let you know when your order is ready for collection through your email address.</td></tr>        
-        <form action="payment_success.jsp">
+        <form action="HistoryPaymentServlet" method="post">
             <input type="submit" value="Show Payment History" />
         </form>
         <form action="DeletePaymentServlet" method="post">

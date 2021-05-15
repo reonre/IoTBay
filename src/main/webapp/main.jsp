@@ -41,6 +41,9 @@
                 <li class="nav-item">
                     <a class="nav-link btn btn-danger text-white" type="button" href="LogoutServlet" data-toggle="modal" data-target="#myModal">Logout</a>
                 </li>
+                <li class="nav-item active">
+                    <a class="nav-link btn btn-primary text-white" type="button" href="create_payment.jsp" data-toggle="modal" data-target="#myModal">Payment<span class="sr-only">(current)</a>                  
+                </li>
             </ul>
         </div>
     </nav>

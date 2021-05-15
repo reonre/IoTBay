@@ -48,6 +48,16 @@
         <servlet-name>PaymentServlet</servlet-name>
         <url-pattern>/PaymentServlet</url-pattern>
     </servlet-mapping>
+    <!--HistoryPaymentServlet-->
+    <servlet>
+        <servlet-name>HistoryPaymentServlet</servlet-name>
+        <servlet-class>uts.isd.controller.HistoryPaymentServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>HistoryPaymentServlet</servlet-name>
+        <url-pattern>/HistoryPaymentServlet</url-pattern>
+    </servlet-mapping>
+
     <!--Logout-->
     <servlet>
         <servlet-name>LogoutServlet</servlet-name>

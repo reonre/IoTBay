@@ -40,6 +40,7 @@ public class PaymentServlet extends HttpServlet {
         
 
         Payment payment;
+        User user = (User) session.getAttribute("user");;
         PaymentManager manager = (PaymentManager) session.getAttribute("manager");
 
         try {
@@ -55,6 +56,7 @@ public class PaymentServlet extends HttpServlet {
                 manager.addPayment(invoice_Id, paymentMethod, cardNumber, expiryDate, cvv, nameOnCard, datePaid);
                 int payment_Id = manager.getPaymentId(cardNumber);
                 payment = manager.searchPayment(payment_Id, datePaid);
+                manager.addHistory(user.getUSER_ID(), payment_Id, invoice_Id, paymentMethod, cardNumber, nameOnCard, datePaid);
                 session.setAttribute("payment", payment);
                 
                 request.getRequestDispatcher("confirm_payment.jsp").include(request, response);

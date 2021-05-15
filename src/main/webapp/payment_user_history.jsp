@@ -3,51 +3,67 @@
     Created on : 12 May 2021, 12:49:20
     Author     : casio
 --%>
-
-<%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="uts.isd.model.*"%>
+<%@page import="java.util.*"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
-     <%
-        ArrayList<String> rs = (ArrayList<String>) session.getAttribute("paymentList");
-        String fetchMessage = (String) session.getAttribute("fetchMessage");
-     %>
-        
     <head>
-        <link href="css/payment_style.css" rel="stylesheet" type="text/css"/>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Payment User View History Page</title>
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <script src="js/bootstrap.min.js"></script>
     </head>
-        <p style="text-align: right; color: black; font-size:20px"> <a class = button href = "payment_order.jsp"> <i>Go to HomePage</i></a>
-        <a class = button href = "Payment1_LogoutServlet"> <i>Logout</i></a></p>
-    <Body>
-        <p> You are user number : ${userId}
-               <table>
+    <title> Contact Us </title>
+    <%
+        User user = (User) session.getAttribute("user");
+    %>
+</head>
+<body onload="startTime(); resetSearch();">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.jsp">IoTBay</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto topnav">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.jsp">Home</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="about_us.jsp">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="contact_us.jsp">Contact</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link btn btn-primary text-white" type="button" href="main.jsp" data-toggle="modal" data-target="#myModal">Profile<span class="sr-only">(current)</a>                  
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link btn btn-danger text-white" type="button" href="LogoutServlet" data-toggle="modal" data-target="#myModal">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <table class="table table-bordered">
+            <th>Payment Id</th>
+            <th>Order Id</th>
+            <th>Payment Method</th>
+            <th>Card Number</th>
+            <th>Name On Card</th>
+            <th>Date paid</th>
+            <c:forEach items="${history}" var="obj">
                 <tr>
-                    <td><b>Payment Id</b></td>
-                    <td><b>Order Id</b></td>
-                    <td><b>Payment Method</b></td>
-                    <td><b>Card Number</b></td>
-                    <td><b>Expiry Date</b></td>
-                    <td><b>CVV</b></td>
-                    <td><b>Name On Card</b></td>
-                    <td><b>Date paid</b></td>
-               </tr>
-                 <%  if(rs != null){
-                    for(int i = 0; i < rs.size(); i=i+8){
-                 %>
-               <td><p> <%=rs.get(0+i)%> </p></td>
-                    <td><p> <%=rs.get(1+i)%> </p></td>
-                    <td><p> <%=rs.get(2+i)%> </p></td>
-                    <td><p> <%=rs.get(3+i)%> </p></td>
-                    <td><p> <%=rs.get(4+i)%>  </p></td>
-                    <td><p> <%=rs.get(5+i)%>  </p></td>
-                    <td><p> <%=rs.get(6+i)%>  </p></td>
-                    <td><p> <%=rs.get(7+i)%> </p></td>
-                </tr><% } } else { %> 
-            </table>
-             <span class="warning"><%=fetchMessage != null ? fetchMessage : ""%></span>
-            <% } %>
-                   
-    </body>
+                    <td>${obj.paymentId}</td>
+                    <td>${obj.invoiceId}</td>
+                    <td>${obj.paymentMethod}</td>
+                    <td>${obj.cardNumber}</td>
+                    <td>${obj.nameOnCard}</td>
+                    <td>${obj.datePaid}</td>
+                </tr>
+            </c:forEach>
+        </table>
+    </div>
+</body>
 </html>
