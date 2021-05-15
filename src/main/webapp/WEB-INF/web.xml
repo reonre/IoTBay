@@ -168,10 +168,7 @@
         <url-pattern>/StaffDeleteServlet</url-pattern>
     </servlet-mapping>
     
-    
-=======
->>>>>>> Stashed changes
-    <!--Product -->
+       <!--Product -->
     <servlet>
         <servlet-name>AddProductServlet</servlet-name>
         <servlet-class>uts.isd.controller.product.AddProductServlet</servlet-class>
