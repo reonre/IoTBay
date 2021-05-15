@@ -7,7 +7,7 @@
 <%@page import="uts.isd.model.*"%>
 <%@page import="java.util.*"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<jsp:include page="/ConnServlet" flush="true"/>
+<jsp:include page="/ConnServlet"/>
 
 <!DOCTYPE html>
 <html>

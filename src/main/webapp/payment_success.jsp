@@ -7,7 +7,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="uts.isd.model.*"%>
 <%@page import="uts.isd.model.dao.*"%>
-<jsp:include page="/ConnServlet" flush="true"/>
+<jsp:include page="/ConnServlet"/>
 <!DOCTYPE html>
 <html>
     <%

@@ -43,7 +43,7 @@ public class ProductListServlet extends HttpServlet {
             Logger.getLogger(ProductListServlet.class.getName()).log(Level.SEVERE, null, ex);  
         }
         
-        request.getRequestDispatcher("/product/productList.jsp").include(request, response);
+        request.getRequestDispatcher("./product/productList.jsp").include(request, response);
         
     }
 

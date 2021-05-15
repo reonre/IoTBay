@@ -18,7 +18,7 @@ import uts.isd.model.dao.ProductDBManager;
  *
  * @author oneilrangiuira
  */
-public class EditProductServlet extends HttpServlet {
+public class ProductServlet extends HttpServlet {
     HttpSession session;
     ProductDBManager productDBManager;
     Product product;
@@ -35,7 +35,7 @@ public class EditProductServlet extends HttpServlet {
             product = productDBManager.findProduct(id);
             if (product != null) {
                 session.setAttribute("product", product);
-                request.getRequestDispatcher("editProduct.jsp").include(request, response);
+                request.getRequestDispatcher("./product/product.jsp").include(request, response);
             } else {
                 session.setAttribute("productErr", "Product doesn't exist");
                 response.sendRedirect("ProductListServlet");
