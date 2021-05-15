@@ -43,6 +43,7 @@
             <th>Date of Birth</th>
             <th>Address</th>
             <th>Position</th>
+            <th>Activated</th>
                 <c:forEach items="${staff}" var="obj">
                 <tr>
                     <td>${obj.USER_ID}</td>
@@ -54,6 +55,7 @@
                     <td>${obj.dob}</td>
                     <td>${obj.address}</td>
                     <td>${obj.position}</td>
+                    <td>${obj.active}</td>
                 </tr>
             </c:forEach>
         </table>
