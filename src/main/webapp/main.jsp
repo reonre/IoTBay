@@ -91,7 +91,7 @@
                             <input type="submit" value="Access Logs"/>
                         </form>
                     </td></tr>
-                <form action="viewOrder.jsp" method="post">
+                <form action="OrderHistory.jsp" method="post">
                     <input type="submit" value="View Order"/>  
                 </form>   
                 <tr><td>
