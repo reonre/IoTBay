@@ -99,8 +99,7 @@ public class Orders implements Serializable{
 
     public double getTotalPrice() {
         double total= (double)PRICE*(double)QUANTITY;
-        double roundOff = Math.round(total*100/100);
-        return roundOff;
+        return total;
     }
 
     public void setTotalPrice(double TOTAL_Price) {
