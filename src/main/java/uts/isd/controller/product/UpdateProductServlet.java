@@ -27,12 +27,11 @@ public class UpdateProductServlet extends HttpServlet {
     
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        session = request.getSession();
+        productDBManager = (ProductDBManager)session.getAttribute("productDBManager");
         user = (User)session.getAttribute("user");
         
         if (user != null && user.getClass().getSimpleName().equals("Staff")) {
-            session = request.getSession();
-            productDBManager = (ProductDBManager)session.getAttribute("productDBManager");
-
             int id = (int)session.getAttribute("PROD_ID");
             String name = request.getParameter("PRODUCT_NAME");
             String price = request.getParameter("PRODUCT_PRICE");

@@ -5,213 +5,213 @@
         <servlet-class>uts.isd.controller.ConnServlet</servlet-class>
         <load-on-startup>0</load-on-startup>
     </servlet>
-    <servlet-mapping>
-        <servlet-name>ConnServlet</servlet-name>
-        <url-pattern>/ConnServlet</url-pattern>
-    </servlet-mapping>
-    
-    <!--Login-->
     <servlet>
         <servlet-name>LoginServlet</servlet-name>
         <servlet-class>uts.isd.controller.LoginServlet</servlet-class>
     </servlet>
-    <servlet-mapping>
-        <servlet-name>LoginServlet</servlet-name>
-        <url-pattern>/LoginServlet</url-pattern>
-    </servlet-mapping>
-    
-    <!--Register-->
     <servlet>
         <servlet-name>RegisterServlet</servlet-name>
         <servlet-class>uts.isd.controller.RegisterServlet</servlet-class>
     </servlet>
-    <servlet-mapping>
-        <servlet-name>RegisterServlet</servlet-name>
-        <url-pattern>/RegisterServlet</url-pattern>
-    </servlet-mapping>
-    <!--PaymentConn-->
     <servlet>
         <servlet-name>PaymentConnServlet</servlet-name>
         <servlet-class>uts.isd.controller.PaymentConnServlet</servlet-class>
         <load-on-startup>0</load-on-startup>
     </servlet>
-    <servlet-mapping>
-        <servlet-name>PaymentConnServlet</servlet-name>
-        <url-pattern>/PaymentConnServlet</url-pattern>
-    </servlet-mapping>
-    <!--PaymentServlet-->
     <servlet>
         <servlet-name>PaymentServlet</servlet-name>
         <servlet-class>uts.isd.controller.PaymentServlet</servlet-class>
     </servlet>
-    <servlet-mapping>
-        <servlet-name>PaymentServlet</servlet-name>
-        <url-pattern>/PaymentServlet</url-pattern>
-    </servlet-mapping>
-    <!--PaymentUpdateServlet-->
-    <servlet>
-        <servlet-name>PaymentUpdateServlet</servlet-name>
-        <servlet-class>uts.isd.controller.PaymentUpdateServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>PaymentUpdateServlet</servlet-name>
-        <url-pattern>/PaymentUpdateServlet</url-pattern>
-    </servlet-mapping>
-    <!--HistoryPaymentServlet-->
-    <servlet>
-        <servlet-name>HistoryPaymentServlet</servlet-name>
-        <servlet-class>uts.isd.controller.HistoryPaymentServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>HistoryPaymentServlet</servlet-name>
-        <url-pattern>/HistoryPaymentServlet</url-pattern>
-    </servlet-mapping>
-    <!--PaymentSeacrhServlet-->
-    <servlet>
-        <servlet-name>PaymentSearchServlet</servlet-name>
-        <servlet-class>uts.isd.controller.PaymentSearchServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>PaymentSearchServlet</servlet-name>
-        <url-pattern>/PaymentSearchServlet</url-pattern>
-    </servlet-mapping>
-    <!--DeletePaymentServlet-->
-    <servlet>
-        <servlet-name>DeletePaymentServlet</servlet-name>
-        <servlet-class>uts.isd.controller.DeletePaymentServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>DeletePaymentServlet</servlet-name>
-        <url-pattern>/DeletePaymentServlet</url-pattern>
-    </servlet-mapping>
-    <!--Logout-->
     <servlet>
         <servlet-name>LogoutServlet</servlet-name>
         <servlet-class>uts.isd.controller.LogoutServlet</servlet-class>
     </servlet>
-    <servlet-mapping>
-        <servlet-name>LogoutServlet</servlet-name>
-        <url-pattern>/LogoutServlet</url-pattern>
-    </servlet-mapping>
-    
-    <!--Edit User-->
     <servlet>
         <servlet-name>EditServlet</servlet-name>
         <servlet-class>uts.isd.controller.EditServlet</servlet-class>
     </servlet>
-    <servlet-mapping>
-        <servlet-name>EditServlet</servlet-name>
-        <url-pattern>/EditServlet</url-pattern>
-    </servlet-mapping>
-    
-    
-    <!--Delete User-->
     <servlet>
         <servlet-name>DeleteServlet</servlet-name>
         <servlet-class>uts.isd.controller.DeleteServlet</servlet-class>
     </servlet>
-    <servlet-mapping>
-        <servlet-name>DeleteServlet</servlet-name>
-        <url-pattern>/DeleteServlet</url-pattern>
-    </servlet-mapping>
-    
-     <!--Access Log-->
     <servlet>
         <servlet-name>LogServlet</servlet-name>
         <servlet-class>uts.isd.controller.LogServlet</servlet-class>
     </servlet>
-    <servlet-mapping>
-        <servlet-name>LogServlet</servlet-name>
-        <url-pattern>/LogServlet</url-pattern>
-    </servlet-mapping>
-    
-    <!--Admin Logout-->
-     <servlet>
+    <servlet>
         <servlet-name>AdminLogoutServlet</servlet-name>
         <servlet-class>uts.isd.controller.AdminLogoutServlet</servlet-class>
     </servlet>
-    <servlet-mapping>
-        <servlet-name>AdminLogoutServlet</servlet-name>
-        <url-pattern>/AdminLogoutServlet</url-pattern>
-    </servlet-mapping>
-    
-    <!--Admin Create Staff-->
-     <servlet>
+    <servlet>
         <servlet-name>AdminCreateStaffServlet</servlet-name>
         <servlet-class>uts.isd.controller.AdminCreateStaffServlet</servlet-class>
     </servlet>
-    <servlet-mapping>
-        <servlet-name>AdminCreateStaffServlet</servlet-name>
-        <url-pattern>/AdminCreateStaffServlet</url-pattern>
-    </servlet-mapping>
-    
-    
-    <!--Staff Conn Servlet-->
     <servlet>
         <servlet-name>StaffConnServlet</servlet-name>
         <servlet-class>uts.isd.controller.StaffConnServlet</servlet-class>
         <load-on-startup>0</load-on-startup>
     </servlet>
-    <servlet-mapping>
-        <servlet-name>StaffConnServlet</servlet-name>
-        <url-pattern>/StaffConnServlet</url-pattern>
-    </servlet-mapping>
-    
-        <!--Admin View Servlet-->
     <servlet>
         <servlet-name>StaffViewServlet</servlet-name>
         <servlet-class>uts.isd.controller.StaffViewServlet</servlet-class>
     </servlet>
-    <servlet-mapping>
-        <servlet-name>StaffViewServlet</servlet-name>
-        <url-pattern>/StaffViewServlet</url-pattern>
-    </servlet-mapping>
-    
-    <!--Admin View Servlet-->
     <servlet>
         <servlet-name>StaffSearchServlet</servlet-name>
         <servlet-class>uts.isd.controller.StaffSearchServlet</servlet-class>
     </servlet>
-    <servlet-mapping>
-        <servlet-name>StaffSearchServlet</servlet-name>
-        <url-pattern>/StaffSearchServlet</url-pattern>
-    </servlet-mapping>
-    
-    <!--Admin View Servlet-->
     <servlet>
         <servlet-name>StaffEditServlet</servlet-name>
         <servlet-class>uts.isd.controller.StaffEditServlet</servlet-class>
     </servlet>
-    <servlet-mapping>
-        <servlet-name>StaffEditServlet</servlet-name>
-        <url-pattern>/StaffEditServlet</url-pattern>
-    </servlet-mapping>
-    
-    <!--Admin View Servlet-->
     <servlet>
         <servlet-name>StaffDeleteServlet</servlet-name>
         <servlet-class>uts.isd.controller.StaffDeleteServlet</servlet-class>
     </servlet>
-    <servlet-mapping>
-        <servlet-name>StaffDeleteServlet</servlet-name>
-        <url-pattern>/StaffDeleteServlet</url-pattern>
-    </servlet-mapping>
-    
-    
-    <!--Product -->
     <servlet>
         <servlet-name>AddProductServlet</servlet-name>
         <servlet-class>uts.isd.controller.product.AddProductServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ProductListServlet</servlet-name>
+        <servlet-class>uts.isd.controller.product.ProductListServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DeleteProductServlet</servlet-name>
+        <servlet-class>uts.isd.controller.product.DeleteProductServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>UpdateProductServlet</servlet-name>
+        <servlet-class>uts.isd.controller.product.UpdateProductServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ProductServlet</servlet-name>
+        <servlet-class>uts.isd.controller.product.ProductServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>EditProductServlet</servlet-name>
+        <servlet-class>uts.isd.controller.product.EditProductServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>OrderProductServlet</servlet-name>
+        <servlet-class>uts.isd.controller.OrderProductServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SearchProductServlet</servlet-name>
+        <servlet-class>uts.isd.controller.product.SearchProductServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>PaymentSearchServlet</servlet-name>
+        <servlet-class>uts.isd.controller.PaymentSearchServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>PaymentUpdateServlet</servlet-name>
+        <servlet-class>uts.isd.controller.PaymentUpdateServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ConnServlet</servlet-name>
+        <url-pattern>/ConnServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/LoginServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RegisterServlet</servlet-name>
+        <url-pattern>/RegisterServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PaymentConnServlet</servlet-name>
+        <url-pattern>/PaymentConnServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PaymentServlet</servlet-name>
+        <url-pattern>/PaymentServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LogoutServlet</servlet-name>
+        <url-pattern>/LogoutServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EditServlet</servlet-name>
+        <url-pattern>/EditServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeleteServlet</servlet-name>
+        <url-pattern>/DeleteServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LogServlet</servlet-name>
+        <url-pattern>/LogServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AdminLogoutServlet</servlet-name>
+        <url-pattern>/AdminLogoutServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AdminCreateStaffServlet</servlet-name>
+        <url-pattern>/AdminCreateStaffServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>StaffConnServlet</servlet-name>
+        <url-pattern>/StaffConnServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>StaffViewServlet</servlet-name>
+        <url-pattern>/StaffViewServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>StaffSearchServlet</servlet-name>
+        <url-pattern>/StaffSearchServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>StaffEditServlet</servlet-name>
+        <url-pattern>/StaffEditServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>StaffDeleteServlet</servlet-name>
+        <url-pattern>/StaffDeleteServlet</url-pattern>
+    </servlet-mapping>
     <servlet-mapping>
         <servlet-name>AddProductServlet</servlet-name>
         <url-pattern>/AddProductServlet</url-pattern>
     </servlet-mapping>
-    
-    
+    <servlet-mapping>
+        <servlet-name>ProductListServlet</servlet-name>
+        <url-pattern>/ProductListServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeleteProductServlet</servlet-name>
+        <url-pattern>/DeleteProductServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UpdateProductServlet</servlet-name>
+        <url-pattern>/UpdateProductServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ProductServlet</servlet-name>
+        <url-pattern>/ProductServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EditProductServlet</servlet-name>
+        <url-pattern>/EditProductServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SearchProductServlet</servlet-name>
+        <url-pattern>/SearchProductServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>OrderProductServlet</servlet-name>
+        <url-pattern>/OrderProductServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PaymentSearchServlet</servlet-name>
+        <url-pattern>/PaymentSearchServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PaymentUpdateServlet</servlet-name>
+        <url-pattern>/PaymentUpdateServlet</url-pattern>
+    </servlet-mapping>
     <session-config>
-        <session-timeout>
-            30
-        </session-timeout>
+        <session-timeout>30</session-timeout>
     </session-config>
 </web-app>

@@ -34,12 +34,11 @@ public class EditProductServlet extends HttpServlet {
     
     @Override   
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        session = request.getSession();
+        productDBManager = (ProductDBManager)session.getAttribute("productDBManager");
         user = (User)session.getAttribute("user");
         
         if (user != null && user.getClass().getSimpleName().equals("Staff")) {
-            session = request.getSession();
-            productDBManager = (ProductDBManager)session.getAttribute("productDBManager");
-
             //Get ID from request
             int id = Integer.parseInt(request.getParameter("id"));
             validator = new Validator();
