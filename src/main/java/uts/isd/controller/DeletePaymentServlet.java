@@ -5,8 +5,7 @@
  */
 package uts.isd.controller;
 
-import uts.isd.model.Payment;
-import uts.isd.model.dao.PaymentManager;
+
 import java.io.IOException;
 import java.sql.SQLException;
 import javax.servlet.ServletException;
@@ -14,6 +13,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import uts.isd.model.*;
+import uts.isd.model.dao.DBConnector;
+import uts.isd.model.dao.PaymentManager;
 
 /**
  *
@@ -22,28 +24,25 @@ import javax.servlet.http.HttpSession;
 public class DeletePaymentServlet extends HttpServlet {
     
  @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
         // session 
         HttpSession session = request.getSession();
-        Integer paymentId = Integer.parseInt(request.getParameter("paymentId")); 
+        Payment payment = (Payment) session.getAttribute("payment");
         PaymentManager manager = ( PaymentManager) session.getAttribute("manager");
+        String cardNumber = payment.getCardNumber();
         
-        Payment payment = null;
+        
+        
         try{
-            //delete the payment from database based from the paymentId
-            payment = manager.foundedPaymentId(paymentId);
-            if(payment != null){
-                manager.deletePayment(paymentId);
-                session.setAttribute("fetchMessage", "Payment is deleted successfully!");
-            } else {
-                session.setAttribute("fetchMessage", "Payment is not deleted!");
-            }
-            response.sendRedirect("payment_cart.jsp");
-        } catch (SQLException ex) {
-           System.out.println(ex.getErrorCode() + " and " + ex.getMessage());
+            int paymentId = manager.getPaymentId(cardNumber);
+            System.out.print(paymentId);
+            manager.deletePayment(paymentId);
+            //request.getRequestDispatcher("create_payment.jsp").include(request,response);
+            response.sendRedirect("create_payment.jsp");
+        } catch (SQLException  ex) {
+           System.out.println("error");
         }
-       request.getRequestDispatcher("payment_cart.jsp").include(request, response);
     }  
 }

@@ -13,8 +13,9 @@ import java.io.Serializable;
 
 public class Payment implements Serializable{
     private int PAY_ID;
-    private int INVOICE_ID;
+    private int ORDER_ID;
     private String paymentMethod;
+    private double ORDER_LINE_PRICE;
     private String cardNumber;
     private String cvv;
     private String nameOnCard;
@@ -27,10 +28,11 @@ public class Payment implements Serializable{
     public Payment(){}
  
     
-    public Payment(int paymentId, int invoiceId, String paymentMethod, String cardNumber, String expiryDate, String cvv, String nameOnCard, String datePaid) {
+    public Payment(int paymentId, int orderId, String paymentMethod, double price, String cardNumber, String expiryDate, String cvv, String nameOnCard, String datePaid) {
         this.PAY_ID = paymentId;
-        this.INVOICE_ID = invoiceId;
+        this.ORDER_ID = orderId;
         this.paymentMethod = paymentMethod;
+        this.ORDER_LINE_PRICE = price;
         this.cardNumber = cardNumber;
         this.nameOnCard = nameOnCard;
         this.cvv = cvv;
@@ -55,8 +57,9 @@ public class Payment implements Serializable{
         return PAY_ID;
     }
     
-    public void setPaymentId(Integer PAY_ID) {
-        this.PAY_ID = PAY_ID;
+    
+    public int getOrderId() {
+        return ORDER_ID;
     }
      
     public String getPaymentMethod() {
@@ -66,6 +69,9 @@ public class Payment implements Serializable{
         this.paymentMethod = paymentMethod;
     }
     
+    public double getPrice() {
+        return ORDER_LINE_PRICE;
+    }
     
     public String getCardNumber() {
         return cardNumber;
@@ -104,4 +110,5 @@ public class Payment implements Serializable{
     public void setDatePaid(String datePaid) {
         this.datePaid = datePaid;
     }
+    
 }

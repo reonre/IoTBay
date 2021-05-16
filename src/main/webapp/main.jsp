@@ -42,7 +42,7 @@
                     <a class="nav-link btn btn-danger text-white" type="button" href="LogoutServlet" data-toggle="modal" data-target="#myModal">Logout</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link btn btn-primary text-white" type="button" href="create_payment.jsp" data-toggle="modal" data-target="#myModal">Payment<span class="sr-only">(current)</a>                  
+                    <a class="nav-link btn btn-warning text-dark" type="button" href="create_payment.jsp" data-toggle="modal" data-target="#myModal">Payment<span class="sr-only">(current)</a>                  
                 </li>
             </ul>
         </div>
@@ -80,6 +80,9 @@
         <form action="LogServlet" method="post">
             <input type="submit" value="Access Logs"/>
         </form>
+            <form action="payment_search.jsp">
+            <input type="submit" value="Search Payment" />
+        </form>  
 
     </div>
 

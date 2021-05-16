@@ -40,22 +40,18 @@
                 <li class="nav-item active">
                     <a class="nav-link btn btn-primary text-white" type="button" href="main.jsp" data-toggle="modal" data-target="#myModal">Profile<span class="sr-only">(current)</a>                  
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link btn btn-danger text-white" type="button" href="LogoutServlet" data-toggle="modal" data-target="#myModal">Logout</a>
-                </li>
             </ul>
         </div>
     </nav>
         <div class="container-fluid">
-        <tr><td>User id:#</td><td><%= user.getUSER_ID()%></td></tr>
-        
-        <tr><td>Purchase #</td><td><%= manager.getPaymentId(payment.getCardNumber())%></td></tr>                                                    
+        <tr><td>User Id:#</td><td><%= user.getUSER_ID()%></td></tr>   
+        <tr><td>Payment Id:#</td><td><%= manager.getPaymentId(payment.getCardNumber())%></td></tr>                                                    
         <tr><td>Your order and payment are confirmed!</td></tr>                                  
         <tr><td> We will let you know when your order is ready for collection through your email address.</td></tr>        
         <form action="HistoryPaymentServlet" method="post">
             <input type="submit" value="Show Payment History" />
         </form>
-        <form action="DeletePaymentServlet" method="post">
+        <form action="payment_search.jsp">
             <input type="submit" value="Search Payment" />
         </form>    
     </div>

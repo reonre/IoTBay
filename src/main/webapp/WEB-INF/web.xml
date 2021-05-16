@@ -48,6 +48,15 @@
         <servlet-name>PaymentServlet</servlet-name>
         <url-pattern>/PaymentServlet</url-pattern>
     </servlet-mapping>
+    <!--PaymentUpdateServlet-->
+    <servlet>
+        <servlet-name>PaymentUpdateServlet</servlet-name>
+        <servlet-class>uts.isd.controller.PaymentUpdateServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PaymentUpdateServlet</servlet-name>
+        <url-pattern>/PaymentUpdateServlet</url-pattern>
+    </servlet-mapping>
     <!--HistoryPaymentServlet-->
     <servlet>
         <servlet-name>HistoryPaymentServlet</servlet-name>
@@ -57,7 +66,24 @@
         <servlet-name>HistoryPaymentServlet</servlet-name>
         <url-pattern>/HistoryPaymentServlet</url-pattern>
     </servlet-mapping>
-
+    <!--PaymentSeacrhServlet-->
+    <servlet>
+        <servlet-name>PaymentSearchServlet</servlet-name>
+        <servlet-class>uts.isd.controller.PaymentSearchServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>PaymentSearchServlet</servlet-name>
+        <url-pattern>/PaymentSearchServlet</url-pattern>
+    </servlet-mapping>
+    <!--DeletePaymentServlet-->
+    <servlet>
+        <servlet-name>DeletePaymentServlet</servlet-name>
+        <servlet-class>uts.isd.controller.DeletePaymentServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DeletePaymentServlet</servlet-name>
+        <url-pattern>/DeletePaymentServlet</url-pattern>
+    </servlet-mapping>
     <!--Logout-->
     <servlet>
         <servlet-name>LogoutServlet</servlet-name>

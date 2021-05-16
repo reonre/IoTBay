@@ -17,6 +17,11 @@ public class Validator implements Serializable {
     private String prod_DescPattern = "[^\'\"]+";
     private String prod_TypePattern = "^[a-zA-Z\\s]+$";
     private String prod_quantPattern = "^[0-9]{1,10}$";
+    
+    //Payment Patterns
+    private String pay_cardNo = "^[0-9]{13,16}$";
+    private String pay_cvv = "^[0-9]{3}$";
+    private String pay_expiryDate = "^(0[1-9]|1[0-2]|[1-9])/(1[4-9]|[2-9][0-9]|20[1-9][1-9])$";
 
     public Validator() {
     }
@@ -69,6 +74,18 @@ public class Validator implements Serializable {
        return validate(prod_NamePattern, username);
     }
     
+    //Validate Payment
+    public boolean validateCardNo(String cardNo) {
+        return validate(pay_cardNo, cardNo);
+    }
+    
+    public boolean validateCvv(String cvv) {
+        return validate(pay_cvv, cvv);
+    }
+    public boolean validateExpiryDate(String expiryDate) {
+        return validate(pay_expiryDate, expiryDate);
+    }
+    
     public void clear(HttpSession session) {
         session.setAttribute("emailErr", "Enter email");
         session.setAttribute("passErr", "Enter password");
@@ -81,5 +98,10 @@ public class Validator implements Serializable {
         session.setAttribute("productdescErr", "Enter Description");
         session.setAttribute("productTypeErr", "Enter Type");
         session.setAttribute("productQuantityErr", null);
+        
+        //Payment session
+        session.setAttribute("creditCardNoErr", "Enter Card Number");
+        session.setAttribute("cvvErr", "Enter Cvv Number");
+        session.setAttribute("expiryDateErr", "Enter Expiry Date");
     }
 }

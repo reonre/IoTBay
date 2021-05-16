@@ -40,33 +40,33 @@
                 <li class="nav-item active">
                     <a class="nav-link btn btn-primary text-white" type="button" href="main.jsp" data-toggle="modal" data-target="#myModal">Profile<span class="sr-only">(current)</a>                  
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link btn btn-danger text-white" type="button" href="LogoutServlet" data-toggle="modal" data-target="#myModal">Logout</a>
-                </li>
             </ul>
         </div>
     </nav>
     <div class="container-fluid">
-        <table class="table table-responsive" id="users">
-            <tr><td>User id:#</td><td><%= user.getUSER_ID()%></td></tr>
-            <tr><td>Payment Method:</td><td><%= payment.getPaymentMethod()%></td></tr>
-            <tr><td>Date Paid:</td><td><%= payment.getDatePaid()%></td></tr>
-            <tr><td>Card Number:</td><td><%= payment.getCardNumber()%></td></tr>
-            <tr><td>Expiry Date:</td><td><%= payment.getExpiryDate()%></td></tr>
-            <tr><td>CVV:</td><td><%= payment.getCvv()%></td></tr>
-            <tr><td>Name On Card:</td><td><%= payment.getNameOnCard()%></td></tr>
-        </table>
+        <form action="DeletePaymentServlet" method="post">
+            <table class="table table-responsive" id="users">
+                <tr><td>User Id:#</td><td><%= user.getUSER_ID()%></td></tr>
+                <tr><td>Order Id:#</td><td><%= payment.getOrderId()%></td></tr>
+                <tr><td>Payment Method:</td><td><%= payment.getPaymentMethod()%></td></tr>
+                <tr><td>Amount :$</td><td><%= payment.getPrice()%></td></tr>
+                <tr><td>Date Paid:</td><td><%= payment.getDatePaid()%></td></tr>
+                <tr><td>Card Number:</td><td><%= payment.getCardNumber()%></td></tr>
+                <tr><td>Expiry Date:</td><td><%= payment.getExpiryDate()%></td></tr>
+                <tr><td>CVV:</td><td><%= payment.getCvv()%></td></tr>
+                <tr><td>Name On Card:</td><td><%= payment.getNameOnCard()%></td></tr>
+                <tr><td>
+                        <input type="submit" value="Cancel" class="button" name = "submit" id="submit">
+                    </td></tr>
+            </table>
+        </form>
         <form action="payment_success.jsp">
             <input type="submit" value="Confirm" />
         </form>
-        <form action="DeletePaymentServlet" method="post">
-            <input type="submit" value="Cancel" />
+        <form action="update_payment.jsp">
+            <input type="submit" value="Update Payment"/>
         </form>
-        <form action="EditPaymentServlet" method="post">
-            <input type="submit" value="Exit"/>
-        </form>
-
+                <jsp:include page="/PaymentConnServlet" flush="true"/>
     </div>        
-
 </body>
 </html>

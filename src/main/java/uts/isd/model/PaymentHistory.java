@@ -11,12 +11,14 @@ import java.io.*;
  */
 public class PaymentHistory implements Serializable {
     private String paymentMethod, cardNumber, nameOnCard, datePaid;
-    private int id, paymentId, invoiceId;
-    public PaymentHistory(int id, int paymentId, int invoiceId, String paymentMethod, String cardNumber, String nameOnCard, String datePaid) {
+    private int id, paymentId, orderId;
+    private double price;
+    public PaymentHistory(int id, int paymentId, int invoiceId, String paymentMethod, double price, String cardNumber, String nameOnCard, String datePaid) {
         this.id = id;
         this.paymentId = paymentId;
-        this.invoiceId = invoiceId;
+        this.orderId = orderId;
         this.paymentMethod = paymentMethod;
+        this.price = price;
         this.cardNumber = cardNumber;
         this.nameOnCard = nameOnCard;
         this.datePaid = datePaid;
@@ -27,11 +29,14 @@ public class PaymentHistory implements Serializable {
     public Integer getPaymentId() {
         return paymentId;
     }
-    public Integer getInvoiceId() {
-        return invoiceId;
+    public Integer getOrderId() {
+        return orderId;
     } 
     public String getPaymentMethod() {
         return paymentMethod;
+    }
+    public double getPrice() {
+        return price;
     }
     public String getCardNumber() {
         return cardNumber;

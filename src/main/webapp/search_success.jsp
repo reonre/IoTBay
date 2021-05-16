@@ -1,12 +1,10 @@
 <%-- 
-    Document   : PaymentUserHistory
-    Created on : 12 May 2021, 12:49:20
+    Document   : search_success
+    Created on : 16 May 2021, 01:13:39
     Author     : casio
 --%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="uts.isd.model.*"%>
-<%@page import="java.util.*"%>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -14,8 +12,9 @@
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <script src="js/bootstrap.min.js"></script>
     </head>
-    <title> Payment History </title>
+    <title> Search Success </title>
     <%
+        PaymentHistory paymenth = (PaymentHistory) session.getAttribute("paymenth");
         User user = (User) session.getAttribute("user");
     %>
 </head>
@@ -39,30 +38,40 @@
                 <li class="nav-item active">
                     <a class="nav-link btn btn-primary text-white" type="button" href="main.jsp" data-toggle="modal" data-target="#myModal">Profile<span class="sr-only">(current)</a>                  
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link btn btn-danger text-white" type="button" href="LogoutServlet" data-toggle="modal" data-target="#myModal">Logout</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link btn btn-warning text-dark" type="button" href="create_payment.jsp" data-toggle="modal" data-target="#myModal">Payment<span class="sr-only">(current)</a>                  
+                </li>
             </ul>
         </div>
     </nav>
+    <%
+        if (user.getUSER_ID() == paymenth.getId()) {
+    %>
     <div class="container-fluid">
-        <table class="table table-bordered">
-            <th>Payment Id</th>
-            <th>Order Id</th>
-            <th>Payment Method</th>
-            <th>Amount</th>
-            <th>Card Number</th>
-            <th>Name On Card</th>
-            <th>Date paid</th>
-            <c:forEach items="${history}" var="obj">
-                <tr>
-                    <td>${obj.paymentId}</td>
-                    <td>${obj.orderId}</td>
-                    <td>${obj.paymentMethod}</td>
-                    <td>${obj.price}</td>
-                    <td>${obj.cardNumber}</td>
-                    <td>${obj.nameOnCard}</td>
-                    <td>${obj.datePaid}</td>
-                </tr>
-            </c:forEach>
-        </table>
+        <table class="table table-responsive" id="users">
+            <tr><td>User id:#</td><td><%= user.getUSER_ID()%></td></tr>
+            <tr><td>Payment ID:</td><td><%= paymenth.getPaymentId()%></td></tr>
+            <tr><td>Invoice ID:</td><td><%= paymenth.getOrderId()%></td></tr>
+            <tr><td>Payment Method:</td><td><%= paymenth.getPaymentMethod()%></td></tr>
+            <tr><td>Amount :$</td><td><%= paymenth.getPrice()%></td></tr>
+            <tr><td>Card Number:</td><td><%= paymenth.getCardNumber()%></td></tr>
+            <tr><td>Name On Card:</td><td><%= paymenth.getNameOnCard()%></td></tr>
+            <tr><td>Date Paid:</td><td><%= paymenth.getDatePaid()%></td></tr>
+
+        </table>   
     </div>
+    <%
+    } else {
+    %>
+    <h1> Payment not found </h1>
+    <%
+        }
+    %>
+    <form action="main.jsp">
+        <input type="submit" value="Back" />
+    </form>
 </body>
 </html>
