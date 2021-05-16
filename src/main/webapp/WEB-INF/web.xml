@@ -92,6 +92,10 @@
         <servlet-class>uts.isd.controller.product.EditProductServlet</servlet-class>
     </servlet>
     <servlet>
+        <servlet-name>OrderProductServlet</servlet-name>
+        <servlet-class>uts.isd.controller.OrderProductServlet</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>SearchProductServlet</servlet-name>
         <servlet-class>uts.isd.controller.product.SearchProductServlet</servlet-class>
     </servlet>
@@ -186,6 +190,10 @@
     <servlet-mapping>
         <servlet-name>SearchProductServlet</servlet-name>
         <url-pattern>/SearchProductServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>OrderProductServlet</servlet-name>
+        <url-pattern>/OrderProductServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>30</session-timeout>

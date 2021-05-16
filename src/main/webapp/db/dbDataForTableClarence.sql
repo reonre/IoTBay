@@ -61,9 +61,10 @@ VALUES
 ('Edyn Garden sensor',39.99,'Garden sensor which keeps you connected to your garden. It tracks light, nutrition, moisture, humidity and temperature. It is Wi-Fi connected and it sends notifications to your phone.','Home Appliances',1);
 
 -- INSERT 20 instances into ORDER table
-INSERT INTO "ORDER"(ID, DATE_ORDER_PLACED, ORDER_DETAILS, ORDERER_NAME, ADDRESS)
+INSERT INTO "ORDER"(ID, PROD_ID,ORDER_DATE,ORDER_DETAILS,ORDERER_NAME,BILLING_ADDRESS,SHIPPING_ADDRESS,QUANTITY,PRICE,TOTAL_PRICE,STATUS)
 VALUES
-(10000,'27/04/2021 10:41:46','','Adam M Addis','84 Avondale Drive'),
+(10000,100,'27/04/2021 10:41:46','','Adam M Addis','84 Avondale Drive', '84 Avondale Drive' ,1,50.14,50.14,'In-Progress'),
+(10000,100,'18/04/2021 9:44:46','','Adam M Addis','84 Avondale Drive', '84 Avondale Drive' ,2,50.14,100.28,'In-Progress'),
 (10000,'18/04/2021 09:44:03','','Adam M Addis','84 Avondale Drive'),
 (10000,'11/03/2021 17:53:31','','Adam M Addis','84 Avondale Drive'),
 (10000,'10/01/2021 16:23:37','','Adam M Addis','84 Avondale Drive'),
