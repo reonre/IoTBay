@@ -32,6 +32,9 @@
                         <a class="nav-link" href="index.jsp">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="ProductListServlet">Products</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="about_us.jsp">About</a>
                     </li>
                     <li class="nav-item">
@@ -46,14 +49,23 @@
                 </ul>
             </div>
         </nav>
-            <p>You are logged in as ${user.name} &lt;${user.email}&gt;</p>
+        <div class="container-fluid">
+            <br></br>
+            <h1><center>
+                    Welcome to IoTBay!
+                </center></h1>
+        </div>
+        <p><center>You are logged in as ${user.name} &lt;${user.email}&gt;</center></p>
 
-        <%} else {
+<%} else {
         %>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto topnav">
                 <li class="nav-item active">
                     <a class="nav-link" href="index.jsp">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                        <a class="nav-link" href="ProductListServlet">Products</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="about_us.jsp">About</a>
@@ -70,13 +82,14 @@
             </ul>
         </div>
     </nav>
+    <div class="container-fluid">
+        <br></br>
+            <h1><center>
+                    Welcome to IoTBay!
+                </center></h1>
+        </div>
     <% }
     %>
-    <div class="container-fluid">
-        <p>
-            Welcome to IoTBay!
-        </p>
-    </div>
     <jsp:include page="/ConnServlet" flush="true"/>
 </body>
 </html>

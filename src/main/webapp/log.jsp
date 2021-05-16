@@ -7,6 +7,8 @@
 <%@page import="uts.isd.model.*"%>
 <%@page import="java.util.*"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<jsp:include page="/ConnServlet"/>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -29,6 +31,9 @@
             <ul class="navbar-nav ml-auto topnav">
                 <li class="nav-item">
                     <a class="nav-link" href="index.jsp">Home</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="ProductListServlet">Products</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="about_us.jsp">About</a>
@@ -59,6 +64,9 @@
                 </tr>
             </c:forEach>
         </table>
+        <form action="main.jsp">
+            <input type="submit" value="Back"/>
+        </form>
     </div>
 </body>
 </html>

@@ -5,6 +5,7 @@
 --%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="uts.isd.model.*"%>
+<jsp:include page="/ConnServlet"/>
 <!DOCTYPE html>
 <html>
     <head>
@@ -30,6 +31,9 @@
                         <a class="nav-link" href="index.jsp">Home</span></a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="ProductListServlet">Products</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="about_us.jsp">About</a>
                     </li>
                     <li class="nav-item active">
@@ -51,6 +55,9 @@
             <ul class="navbar-nav ml-auto topnav">
                 <li class="nav-item">
                     <a class="nav-link" href="index.jsp">Home</span></a>
+                </li>
+                <li class="nav-item">
+                        <a class="nav-link" href="ProductListServlet">Products</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="about_us.jsp">About</a>

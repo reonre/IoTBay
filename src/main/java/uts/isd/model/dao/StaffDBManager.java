@@ -117,7 +117,9 @@ public class StaffDBManager {
             String dob = rs.getString(7);
             String address = rs.getString(8);
             String position = rs.getString(11);
-            temp.add(new Staff(Admin_ID,name,email,pass,phone,gender,dob,address, position));
+            Staff staff = new Staff(Admin_ID,name,email,pass,phone,gender,dob,address, position);
+            staff.setActive(Boolean.parseBoolean(rs.getString(10)));
+            temp.add(staff);
         }
         return temp;
     }

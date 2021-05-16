@@ -58,15 +58,15 @@ public class Validator implements Serializable {
         return validate(prod_PricePattern, price);
     }
     
-    public boolean validateProductDesc(String detail) {
-        return validate(prod_DescPattern, detail);
+    public boolean validateProductDesc(String desc) {
+        return validate(prod_DescPattern, desc);
     }
 
     public boolean validateProductType(String type) {
         return validate(prod_TypePattern, type);
     }
 
-    public boolean validateQuantity(String quantity) {
+    public boolean validateProductQuantity(String quantity) {
         return validate(prod_quantPattern, quantity);
     }
     
@@ -94,14 +94,16 @@ public class Validator implements Serializable {
         
         // Product session
         session.setAttribute("productNameErr", "Enter Product Name");
-        session.setAttribute("productPriceErr", null);
-        session.setAttribute("productdescErr", "Enter Description");
+        session.setAttribute("productPriceErr", "Enter Price");
+        session.setAttribute("productDescErr", "Enter Description");
         session.setAttribute("productTypeErr", "Enter Type");
         session.setAttribute("productQuantityErr", null);
-        
         //Payment session
         session.setAttribute("creditCardNoErr", "Enter Card Number");
         session.setAttribute("cvvErr", "Enter Cvv Number");
         session.setAttribute("expiryDateErr", "Enter Expiry Date");
+
+        session.setAttribute("productQuantityErr", "Enter Quantity");
+
     }
 }

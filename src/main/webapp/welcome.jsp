@@ -6,6 +6,7 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="uts.isd.model.*"%>
+<jsp:include page="/ConnServlet"/>
 <!DOCTYPE html>
 <html>
     <head>
@@ -14,6 +15,7 @@
         <script src="js/bootstrap.min.js"></script>
         <title>Welcome</title>
     </head>
+    
     <body>
         <nav class="navbar navbar-expand-md navbar-dark bg-dark">
             <a class="navbar-brand" href="index.jsp">IoTBay</a>
@@ -25,6 +27,9 @@
                 <ul class="navbar-nav ml-auto topnav">
                     <li class="nav-item">
                         <a class="nav-link" href="index.jsp">Home</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="ProductListServlet">Products</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="about_us.jsp">About</a>

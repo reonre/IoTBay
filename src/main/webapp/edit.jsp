@@ -40,6 +40,9 @@
                     <a class="nav-link" href="index.jsp">Home</span></a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="ProductListServlet">Products</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="about_us.jsp">About</a>
                 </li>
                 <li class="nav-item">
@@ -59,7 +62,7 @@
         if (user.getClass().getSimpleName().equals("Staff")){
     %>
     <div class="container-fluid">
-        <h1> Edit student information <span><%= (updated != null) ?  "Update was successful":""%></span></h1>
+        <h1> Edit Staff information <span><%= (updated != null) ?  "Update was successful":""%></span></h1>
         <form action="EditServlet" method="post">
             <table class="table table-responsive">
                 <tr><td>Name</td><td><input type="text" name="name" value="${user.name}"/></td></tr>
@@ -94,7 +97,7 @@
         else if (user.getClass().getSimpleName().equals("Customer")){
     %>
     <div class="container-fluid">
-        <h1> Edit student information <span><%= (updated != null) ?  "Update was successful":""%></span></h1>
+        <h1> Edit Customer information <span><%= (updated != null) ?  "Update was successful":""%></span></h1>
         <form action="EditServlet" method="post">
             <table class="table table-responsive">
                 <tr><td>Name</td><td><input type="text" name="name" value="${user.name}"/></td></tr>

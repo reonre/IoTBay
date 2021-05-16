@@ -53,7 +53,7 @@ public class LoginServlet extends HttpServlet {
                 user = manager.findUser(email, password);
                 if (user != null){
                     session.setAttribute("user",user);
-                    request.getRequestDispatcher("main.jsp").include(request,response);
+                    request.getRequestDispatcher("index.jsp").include(request,response);
                     manager.addLogLogin(user.getUSER_ID());
                 }
                 else {
@@ -63,7 +63,7 @@ public class LoginServlet extends HttpServlet {
                 
             } catch (SQLException | NullPointerException ex){
                 request.getRequestDispatcher("login.jsp").include(request,response);
-                System.out.println(ex.getMessage() == null ? "User does not exist" : "Welcomelaksjdflkjasdf");
+                System.out.println(ex.getMessage() == null ? "User does not exist" : "Welcome");
             }
         }
     }
