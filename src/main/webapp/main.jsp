@@ -75,25 +75,31 @@
             %>
 
         </table>
-        <form action="edit.jsp">
-            <input type="submit" value="Edit Account" />
-        </form>
-        <form action="DeleteServlet" method="post">
-            <input type="submit" value="Delete Account" />
-        </form>
-        <form action="LogServlet" method="post">
-            <input type="submit" value="Access Logs"/>
-        </form>
-
-        <form action="viewOrder.jsp" method="post">
-            <input type="submit" value="View Order"/>  
-        </form>   
-
-        <form action="payment_search.jsp">
-            <input type="submit" value="Search Payment" />
-        </form>
-
+            <table>
+                <tr><td>
+                        <form action="edit.jsp">
+                            <input type="submit" value="Edit Account" />
+                        </form>
+                    </td></tr>
+                <tr><td>
+                        <form action="DeleteServlet" method="post">
+                            <input type="submit" value="Delete Account" />
+                        </form>
+                    </td></tr>
+                <tr><td>
+                        <form action="LogServlet" method="post">
+                            <input type="submit" value="Access Logs"/>
+                        </form>
+                    </td></tr>
+                <form action="viewOrder.jsp" method="post">
+                    <input type="submit" value="View Order"/>  
+                </form>   
+                <tr><td>
+                        <form action="payment_search.jsp">
+                            <input type="submit" value="Search Payment" />
+                        </form>
+                    </td></tr>
+            </table>
     </div>
-
 </body>
 </html>
