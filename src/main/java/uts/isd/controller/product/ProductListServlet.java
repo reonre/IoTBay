@@ -41,9 +41,9 @@ public class ProductListServlet extends HttpServlet {
             }
         } catch (SQLException ex) {           
             Logger.getLogger(ProductListServlet.class.getName()).log(Level.SEVERE, null, ex);  
+        } finally {
+            request.getRequestDispatcher("productList.jsp").include(request, response);
         }
-        
-        request.getRequestDispatcher("productList.jsp").include(request, response);
         
     }
 

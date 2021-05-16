@@ -65,7 +65,7 @@
         <h1 class="text-center">Products</h1>
         <div class="flex-row d-flex justify-content-center mb-4"> 
             <% if (user != null && user.getClass().getSimpleName().equals("Staff")) { %>
-            <a class="btn btn-outline-primary m-2" href="addProduct.jsp">Add Product</a>
+            <a class="btn btn-outline-success m-2" href="addProduct.jsp">Add Product</a>
             <% } %>
             <a class="btn btn-outline-primary m-2" href="ProductListServlet">List All Products</a>
         </div>
