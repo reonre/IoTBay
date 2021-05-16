@@ -8,6 +8,7 @@
 <%@page import="uts.isd.model.User"%>
 <%@page import="uts.isd.model.Orders"%>
 <%@page import="java.text.DecimalFormat"%>
+<%--<jsp:include page="/ConnServlet"/>--%>
 <html>
     <%
         User user = (User)session.getAttribute("user");
@@ -63,9 +64,9 @@
             <form action="OrderProductServlet" method="post">
             <table class="table table-responsive">
                 
-                <tr><td><%= product.getProduct_name() %></td><td> 
-                 <tr><td>Quantity</td><td><input type="number" name="quant"/></td></tr>
-                        
+                <tr><td><%= product.getProduct_name()%></td><td> 
+                <tr><td>Quantity</td><td><input type="number" name="quant"/></td></tr>
+
                 <tr><td>Customer Name</td><td><input type="text" name="name"/></td></tr>
                 <tr><td>Billing Address</td><td><input type="text" name="billadd"/></td></tr>
                 <tr><td>Shipping Address</td><td><input type="text" name="shipadd"/></td></tr>                

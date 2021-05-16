@@ -4,17 +4,24 @@
     Author     : Typing Corpse
 --%>
 
+<%@page import="uts.isd.model.dao.OrderDBManager"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="uts.isd.model.Product"%>
 <%@page import="uts.isd.model.User"%>
 <%@page import="uts.isd.model.Orders"%>
 <%@page import="java.text.DecimalFormat"%>
 <%@page import="java.util.ArrayList" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<jsp:include page="/ConnServlet"/>
 <html>
     <%
         User user = (User) session.getAttribute("user");
         Product product = (Product) session.getAttribute("product");
-//        ArrayList<Orders> orders = (ArrayList<Orders>) session.getAttribute("orders");
+        int id = ((User) session.getAttribute("user")).getUSER_ID();
+        OrderDBManager ordManager = (OrderDBManager) session.getAttribute("orderDBManager");
+//        System.out.println(ordManager==null);
+        session.setAttribute("orders",ordManager.fetchOrders(id));
+//        ArrayList<Orders> orders = ordManager.fetchOrders(id);
 //        DecimalFormat priceFormatter = new DecimalFormat("$#0.00");
 //        session.setAttribute("orders", orders);
 //        request.setAttribute("orders", orders);
@@ -67,7 +74,8 @@
         </nav>
         <div class="container">
             <table class="table table-responsive">
-                
+
+               
                         <table class="table">
                             <thead>
                                 <tr>
@@ -82,50 +90,29 @@
                                 </tr>
                             </thead>
                             <tbody>
-<!--                            <c:forEach items="${orders}" var="order" >-->
+                      
                                 <tr>
-                                    <td> </td>
-                                    <td></td>
-                                    <td> </td>
-                                    <td> </td>
-                                    <td> </td>
-                                    <td> </td>
-                                    <td> </td>
-                                    <td> </td>
+                                   
+                                    <td>${order.getOrdererName()}</td>
+                                    <td>${product.getProduct_name()}</td>
+                                    <td>${order.getQuantity()}</td>
+                                    <td>${order.getPrice()}</td>
+                                    <td>${order.getTotalPrice()}</td>
+                                    <td>${order.getStatus()}</td>
+                                    <td>${order.getBillingAddress()}</td>
+                                    <td>${order.getShippingAddress()}</td>
                                 </tr>
-                            
-                                <tr>
-                                    <td> </td>
-                                    <td></td>
-                                    <td> </td>
-                                    <td> </td>
-                                    <td> </td>
-                                    <td> </td>
-                                    <td> </td>
-                                    <td> </td>
-                                </tr>
-                                
-                                <tr>
-                                    <td> </td>
-                                    <td></td>
-                                    <td> </td>
-                                    <td> </td>
-                                    <td> </td>
-                                    <td> </td>
-                                    <td> </td>
-                                    <td> </td>
-                                </tr>
-                                </tbody>
+                       
+                                </tbody > 
+                               
                         </table>
 
 
 
 
                 <tr><td>
-                        <input type="submit" value="Cancel Order" class="button" name = "submit" id="submit">
+                        <input type="submit" value="Submit" class="button" name = "submit" id="submit">
                     </td></tr>
-                
-                <input type="submit" value="Edit Order" class="button" name = "submit" id="submit">
             </table>
 
 

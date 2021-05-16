@@ -28,9 +28,6 @@ public class OrderDBManager {
     public Orders findOrder(int orderID, int userID) throws SQLException {
         String fetch = "SELECT * FROM IOTUSER.ORDERS WHERE ORDER_ID = " + orderID + " and USER_ID='" + userID + "'";
         ResultSet rs = st.executeQuery(fetch);
-        
-        
-        //reads data from Users Table, then stores them into ORDERS
         while (rs.next()) {  
             int ORDER_ID = rs.getInt(1);
             int USER_ID = rs.getInt(2);
@@ -56,26 +53,23 @@ public class OrderDBManager {
         String a = "INSERT INTO IOTUSER.\"ORDER\" (ID,PROD_ID,ORDER_DATE,ORDER_DETAILS,ORDERER_NAME,QUANTITY,PRICE,TOTAL_PRICE,BILLING_ADDRESS,SHIPPING_ADDRESS,STATUS)";
         String b=  "VALUES (" +order.getUserID()+"," +order.getProdID()+",'" +order.getOrderDate()+"','" +order.getOrderDetails()+"','" +order.getOrdererName()+"'," +order.getQuantity()+"," +order.getPrice()+"," +order.getTotalPrice()+",'" +order.getBillingAddress()+"','" +order.getShippingAddress()+"','" +order.getStatus()+"')";
         st.executeUpdate(a +b);
-//        st.executeUpdate("INSERT INTO IOTUSER.ORDER VALUES (" +order.getUserID()+"," +order.getProdID()+",'" +order.getOrderDate()+"','" +order.getOrderDetails()+"','" +order.getOrdererName()+"'," +order.getQuantity()+"," +order.getPrice()+"," +order.getTotalPrice()+",'" +order.getBillingAddress()+"','" +order.getShippingAddress()+"','" +order.getStatus()+"')");
 
     }
     
+    //use all values to update order
     public void updateOrder(int ORDER_ID, int ID, String ORDER_DATE, String ORDER_DETAILS, String ORDERER_NAME, int QUANTITY, double PRICE,double TOTAL_PRICE,String BILLING_ADDRESS,String SHIPPING_ADDRESS, String STATUS) throws SQLException {
         st.executeUpdate("UPDATE IOTUSER.\"ORDER\" SET ORDERDATE='"+ORDER_ID+"',ID="+ID+",ORDER_DATE="+ORDER_DATE+",ORDER_DETAILS='"+
                 ORDER_DETAILS+",ORDERER_NAME='"+ORDERER_NAME+"',QUANTITY="+QUANTITY+",PRICE="+PRICE+",TOTALPRICE="+TOTAL_PRICE+",BILLING_ADDRESS='"+BILLING_ADDRESS+"',SHIPPING_ADDRESS='"+SHIPPING_ADDRESS+"',STATUS='"+STATUS+"' WHERE ORDER_ID="+ORDER_ID+" AND ID="+ID+"");
     }
     
-    //updates order with all variables
-    public void updateOrder(int orderID, int userID, String orderDate, double totalPrice, String Address) throws SQLException {
-        st.executeUpdate("UPDATE IOTUSER.ORDERS SET ORDERDATE='"+orderDate+",TOTALPRICE="+totalPrice+",ADDRESS='"+
-                Address+"' WHERE ORDERID="+orderID + " AND USERID='"+userID+"'");
+  
+    //set order to cancelled
+    public void cancelOrder(int ORDER_ID) throws SQLException{
+        st.executeUpdate("UPDATE IOTUSERS.\"ORDER\" SET STATUS='Cancelled' WHERE ORDER_ID=" +ORDER_ID+"");
     }
     
-    //delete order using ORDERID from order table
-    public void deleteOrder(int orderID) throws SQLException {
-        st.executeUpdate("DELETE FROM IOTBAY.ORDERS WHERE ORDERID=" +orderID+"");
-    }
-    //fetches order using userID
+    
+    //fetching order using USERID
    public ArrayList<Orders> fetchOrders(int userID) throws SQLException {
         String fetch = "select * from IOTUSER.\"ORDER\" where ID="+userID+"";
          ArrayList<Orders> temp = new ArrayList();

@@ -51,9 +51,11 @@ public class OrderProductServlet extends HttpServlet {
             Orders order= new Orders(0,user.getUSER_ID(),product.getProd_id(),date.toString(),"",name,quantity,product.getProduct_price(),0.0,billAddress,shipAddress,"In-Progress");
             OrderDBManager.addOrder(order);
             session.setAttribute("order", order);
-            response.sendRedirect("viewOrder.jsp");
+
+//            response.sendRedirect("OrderHistoryServlet");
             
-//            request.getRequestDispatcher("viewOrder.jsp").include(request, response);
+            request.getRequestDispatcher("viewOrder.jsp").include(request, response);
+           
           
 //            OrderDBManager= OrderDBManager.findProduct(PROD_ID);
 //            if (product != null) {
@@ -65,7 +67,8 @@ public class OrderProductServlet extends HttpServlet {
 //            }
             
         } catch (SQLException ex) {           
-              Logger.getLogger(OrderProductServlet.class.getName()).log(Level.SEVERE, null, ex);       
+              Logger.getLogger(OrderProductServlet.class.getName()).log(Level.SEVERE, null, ex); 
+              System.out.println("sajbndkhsanbdksadbnsakdbsakasnjdsa");
         }
 //     }
     }

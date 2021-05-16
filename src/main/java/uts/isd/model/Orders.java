@@ -44,6 +44,11 @@ public class Orders implements Serializable{
         this.SHIPPING_ADDRESS=SHIPPING_ADDRESS;   
         this.STATUS=STATUS;
     }
+    
+//    public Orders(int ID){
+//        this.USER_ID=ID;
+//        
+//    }
    
     public int getOrderID() {
         return ORDER_ID;
