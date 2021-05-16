@@ -94,9 +94,6 @@
                     <form action="payment_search.jsp">
                         <input type="submit" value="Search Payment" />
                     </form>
-                    <form action="payment_search.jsp">
-                        <input type="submit" value="Search Payment" />
-                    </form>
                 </td></tr>
 
         </table>
