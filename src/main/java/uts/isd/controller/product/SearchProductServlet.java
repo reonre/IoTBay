@@ -28,28 +28,40 @@ public class SearchProductServlet extends HttpServlet {
 
     @Override   
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // get session
         session = request.getSession();
+        
+        // get product manager
         productDBManager = (ProductDBManager)session.getAttribute("productDBManager");
 
         //Get query
         name = request.getParameter("nameSearch");
         type = request.getParameter("typeSearch");
+        
+        // create product array
         products = new ArrayList<>();
 
 
         try {
+            // get products from the searches
             products = productDBManager.searchProducts(name, type);
+            // if products are return then show
+            if (products != null) {
+                session.setAttribute("products", products);
+                //keep the search search names when view loads
+                session.setAttribute("nameSearch", name);
+                session.setAttribute("typeSearch", type);
+            } else {
+                //show error that there are no products
+                session.setAttribute("searchErr", "No Products exist");
+            }
         } catch (SQLException ex) {           
             Logger.getLogger(DeleteProductServlet.class.getName()).log(Level.SEVERE, null, ex);       
+        } finally {
+            // show product list page
+            request.getRequestDispatcher("productList.jsp").include(request, response);
+            // refresh search error
+            session.setAttribute("searchErr", null);
         }
-        
-        if (products != null) {
-            session.setAttribute("products", products);
-            session.setAttribute("nameSearch", name);
-            session.setAttribute("typeSearch", type);
-        } else {
-            session.setAttribute("searchErr", "No Products exist");
-        }
-        request.getRequestDispatcher("productList.jsp").include(request, response);
     }
 }

@@ -67,10 +67,12 @@ public class UpdateProductServlet extends HttpServlet {
                 try {
                     productDBManager.updateProduct(id, name, price, desc, type, quantity);
                     session.setAttribute("productUpdate", "Update was Successful");
-                    response.sendRedirect("EditProductServlet?id=" + id);
                 } catch (SQLException ex) {
                     Logger.getLogger(AddProductServlet.class.getName()).log(Level.SEVERE, null, ex);
                     session.setAttribute("productUpdate", "Update was Unsuccessful");
+                } finally {
+                    response.sendRedirect("EditProductServlet?id=" + id);
+                    session.setAttribute("productUpdate", null);
                 }
             }
         } else {

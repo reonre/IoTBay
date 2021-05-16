@@ -51,6 +51,7 @@ public class ProductListServlet extends HttpServlet {
         } finally {
             //anything that happens will eventually show product list page
             request.getRequestDispatcher("productList.jsp").include(request, response);
+            session.setAttribute("productErr", null);
         }
         
     }
