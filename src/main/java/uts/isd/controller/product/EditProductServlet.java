@@ -6,8 +6,8 @@
 package uts.isd.controller.product;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.SQLException;
-import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletException;
@@ -22,29 +22,33 @@ import uts.isd.model.dao.ProductDBManager;
  *
  * @author oneilrangiuira
  */
-public class ProductListServlet extends HttpServlet {
-    ArrayList<Product> productList;
+public class EditProductServlet extends HttpServlet {
+
     HttpSession session;
     ProductDBManager productDBManager;
+    Product product;
     
-    @Override
+    @Override   
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        productList = new ArrayList<>();
         session = request.getSession();
         productDBManager = (ProductDBManager)session.getAttribute("productDBManager");
-        
-        try { 
-            productList = productDBManager.listAllProducts();
-            
-            if (!productList.isEmpty()) {
-                session.setAttribute("products", productList);
+
+        //Get ID from request
+        int id = Integer.parseInt(request.getParameter("id"));
+
+        try {
+            product = productDBManager.findProduct(id);
+            if (product != null) {
+                session.setAttribute("product", product);
+                request.getRequestDispatcher("editProduct.jsp").include(request, response);
+            } else {
+                session.setAttribute("productErr", "Product doesn't exist");
+                response.sendRedirect("ProductListServlet");
             }
+            
         } catch (SQLException ex) {           
-            Logger.getLogger(ProductListServlet.class.getName()).log(Level.SEVERE, null, ex);  
+              Logger.getLogger(DeleteProductServlet.class.getName()).log(Level.SEVERE, null, ex);       
         }
-        
-        request.getRequestDispatcher("productList.jsp").include(request, response);
-        
-    }
+     }
 
 }

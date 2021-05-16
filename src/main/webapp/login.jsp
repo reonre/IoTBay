@@ -33,7 +33,7 @@
                         <a class="nav-link" href="index.jsp">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="./product/productList.jsp">Products</a>
+                        <a class="nav-link" href="ProductListServlet">Products</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="about_us.jsp">About</a>

@@ -39,29 +39,28 @@ public class AddProductServlet extends HttpServlet {
         validator.clear(session);
         
         // Validate if inputs are in the correct format
-        if (!validator.validateName(name)){
+        if (!validator.validateProductName(name)){
             session.setAttribute("productNameErr", "Incorrect name");
-            request.getRequestDispatcher("./product/addProduct.jsp").include(request, response);
+            request.getRequestDispatcher("addProduct.jsp").include(request, response);
         } else if (!validator.validateProductPrice(price)) {
             session.setAttribute("productPriceErr", "Incorrect price");
-            request.getRequestDispatcher("./product/addProduct.jsp").include(request, response);
+            request.getRequestDispatcher("addProduct.jsp").include(request, response);
         } else if (!validator.validateProductDesc(desc)) {
             session.setAttribute("productDescErr", "Incorrect description");
-            request.getRequestDispatcher("./product/addProduct.jsp").include(request, response);
+            request.getRequestDispatcher("addProduct.jsp").include(request, response);
         } else if (!validator.validateProductType(type)) {
             session.setAttribute("productTypeErr", "Incorrect type");
-            request.getRequestDispatcher("./product/addProduct.jsp").include(request, response);
+            request.getRequestDispatcher("addProduct.jsp").include(request, response);
         } else if (!validator.validateProductQuantity(quantity)) {
             session.setAttribute("productQuantityErr", "Incorrect quantity");
-            request.getRequestDispatcher("./product/addProduct.jsp").include(request, response);
-        } else {
+            request.getRequestDispatcher("addProduct.jsp").include(request, response);
+        } else { 
             try {
                 productDBManager.addProduct(name, price, desc, type, quantity);
-            } catch (SQLException ex) {
+                response.sendRedirect("ProductListServlet");
+            } catch (SQLException | NullPointerException ex) {
                 Logger.getLogger(AddProductServlet.class.getName()).log(Level.SEVERE, null, ex);
-            }
-
-            response.sendRedirect("ProductListServlet");
+            } 
         }
     }
 }

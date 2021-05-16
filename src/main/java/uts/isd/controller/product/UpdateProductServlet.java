@@ -42,19 +42,19 @@ public class UpdateProductServlet extends HttpServlet {
         // Validate if inputs are in the correct format
         if (!validator.validateName(name)){
             session.setAttribute("productNameErr", "Incorrect name");
-            request.getRequestDispatcher("./product/addProduct.jsp").include(request, response);
+            request.getRequestDispatcher("addProduct.jsp").include(request, response);
         } else if (!validator.validateProductPrice(price)) {
             session.setAttribute("productPriceErr", "Incorrect price");
-            request.getRequestDispatcher("./product/addProduct.jsp").include(request, response);
+            request.getRequestDispatcher("addProduct.jsp").include(request, response);
         } else if (!validator.validateProductDesc(desc)) {
             session.setAttribute("productDescErr", "Incorrect description");
-            request.getRequestDispatcher("./product/addProduct.jsp").include(request, response);
+            request.getRequestDispatcher("addProduct.jsp").include(request, response);
         } else if (!validator.validateProductType(type)) {
             session.setAttribute("productTypeErr", "Incorrect type");
-            request.getRequestDispatcher("./product/addProduct.jsp").include(request, response);
+            request.getRequestDispatcher("addProduct.jsp").include(request, response);
         } else if (!validator.validateProductQuantity(quantity)) {
             session.setAttribute("productQuantityErr", "Incorrect quantity");
-            request.getRequestDispatcher("./product/addProduct.jsp").include(request, response);
+            request.getRequestDispatcher("addProduct.jsp").include(request, response);
         } else {
             try {
                 productDBManager.updateProduct(id, name, price, desc, type, quantity);

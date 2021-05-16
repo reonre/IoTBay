@@ -1,30 +1,28 @@
 <%-- 
-    Document   : productList
-    Created on : 15/05/2021, 12:36:39 PM
+    Document   : product
+    Created on : 15/05/2021, 1:41:43 PM
     Author     : oneilrangiuira
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="uts.isd.model.Product"%>
 <%@page import="uts.isd.model.User"%>
-<%@page import="uts.isd.model.Product" %>
-<%@page import="java.util.ArrayList" %>
 <%@page import="java.text.DecimalFormat"%>
-<jsp:include page="/ConnServlet"/>
 <!DOCTYPE html>
 <html>
+    <%
+        User user = (User)session.getAttribute("user");
+        Product product = (Product)session.getAttribute("product");
+        DecimalFormat priceFormatter = new DecimalFormat("$#0.00");
+    %>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Product List</title>
+        <title>Product - <%= product.getProduct_name() %></title>
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/style.css">
     </head>
     <body>
-        <%
-            User user = (User) session.getAttribute("user");
-            ArrayList<Product> products = (ArrayList<Product>)session.getAttribute("products");
-            String productSearch = (String)session.getAttribute("productSearch");
-            DecimalFormat priceFormat = new DecimalFormat("$#0.00");
-        %>
+        
         <nav class="navbar navbar-expand-md navbar-dark bg-dark">
             <a class="navbar-brand" href="index.jsp">IoTBay</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -62,29 +60,30 @@
             </ul>
         </div>
         </nav>
-
-        <h1 class="text-center">Products</h1>
-        <div class="flex-row d-flex justify-content-center mb-4"> 
+         <div class="container">
             <% if (user != null && user.getClass().getSimpleName().equals("Staff")) { %>
-            <a class="btn btn-outline-primary mr-sm-2" href="addProduct.jsp">Add Product</a>
+            <a class="btn btn-outline-info mt-2" href="EditProductServlet?Prod_id=<%= product.getProd_id()%>" >Edit</a>
+            <a class="btn btn-outline-danger mt-2" href="DeleteProductServlet?id=<%= product.getProd_id()%>">Delete</a>
             <% } %>
-            <a class="btn btn-outline-primary mr-sm-5" href="ProductListServlet">List All Products</a>
-        </div>
-
-        <div class="row text-center">   
-        <% for (Product product: products){ %>
-            <div class="col-xl-3 col-md-4 col-sm-6 mb-4"> 
-                <div class="card h-100 box-shadow">
-                    <h6 class="card-header text-muted"><%= product.getProduct_type()%></h6>
-                    <div class="card-body">
-                        <h5 class="card-title"><%= product.getProduct_name()%></h5>
-                        <p class="card-text">Price: <%= priceFormat.format(product.getProduct_price())%></p>
-                        <p class="card-text"><%= product.getProduct_desc()%></p>
-                        <p class="card-text">Quantity: <%= product.getProduct_quant()%></p>
-                    </div>
+            <h1><%= product.getProduct_name() %></h1>
+            <% if (user != null && user.getClass().getSimpleName().equals("Staff")) { %>
+            <h4>ID: <%= product.getProd_id()%></h4>
+            <% } %>
+            <h5><%= product.getProduct_type()%></h5>
+            <p><%= product.getProduct_desc()%></p>
+            <p><%= priceFormatter.format(product.getProduct_price()) %></p>
+            
+            <form class="form-inline justify-content-center" action="productList.jsp" method="post">
+                <div class="form-group">
+                    <label class="mr-2" for="quantity">Quantity: </label>
+                    <input type="text" class="form-control mr-2" id="quantity" name="quantity">
                 </div>
-            </div>        
-        <% } %>
+                <div class="mr-2">
+                    <input type="submit" value="Order" class="btn btn-outline-success">
+                    <a href="ProductListServlet" class="btn btn-outline-warning">Cancel</a>
+                </div>
+            </form>
+            
         </div>
     </body>
 </html>

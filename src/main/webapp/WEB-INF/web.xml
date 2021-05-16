@@ -84,8 +84,12 @@
         <servlet-class>uts.isd.controller.product.UpdateProductServlet</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>EditProductServlet</servlet-name>
+        <servlet-name>ProductServlet</servlet-name>
         <servlet-class>uts.isd.controller.product.ProductServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>EditProductServlet</servlet-name>
+        <servlet-class>uts.isd.controller.product.EditProductServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>ConnServlet</servlet-name>
@@ -166,6 +170,10 @@
     <servlet-mapping>
         <servlet-name>UpdateProductServlet</servlet-name>
         <url-pattern>/UpdateProductServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ProductServlet</servlet-name>
+        <url-pattern>/ProductServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>EditProductServlet</servlet-name>

@@ -77,9 +77,9 @@ public class Validator implements Serializable {
         
         // Product session
         session.setAttribute("productNameErr", "Enter Product Name");
-        session.setAttribute("productPriceErr", null);
+        session.setAttribute("productPriceErr", "Enter Price");
         session.setAttribute("productDescErr", "Enter Description");
         session.setAttribute("productTypeErr", "Enter Type");
-        session.setAttribute("productQuantityErr", null);
+        session.setAttribute("productQuantityErr", "Enter Quantity");
     }
 }

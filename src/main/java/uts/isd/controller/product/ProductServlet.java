@@ -35,7 +35,7 @@ public class ProductServlet extends HttpServlet {
             product = productDBManager.findProduct(id);
             if (product != null) {
                 session.setAttribute("product", product);
-                request.getRequestDispatcher("./product/product.jsp").include(request, response);
+                request.getRequestDispatcher("product.jsp").include(request, response);
             } else {
                 session.setAttribute("productErr", "Product doesn't exist");
                 response.sendRedirect("ProductListServlet");
