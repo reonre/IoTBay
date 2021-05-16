@@ -85,8 +85,8 @@
             <input type="submit" value="Access Logs"/>
         </form>
 
-        <form action="viewOrder.jsp" method="post">
-            <input type="submit" value="View Order"/>  
+        <form action="OrderHistory.jsp" method="post">
+            <input type="submit" value="View Orders"/>  
         </form>   
 
         <form action="payment_search.jsp">

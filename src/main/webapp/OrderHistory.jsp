@@ -1,9 +1,8 @@
 <%-- 
-    Document   : viewOrder
-    Created on : 16/05/2021, 4:17:35 PM
+    Document   : OrderHistory
+    Created on : 17/05/2021, 12:23:55 AM
     Author     : Typing Corpse
 --%>
-
 <%@page import="uts.isd.model.dao.OrderDBManager"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="uts.isd.model.Product"%>
@@ -14,20 +13,21 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <jsp:include page="/ConnServlet"/>
 <html>
+    
     <%
         User user = (User) session.getAttribute("user");
         Product product = (Product) session.getAttribute("product");
         int id = ((User) session.getAttribute("user")).getUSER_ID();
         OrderDBManager ordManager = (OrderDBManager) session.getAttribute("orderDBManager");
-//        System.out.println(ordManager==null);
+        
+
         session.setAttribute("orders", ordManager.fetchOrders(id));
 //        ArrayList<Orders> orders = ordManager.fetchOrders(id);
 //        DecimalFormat priceFormatter = new DecimalFormat("$#0.00");
 //        session.setAttribute("orders", orders);
 //        request.setAttribute("orders", orders);
     %>
-
-    <head>
+ <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Order</title>
         <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -90,10 +90,10 @@
                         </tr>
                     </thead>
                     <tbody>
-
+                    <c:forEach items="${orders}" var="order"  >
                         <tr>
                             <td>${order.getOrdererName()}</td>
-                            <td>${product.getProduct_name()}</td>
+                            <td><%=ordManager.fetchProductName(((Orders)pageContext.getAttribute("order")).getProdID())%></td>
                             <td>${order.getQuantity()}</td>
                             <td>${order.getPrice()}</td>
                             <td>${order.getTotalPrice()}</td>
@@ -101,19 +101,16 @@
                             <td>${order.getBillingAddress()}</td>
                             <td>${order.getShippingAddress()}</td>
                         </tr>
+                        
+                        </c:forEach>
 
                     </tbody > 
 
                 </table>
-                <tr><td>
-                        <input type="submit" value="Edit Order" class="button" name = "submit" id="submit">
-                    </td></tr>
                 
-                <tr><td>
-                <input type="submit" value="Cancel Order" class="button" name = "submit" id="submit">
-                </td></tr>
             </table>
 
         </div>
     </body>
 </html>
+

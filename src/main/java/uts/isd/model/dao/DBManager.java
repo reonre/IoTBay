@@ -20,6 +20,7 @@ public class DBManager {
     public DBManager(Connection conn) throws SQLException {
         st = conn.createStatement();
     }
+    
 
     public User findUser(String email, String password) throws SQLException {
         String fetch = "SELECT * FROM IOTUSER.\"USER\" WHERE EMAIL='" + email + "' AND PASSWORD='" + password + "'";// read

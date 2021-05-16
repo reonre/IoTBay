@@ -23,6 +23,7 @@ public class Orders implements Serializable{
     private String BILLING_ADDRESS;
     private String SHIPPING_ADDRESS;
     private String STATUS;
+    
 
     
     
@@ -71,10 +72,9 @@ public class Orders implements Serializable{
         return PROD_ID;
     }
     
-//    public String getPRODNAME(int PROD_ID){
-//        Product product = new Product();
-//        String name= Product
-//       return 
+//    public String getPRODNAME(){
+//        
+//       return name;
 //    }
     
     public void setProdID(int PRODID){

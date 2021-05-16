@@ -65,8 +65,15 @@ public class OrderDBManager {
   
     //set order to cancelled
     public void cancelOrder(int ORDER_ID) throws SQLException{
-        st.executeUpdate("UPDATE IOTUSERS.\"ORDER\" SET STATUS='Cancelled' WHERE ORDER_ID=" +ORDER_ID+"");
+        st.executeUpdate("UPDATE IOTUSER.\"ORDER\" SET STATUS='Cancelled' WHERE ORDER_ID=" +ORDER_ID+"");
     }
+    
+    public String fetchProductName(int PROD_ID) throws SQLException{
+       ResultSet rs = st.executeQuery("SELECT PRODUCT_NAME FROM IOTUSER.PRODUCT WHERE PROD_ID = "+PROD_ID+"");
+       rs.next();
+       return rs.getString(1);
+    }
+    
     
     
     //fetching order using USERID
