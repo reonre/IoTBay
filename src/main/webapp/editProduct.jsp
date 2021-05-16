@@ -7,12 +7,14 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="uts.isd.model.User" %>
 <%@page import="uts.isd.model.Product" %>
+<jsp:include page="/ConnServlet"/>
 <!DOCTYPE html>
 <html>
     <%
         User user = (User)session.getAttribute("user");
         Product product = (Product)session.getAttribute("product");
-        String update = (String)session.getAttribute("productUpdate");
+        session.setAttribute("PROD_ID", product.getProd_id());
+        String updateProduct = (String)session.getAttribute("productUpdate");
         String productNameErr = (String)session.getAttribute("productNameErr");
         String productPriceErr = (String)session.getAttribute("productPriceErr");
         String productDescErr = (String)session.getAttribute("productDescErr");
@@ -63,16 +65,15 @@
             </ul>
         </div>
         </nav>
-        <p class="text-center"><%= (update != null ? update : "") %></p>
-        <div class="container-fluid col-4 mb">
-            <div class="card">
+        <% if (user != null && user.getClass().getSimpleName().equals("Staff")) { %>
+            <div class="container-fluid col-4 mb">
+            <div class="card mt-2">
                 <div class="card-body">
                     <h1 class="text-center">Edit Product</h1>
-                   
+                    <p class="text-center text-danger"><%= (updateProduct != null ? updateProduct : "") %></p>
                     <form action="UpdateProductServlet" method="post">
                         <div class="form-group">
-                            <label for="PROD_ID">ID: </label>
-                            <input value="${product.id}" type="text" class="form-control-plaintext" id="PROD_ID" name="PROD_ID" readonly>
+                            <label for="PROD_ID">ID: <%= product.getProd_id() %> </label>
                         </div>
                         <div class="form-group">
                             <label for="PRODUCT_NAME">Name:</label>
@@ -84,7 +85,7 @@
                                 <div class="input-group-prepend">
                                     <div class="input-group-text">$</div>
                                 </div>
-                                <input placeholder="<%= productPriceErr != null ? productPriceErr : "" %>" value="<%= product.getProduct_price() %>" type="number" class="form-control" id="PRODUCT_PRICE" name="PRODUCT_PRICE" required="">
+                                <input placeholder="<%= productPriceErr != null ? productPriceErr : "" %>" value="<%= product.getProduct_price() %>" type="number" min="0" step=".01" class="form-control" id="PRODUCT_PRICE" name="PRODUCT_PRICE" required="">
                             </div>
                         </div>
                         <div class="form-group">
@@ -101,13 +102,15 @@
                             <input placeholder="<%= productQuantityErr != null ? productQuantityErr : "" %>" value="<%= product.getProduct_quant() %>" type="number" class="form-control" id="PRODUCT_QUANT" name="PRODUCT_QUANT" required="">
                         </div>
                         <div class="text-center">
-                            <a href="ProductListServlet" class="btn btn-outline-danger">Back</a>
+                            <button type="button" onclick="history.back()" class="btn btn-outline-warning">Back</button>
                             <input type="submit" value="Update" class="btn btn-outline-success">
                         </div>
                     </form>
                 </div>
             </div>
         </div>
-
+        <% } else { %>
+        <p>You do not have access to this control</p>
+        <% } %>
     </body>
 </html>
