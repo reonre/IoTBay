@@ -25,8 +25,8 @@ public class OrderDBManager {
     
     
     //finds order with order id and userid
-    public Orders findOrder(int oID, int uID) throws SQLException {
-        String fetch = "SELECT * FROM IOTUSER.ORDERS WHERE ORDER_ID = " + oID + " and USER_ID='" + uID + "'";
+    public Orders findOrder(int orderID, int userID) throws SQLException {
+        String fetch = "SELECT * FROM IOTUSER.ORDERS WHERE ORDER_ID = " + orderID + " and USER_ID='" + userID + "'";
         ResultSet rs = st.executeQuery(fetch);
         
         
@@ -34,24 +34,26 @@ public class OrderDBManager {
         while (rs.next()) {  
             int ORDER_ID = rs.getInt(1);
             int USER_ID = rs.getInt(2);
+            int PROD_ID=rs.getInt(3);
             
-        String ORDER_DATE = rs.getString(3);
-        String ORDER_DETAILS=rs.getString(4);
-        String ORDERER_NAME=rs.getString(5);
-        int QUANTITY=rs.getInt(6);
-        double PRICE=rs.getDouble(7);
-        double TOTAL_PRICE=rs.getDouble(8);
-        String BILLING_ADDRESS=rs.getString(9);
-        String SHIPPING_ADDRESS=rs.getString(10);
-    
-                return new Orders(ORDER_ID,USER_ID,ORDER_DATE,ORDER_DETAILS,ORDERER_NAME,QUANTITY,PRICE,TOTAL_PRICE,BILLING_ADDRESS,SHIPPING_ADDRESS);
+        String ORDER_DATE = rs.getString(4);
+        String ORDER_DETAILS=rs.getString(5);
+        String ORDERER_NAME=rs.getString(6);
+        int QUANTITY=rs.getInt(7);
+        double PRICE=rs.getDouble(8);
+        double TOTAL_PRICE=rs.getDouble(9);
+        String BILLING_ADDRESS=rs.getString(10);
+        String SHIPPING_ADDRESS=rs.getString(11);
+        String STATUS=rs.getString(12);
+  
+                return new Orders(ORDER_ID,USER_ID,PROD_ID,ORDER_DATE,ORDER_DETAILS,ORDERER_NAME,QUANTITY,PRICE,TOTAL_PRICE,BILLING_ADDRESS, SHIPPING_ADDRESS,STATUS);
         }
         return null;
     }
     
     //adds order using order id and user id
-    public void addOrder(int orderID, int userID) throws SQLException {
-        st.executeUpdate("INSERT INTO IOTUSER.ORDERS VALUES ("+orderID+", '" +userID+"', null, null, null, null, null)");
+    public void addOrder(Orders order) throws SQLException {
+        st.executeUpdate("INSERT INTO IOTUSER.ORDERS VALUES (" +order.getUserID()+"," +order.getProdID()+",'" +order.getOrderDate()+"','" +order.getOrderDetails()+"','" +order.getOrdererName()+"'," +order.getQuantity()+"," +order.getPrice()+"," +order.getTotalPrice()+",'" +order.getBillingAddress()+"','" +order.getShippingAddress()+"','" +order.getStatus()+"')");
        
     }
     
