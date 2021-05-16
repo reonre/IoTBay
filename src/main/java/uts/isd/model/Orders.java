@@ -13,6 +13,7 @@ import java.io.*;
 public class Orders implements Serializable{
     private int ORDER_ID;
     private int USER_ID;
+    private int PROD_ID;
     private String ORDER_DATE;
     private String ORDER_DETAILS;
     private String ORDERER_NAME;
@@ -21,6 +22,7 @@ public class Orders implements Serializable{
     private double PRICE;
     private String BILLING_ADDRESS;
     private String SHIPPING_ADDRESS;
+    private String STATUS;
 
     
     
@@ -28,9 +30,10 @@ public class Orders implements Serializable{
 //    
 //    }
 
-    public Orders(int ORDER_ID, int USER_ID, String ORDER_DATE,String ORDER_DETAILS,String ORDERER_NAME, int QUANTITY, double PRICE,double TOTAL_PRICE, String BILLING_ADDRESS, String SHIPPING_ADDRESS) {
+    public Orders(int ORDER_ID, int USER_ID,int PROD_ID,String ORDER_DATE,String ORDER_DETAILS,String ORDERER_NAME, int QUANTITY, double PRICE,double TOTAL_PRICE, String BILLING_ADDRESS, String SHIPPING_ADDRESS, String STATUS) {
         this.ORDER_ID=ORDER_ID;
         this.USER_ID=USER_ID;
+        this.PROD_ID=PROD_ID;
         this.ORDER_DATE=ORDER_DATE;
         this.ORDER_DETAILS=ORDER_DETAILS;
         this.ORDERER_NAME=ORDERER_NAME;
@@ -39,6 +42,7 @@ public class Orders implements Serializable{
         this.PRICE=PRICE;
         this.BILLING_ADDRESS=BILLING_ADDRESS;
         this.SHIPPING_ADDRESS=SHIPPING_ADDRESS;   
+        this.STATUS=STATUS;
     }
    
     public int getOrderID() {
@@ -57,6 +61,14 @@ public class Orders implements Serializable{
     public void setUserID(int USERID) {
         this.USER_ID= USERID;
     }
+    
+    public int getProdID(){
+        return PROD_ID;
+    }
+    
+    public void setProdID(int PRODID){
+        this.PROD_ID=PRODID;
+    }
 
     public String getOrderDate() {
         return ORDER_DATE;
@@ -64,12 +76,14 @@ public class Orders implements Serializable{
 
     public void setOrderDate(String orderDate) {
         this.ORDER_DATE = orderDate;
-        
-        
     }
     
     public String getOrdererName(){
         return ORDERER_NAME;
+    }
+    
+    public String getOrderDetails(){
+        return ORDER_DETAILS;
     }
 
     public double getTotalPrice() {
@@ -102,6 +116,10 @@ public class Orders implements Serializable{
     
     public double getPrice(){
         return PRICE;
+    }
+    
+    public String getStatus(){
+        return STATUS;
     }
     
 //    public void updatePrice(double price, int quantity) {
