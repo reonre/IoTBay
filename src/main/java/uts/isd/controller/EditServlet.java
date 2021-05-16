@@ -31,7 +31,7 @@ public class EditServlet extends HttpServlet {
         HttpSession session = request.getSession();
         //2- create an instance of the Validator class
         Validator validator = new Validator();
-        //3- capture the posted email
+        //3- capture the posted data from the jsp.
         int id = ((User)session.getAttribute("user")).getUSER_ID();
         String name = request.getParameter("name");
         String gender = request.getParameter("gender");
@@ -41,24 +41,22 @@ public class EditServlet extends HttpServlet {
         String email = request.getParameter("email");
          String type = request.getParameter("type");
         String position = request.getParameter("position");
-        //4- capture the posted password
         String password = request.getParameter("password");
-        
-        //5- retrieve the manager instance from session    
+        //5- retrieve the role from the current user session.  
         String role = ((User)session.getAttribute("user")).getClass().getSimpleName();
-//        String role = (String)request.getSession().getAttribute("role");
         
-
+        //If statement for identifying the role.
         if (role.equals("Staff")) {
             role = "S";
         }
         else {
             role = "C";
         }
-        
+        //Instancing the DBManager.
         DBManager manager = (DBManager) session.getAttribute("manager");
         User user;
         
+        //Calling the validator methods to check the email and password.
         if (!validator.validateEmail(email)){
             session.setAttribute("emailErr","Error: Email format incorrect");
             request.getRequestDispatcher("register.jsp").include(request,response);
@@ -69,16 +67,16 @@ public class EditServlet extends HttpServlet {
         } else {
             try {
                 if (role.equals("S")) {
-                    System.out.print("Before");
                     manager.updateStaff(id, name, email, password, phone, gender, dob, address, position);
-                    System.out.print("updatedStaff");
+                    System.out.print("updatedStaff");//Console test.
+                    //Binds the object with a name and stores the name/value pair as an attribute of the HttpSession object. 
                     session.setAttribute("user", new Staff(id, name, email, password, phone, gender, dob, address, position));
                     request.getRequestDispatcher("main.jsp").include(request, response);
                 } else {
-                    System.out.print("After");
-                    manager.updateCustomer(id, name, email, password, phone, gender, dob, address, type);
-                    System.out.print("updatedCustomer");
-                    session.setAttribute("user", new Customer(id, name, email, password, phone, gender, dob, address, type));
+                    manager.updateCustomer(id, name, email, password, phone, gender, dob, address, type);//calls the updateCustomer function from the DBmanager.
+                    System.out.print("updatedCustomer");//Console Test
+                    //Binds the object with a name and stores the name/value pair as an attribute of the HttpSession object. 
+                    session.setAttribute("user", new Customer(id, name, email, password, phone, gender, dob, address, type));//Sets the 
                     request.getRequestDispatcher("main.jsp").include(request, response);
                 }
             } catch (SQLException ex) {

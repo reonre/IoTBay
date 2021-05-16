@@ -29,8 +29,8 @@ public class LogoutServlet extends HttpServlet{
         DBManager manager = (DBManager) session.getAttribute("manager");
         User user = (User) session.getAttribute("user");
         try {
-            manager.addLogLogout(user.getUSER_ID());
-            session.invalidate();
+            manager.addLogLogout(user.getUSER_ID());//Adds to the log.
+            session.invalidate();//Invalidates the session. user = null.
             request.getRequestDispatcher("logout.jsp").include(request, response);
         }
         catch (SQLException e) {

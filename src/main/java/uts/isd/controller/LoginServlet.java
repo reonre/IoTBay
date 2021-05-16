@@ -40,21 +40,23 @@ public class LoginServlet extends HttpServlet {
         User user = null;
         validator.clear(session);
         
+        //Validates the Email.
         if (!validator.validateEmail(email)){
             session.setAttribute("emailErr","Error: Email format incorrect");
             request.getRequestDispatcher("login.jsp").include(request,response);
         }
+        //if the email entered equals "admin@admin" then redirect to the admin_home.jsp.
         else if (email.equals("admin@admin") && password.equals("admin")) {
             session.setAttribute("admin", "admin");
             request.getRequestDispatcher("admin_home.jsp").include(request,response);
         } 
         else{
             try {
-                user = manager.findUser(email, password);
+                user = manager.findUser(email, password); //The calls the findUser method which returns the user of the matched email and password.
                 if (user != null){
                     session.setAttribute("user",user);
                     request.getRequestDispatcher("index.jsp").include(request,response);
-                    manager.addLogLogin(user.getUSER_ID());
+                    manager.addLogLogin(user.getUSER_ID());//Calls the add log method to update the table.
                 }
                 else {
                     session.setAttribute("existErr","User does not exist in the Database!");

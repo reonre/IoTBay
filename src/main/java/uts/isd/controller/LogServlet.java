@@ -34,16 +34,18 @@ public class LogServlet extends HttpServlet {
         HttpSession session = request.getSession();
         //5- retrieve the manager instance from session    
         DBManager manager = (DBManager) session.getAttribute("manager");
+        //Getting the current session ID.
         int id = ((User)session.getAttribute("user")).getUSER_ID();
         try {
             if (session.getAttribute("log") != null) {
+                //Passing and casting the arraylist<accesslog> of the current session into "log".
                 ArrayList<AccessLog> log = (ArrayList<AccessLog>)session.getAttribute("log");
-                Collections.reverse(log);
+                Collections.reverse(log); //Reverses the collection of logs in the arraylist.
                 session.setAttribute("log", log);
                 request.getRequestDispatcher("log.jsp").include(request,response);
             }
             else {
-                ArrayList<AccessLog> log = manager.fetchLogs(id);
+                ArrayList<AccessLog> log = manager.fetchLogs(id); //Fetches the logs with the current session user id.
                 session.setAttribute("log", log);
                 request.getRequestDispatcher("log.jsp").include(request,response);
             }

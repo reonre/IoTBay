@@ -14,8 +14,8 @@ public class Customer extends User {
     private String type;
     
     public Customer(int USER_ID, String name, String email, String password, String phone, String gender, String dob, String address, String type) {
-        super(USER_ID, name, email, password, phone, gender, dob, address);
-        this.type = type;
+        super(USER_ID, name, email, password, phone, gender, dob, address);//Identifying the super class of this class.
+        this.type = type;//Instantiating type witihn the constructor.
     }
     
     

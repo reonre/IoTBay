@@ -31,9 +31,8 @@ public class RegisterServlet extends HttpServlet {
         HttpSession session = request.getSession();
         //2- create an instance of the Validator class
         Validator validator = new Validator();
-        //3- capture the posted email
+        //3- capture the posted data from the jsp.
         String email = request.getParameter("email");
-        //4- capture the posted password
         String password = request.getParameter("password");
         String name = request.getParameter("name");
         String gender = request.getParameter("gender");
@@ -54,7 +53,7 @@ public class RegisterServlet extends HttpServlet {
         DBManager manager = (DBManager) session.getAttribute("manager");
         User user;
         validator.clear(session);
-        
+        //Validate the email and password.
         if (!validator.validateEmail(email)){
             session.setAttribute("emailErr","Error: Email format incorrect");
             request.getRequestDispatcher("register.jsp").include(request,response);
@@ -65,21 +64,25 @@ public class RegisterServlet extends HttpServlet {
         }
         else{
             try {
-                user = manager.findUser(email, password);
+                user = manager.findUser(email, password);//The calls the findUser method which returns the user of the matched email and password.
                 if (user != null){
                     request.getRequestDispatcher("main.jsp").include(request,response);
                 }
                 else if (role.equals("S")){
+                    //The calls the addStaff function which adds the captured data from the current session into the database.
                     manager.addStaff(name, email, password, phone, gender, dob, address, role, position);
                     user = manager.findUser(email, password);
-                    manager.addLogLogin(user.getUSER_ID());
+                    manager.addLogLogin(user.getUSER_ID());//Adds to the log.
+                    //Binds the object with a name and stores the name/value pair as an attribute of the HttpSession object. 
                     session.setAttribute("user", user);
                     request.getRequestDispatcher("main.jsp").include(request,response);
                 }
                 else {
+                    //The calls the addCustomer function which adds the captured data from the current session into the database.
                     manager.addCustomer(name, email, password, phone, gender, dob, address, role, type);
                     user = manager.findUser(email, password);
                     manager.addLogLogin(user.getUSER_ID());
+                    //Binds the object with a name and stores the name/value pair as an attribute of the HttpSession object. 
                     session.setAttribute("user", user);
                     request.getRequestDispatcher("main.jsp").include(request,response);
                 }
