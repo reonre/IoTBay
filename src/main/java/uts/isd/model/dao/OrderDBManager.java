@@ -24,7 +24,7 @@ public class OrderDBManager {
     }
     
     
-    //finds order with order id and userid
+    //finds order using orderid and userid
     public Orders findOrder(int orderID, int userID) throws SQLException {
         String fetch = "SELECT * FROM IOTUSER.ORDERS WHERE ORDER_ID = " + orderID + " and USER_ID='" + userID + "'";
         ResultSet rs = st.executeQuery(fetch);
@@ -68,6 +68,7 @@ public class OrderDBManager {
         st.executeUpdate("UPDATE IOTUSER.\"ORDER\" SET STATUS='Cancelled' WHERE ORDER_ID=" +ORDER_ID+"");
     }
     
+    //fetch product name from product table
     public String fetchProductName(int PROD_ID) throws SQLException{
        ResultSet rs = st.executeQuery("SELECT PRODUCT_NAME FROM IOTUSER.PRODUCT WHERE PROD_ID = "+PROD_ID+"");
        rs.next();
