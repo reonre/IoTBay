@@ -69,16 +69,7 @@
             <p><%= product.getProduct_desc()%></p>
             <p><%= priceFormatter.format(product.getProduct_price()) %></p>
             
-            <form class="form-inline" action="productList.jsp" method="post">
-                <div class="form-group">
-                    <label class="mr-2" for="quantity">Quantity: </label>
-                    <input type="text" class="form-control mr-2" id="quantity" name="quantity">
-                </div>
-                <div class="mr-2">
-                    <input type="submit" value="Order" class="btn btn-outline-success">
-                    <a href="ProductListServlet" class="btn btn-outline-warning">Back</a>
-                </div>
-            </form>
+            <a href="Order.jsp" value="Order" class="btn btn-outline-success">
             <% if (user != null && user.getClass().getSimpleName().equals("Staff")) { %>
             <div class="card mt-2 float-right" style="width: 16rem;">
                 <div class="card-body m-auto">
