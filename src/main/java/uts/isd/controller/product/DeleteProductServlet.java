@@ -25,21 +25,26 @@ public class DeleteProductServlet extends HttpServlet {
     @Override   
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         session = request.getSession();
-        productDBManager = (ProductDBManager)session.getAttribute("productDBManager");
+        
+        //get user session
         user = (User)session.getAttribute("user");
         
+        // Check if user is Staff
         if (user != null && user.getClass().getSimpleName().equals("Staff")) {
-
+            productDBManager = (ProductDBManager)session.getAttribute("productDBManager");
             //Get ID from request
             String id = request.getParameter("id");
 
             try {
+                //delete product
                 productDBManager.deleteProduct(id);
+                //show that product is deleted
+                session.setAttribute("productErr", "Product " + id + " deleted");
             } catch (SQLException ex) {           
                   Logger.getLogger(DeleteProductServlet.class.getName()).log(Level.SEVERE, null, ex);       
             }
         }
-
+        // Show ProductList page
         response.sendRedirect("ProductListServlet");
      }
 }

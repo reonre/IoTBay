@@ -28,17 +28,23 @@ public class AddProductServlet extends HttpServlet {
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         session = request.getSession();
+        // get user session
         user = (User)session.getAttribute("user");
         
+        // Check if user is Staff
+        // Else then to ProductList page
         if (user != null && user.getClass().getSimpleName().equals("Staff")) {
+            //call manager
             productDBManager = (ProductDBManager)session.getAttribute("productDBManager");
             
+            //get product parameters for view
             String name = request.getParameter("PRODUCT_NAME");
             String price = request.getParameter("PRODUCT_PRICE");
             String desc = request.getParameter("PRODUCT_DESC");
             String type = request.getParameter("PRODUCT_TYPE"); 
             String quantity = request.getParameter("PRODUCT_QUANT");
             
+            // clear validator
             validator = new Validator();
             validator.clear(session);
         
@@ -60,13 +66,19 @@ public class AddProductServlet extends HttpServlet {
                 request.getRequestDispatcher("addProduct.jsp").include(request, response);
             } else { 
                 try {
+                    //add product
                     productDBManager.addProduct(name, price, desc, type, quantity);
+                    //show that product is added
+                    session.setAttribute("productErr", "Product added");
+                    // go to product list page
                     response.sendRedirect("ProductListServlet");
                 } catch (SQLException | NullPointerException ex) {
                     Logger.getLogger(AddProductServlet.class.getName()).log(Level.SEVERE, null, ex);
                 } 
             }
         } else {
+            //show that user is not a staff member
+            session.setAttribute("productErr", "You are not a staff user");
             response.sendRedirect("ProductListServlet");
         }
     }

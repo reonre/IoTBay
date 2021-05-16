@@ -25,19 +25,29 @@ public class ProductServlet extends HttpServlet {
     
     @Override   
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        //get session
         session = request.getSession();
+        
+        //get product manager
         productDBManager = (ProductDBManager)session.getAttribute("productDBManager");
 
         //Get ID from request
         int id = Integer.parseInt(request.getParameter("id"));
 
         try {
+            //find product by id
             product = productDBManager.findProduct(id);
+            
+            //if product is returned
             if (product != null) {
+                //get product and set in session
                 session.setAttribute("product", product);
+                //go to product page
                 request.getRequestDispatcher("product.jsp").include(request, response);
             } else {
+                //show error that product does not exit
                 session.setAttribute("productErr", "Product doesn't exist");
+                //to to product list page
                 response.sendRedirect("ProductListServlet");
             }
             

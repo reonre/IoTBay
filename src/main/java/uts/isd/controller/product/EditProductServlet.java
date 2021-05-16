@@ -35,21 +35,34 @@ public class EditProductServlet extends HttpServlet {
     @Override   
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         session = request.getSession();
-        productDBManager = (ProductDBManager)session.getAttribute("productDBManager");
+        
+        // get user from session
         user = (User)session.getAttribute("user");
         
+        // Check if user is Staff
+        // Else then to ProductList page
         if (user != null && user.getClass().getSimpleName().equals("Staff")) {
+            //get product manager
+            productDBManager = (ProductDBManager)session.getAttribute("productDBManager");
+            
             //Get ID from request
             int id = Integer.parseInt(request.getParameter("id"));
+            
+            // clear validator
             validator = new Validator();
             validator.clear(session);
 
             try {
+                //find product by product id
                 product = productDBManager.findProduct(id);
+                
+                //if product is not empty, then return editProduct page with product information
                 if (product != null) {
+                    //get product attributes and place them in session
                     session.setAttribute("product", product);
+                    //go to edit page
                     request.getRequestDispatcher("editProduct.jsp").include(request, response);
-                } else {
+                } else {  // else return to productList page
                     session.setAttribute("productErr", "Product doesn't exist");
                     response.sendRedirect("ProductListServlet");
                 }
@@ -57,6 +70,8 @@ public class EditProductServlet extends HttpServlet {
                   Logger.getLogger(DeleteProductServlet.class.getName()).log(Level.SEVERE, null, ex);       
             }
         } else {
+            //if user is not staff, then go to page
+            session.setAttribute("productErr", "You are not staff member");
             response.sendRedirect("ProductListServlet");
         }
      }

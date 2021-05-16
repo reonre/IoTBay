@@ -22,8 +22,8 @@
         <%
             User user = (User) session.getAttribute("user");
             ArrayList<Product> products = (ArrayList<Product>)session.getAttribute("products");
-            String productSearch = (String)session.getAttribute("productSearch");
             DecimalFormat priceFormat = new DecimalFormat("$#0.00");
+            String productErr = (String)session.getAttribute("productErr");
         %>
         <nav class="navbar navbar-expand-md navbar-dark bg-dark">
             <a class="navbar-brand" href="index.jsp">IoTBay</a>
@@ -63,6 +63,7 @@
         </div>
         </nav>
         <h1 class="text-center">Products</h1>
+        <p class="text-danger text-center"><%= productErr != null ? productErr : "" %></p>
         <div class="flex-row d-flex justify-content-center mb-4"> 
             <% if (user != null && user.getClass().getSimpleName().equals("Staff")) { %>
             <a class="btn btn-outline-success m-2" href="addProduct.jsp">Add Product</a>
