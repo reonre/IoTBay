@@ -51,7 +51,7 @@ public class OrderDBManager {
         return null;
     }
     
-    //adds order using order id and user id
+    //add order to assigned USER
     public void addOrder(Orders order) throws SQLException {
         String a = "INSERT INTO IOTUSER.\"ORDER\" (ID,PROD_ID,ORDER_DATE,ORDER_DETAILS,ORDERER_NAME,QUANTITY,PRICE,TOTAL_PRICE,BILLING_ADDRESS,SHIPPING_ADDRESS,STATUS)";
         String b=  "VALUES (" +order.getUserID()+"," +order.getProdID()+",'" +order.getOrderDate()+"','" +order.getOrderDetails()+"','" +order.getOrdererName()+"'," +order.getQuantity()+"," +order.getPrice()+"," +order.getTotalPrice()+",'" +order.getBillingAddress()+"','" +order.getShippingAddress()+"','" +order.getStatus()+"')";
@@ -60,9 +60,10 @@ public class OrderDBManager {
 
     }
     
-//    public void addOrder(int ID, int PROD_ID, int ORDER_DATE, int productID, String productName, double totalPrice, double price) throws SQLException {
-//        st.executeUpdate("INSERT INTO IOTBAY.ORDERLINE " + "VALUES (" +orderLineID+", " +orderID+", "+quantity+", "+productID+", '"+productName+"', "+totalPrice+", "+ price+")");
-//    }
+    public void updateOrder(int ORDER_ID, int ID, String ORDER_DATE, String ORDER_DETAILS, String ORDERER_NAME, int QUANTITY, double PRICE,double TOTAL_PRICE,String BILLING_ADDRESS,String SHIPPING_ADDRESS, String STATUS) throws SQLException {
+        st.executeUpdate("UPDATE IOTUSER.\"ORDER\" SET ORDERDATE='"+ORDER_ID+"',ID="+ID+",ORDER_DATE="+ORDER_DATE+",ORDER_DETAILS='"+
+                ORDER_DETAILS+",ORDERER_NAME='"+ORDERER_NAME+"',QUANTITY="+QUANTITY+",PRICE="+PRICE+",TOTALPRICE="+TOTAL_PRICE+",BILLING_ADDRESS='"+BILLING_ADDRESS+"',SHIPPING_ADDRESS='"+SHIPPING_ADDRESS+"',STATUS='"+STATUS+"' WHERE ORDER_ID="+ORDER_ID+" AND ID="+ID+"");
+    }
     
     //updates order with all variables
     public void updateOrder(int orderID, int userID, String orderDate, double totalPrice, String Address) throws SQLException {

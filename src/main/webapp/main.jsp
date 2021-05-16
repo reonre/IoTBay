@@ -84,7 +84,12 @@
         <form action="LogServlet" method="post">
             <input type="submit" value="Access Logs"/>
         </form>
-            <form action="payment_search.jsp">
+
+        <form action="viewOrder.jsp" method="post">
+            <input type="submit" value="View Order"/>  
+        </form>   
+
+        <form action="payment_search.jsp">
             <input type="submit" value="Search Payment" />
         </form>
 
