@@ -22,14 +22,8 @@ public class DBManager {
     }
 
     public User findUser(String email, String password) throws SQLException {
-        String fetch = "SELECT * FROM IOTUSER.\"USER\" WHERE EMAIL='" + email + "' AND PASSWORD='" + password + "'";// read
-                                                                                                                    // from
-                                                                                                                    // where
-                                                                                                                    // Emal
-                                                                                                                    // =
-                                                                                                                    // and
-                                                                                                                    // password
-                                                                                                                    // =
+        String fetch = "SELECT * FROM IOTUSER.\"USER\" WHERE EMAIL='" + email + "' AND PASSWORD='" + password + "'";//Fetch All from the IOTUSER.USER.
+                                                                                                                   
 
         ResultSet rs = st.executeQuery(fetch);//Returns the resultset object.
         //If the result set still has a result, move to the nxt result and do something.
@@ -69,14 +63,7 @@ public class DBManager {
     }
 
     public int findSC(String email, String password) throws SQLException {
-        String fetch = "SELECT * FROM IOTUSER.\"USER\" WHERE EMAIL='" + email + "' AND PASSWORD='" + password + "'";// read
-                                                                                                                    // from
-                                                                                                                    // where
-                                                                                                                    // Emal
-                                                                                                                    // =
-                                                                                                                    // and
-                                                                                                                    // password
-                                                                                                                    // =
+        String fetch = "SELECT * FROM IOTUSER.\"USER\" WHERE EMAIL='" + email + "' AND PASSWORD='" + password + "'";//Fetch All from the IOTUSER.USER.
 
         ResultSet rs = st.executeQuery(fetch);
 
