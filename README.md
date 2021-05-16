@@ -2,7 +2,7 @@
 ## Introduction
 This project consists of the IoTBay web store application.
 
-## Deployment Information
+### Deployment Information
 The project can be launched using supported IDEs such as NetBeans.
 
 ### Database Configuration
