@@ -61,10 +61,6 @@
         </div>
         </nav>
          <div class="container">
-            <% if (user != null && user.getClass().getSimpleName().equals("Staff")) { %>
-            <a class="btn btn-outline-info mt-2" href="EditProductServlet?Prod_id=<%= product.getProd_id()%>" >Edit</a>
-            <a class="btn btn-outline-danger mt-2" href="DeleteProductServlet?id=<%= product.getProd_id()%>">Delete</a>
-            <% } %>
             <h1><%= product.getProduct_name() %></h1>
             <% if (user != null && user.getClass().getSimpleName().equals("Staff")) { %>
             <h4>ID: <%= product.getProd_id()%></h4>
@@ -73,16 +69,16 @@
             <p><%= product.getProduct_desc()%></p>
             <p><%= priceFormatter.format(product.getProduct_price()) %></p>
             
-            <form class="form-inline justify-content-center" action="productList.jsp" method="post">
-                <div class="form-group">
-                    <label class="mr-2" for="quantity">Quantity: </label>
-                    <input type="text" class="form-control mr-2" id="quantity" name="quantity">
+            <a href="Order.jsp" value="Order" class="btn btn-outline-success">
+            <% if (user != null && user.getClass().getSimpleName().equals("Staff")) { %>
+            <div class="card mt-2 float-right" style="width: 16rem;">
+                <div class="card-body m-auto">
+                    <h4>Admin controls</h4>
+                    <a class="btn btn-outline-info" href="EditProductServlet?id=<%= product.getProd_id()%>">Edit</a>
+                    <a class="btn btn-outline-danger" href="DeleteProductServlet?id=<%= product.getProd_id()%>">Delete</a>
                 </div>
-                <div class="mr-2">
-                    <input type="submit" value="Order" class="btn btn-outline-success">
-                    <a href="ProductListServlet" class="btn btn-outline-warning">Cancel</a>
-                </div>
-            </form>
+            </div>
+            <% } %>
             
         </div>
     </body>

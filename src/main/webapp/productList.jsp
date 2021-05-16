@@ -65,9 +65,14 @@
         <h1 class="text-center">Products</h1>
         <div class="flex-row d-flex justify-content-center mb-4"> 
             <% if (user != null && user.getClass().getSimpleName().equals("Staff")) { %>
-            <a class="btn btn-outline-primary m-2" href="addProduct.jsp">Add Product</a>
+            <a class="btn btn-outline-success m-2" href="addProduct.jsp">Add Product</a>
             <% } %>
             <a class="btn btn-outline-primary m-2" href="ProductListServlet">List All Products</a>
+            <form class="form-inline my-4 my-lg-0" method="get" action="SearchProductServlet">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search name" name="nameSearch">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search type" name="typeSearch">
+                <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
+            </form>
         </div>
 
         <div class="row text-center">   

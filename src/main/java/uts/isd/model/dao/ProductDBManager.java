@@ -120,8 +120,8 @@ public class ProductDBManager {
          
         String query = 
                 "SELECT * FROM IOTUSER.PRODUCT " +
-                "WHERE PRODUCT_NAME LIKE " + "%" + searchName + "%" +
-                "AND PRODUCT_TYPE LIKE " + "%" + searchType + "%";
+                "WHERE LOWER(PRODUCT_NAME) LIKE " + "'%" + searchName + "%'" +
+                "AND LOWER(PRODUCT_TYPE) LIKE " + "'%" + searchType + "%'";
         ResultSet rs = st.executeQuery(query);
         ArrayList<Product> list = new ArrayList<>();
         
@@ -139,14 +139,14 @@ public class ProductDBManager {
     }
 
     // Update - Update a single product
-    public void updateProduct(String id, String name, String price, String desc, String type, String quant) throws SQLException {
+    public void updateProduct(int id, String name, String price, String desc, String type, String quant) throws SQLException {
         String query = 
                 "UPDATE IOTUSER.PRODUCT SET " +
                 "PRODUCT_NAME = '" + name + "', " +
                 "PRODUCT_PRICE = " + price + ", " +
                 "PRODUCT_DESC = '" + desc + "', " +
                 "PRODUCT_TYPE = '" + type + "', " +
-                "PRODUCT_QUANT = " + quant + ", " +
+                "PRODUCT_QUANT = " + quant + " " +
                 "WHERE PROD_ID = " + id;
         
         st.execute(query);
