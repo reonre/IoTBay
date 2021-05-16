@@ -31,7 +31,7 @@
                     <a class="nav-link" href="index.jsp">Home<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                        <a class="nav-link" href="ProductListServlet">Products</a>
+                    <a class="nav-link" href="ProductListServlet">Products</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="about_us.jsp">About</a>
@@ -63,8 +63,7 @@
             %>
             <tr><td>Position:</td><td>${user.position}</td></tr>
             <%
-                }
-                else if (user.getClass().getSimpleName().equals("Customer")){
+            } else if (user.getClass().getSimpleName().equals("Customer")) {
             %>
             <tr><td>Type:</td><td>${user.type}</td></tr>
             <%
@@ -72,31 +71,35 @@
             %>
 
         </table>
-            <table>
-                <tr><td>
-                        <form action="edit.jsp">
-                            <input type="submit" value="Edit Account" />
-                        </form>
-                    </td></tr>
-                <tr><td>
-                        <form action="DeleteServlet" method="post">
-                            <input type="submit" value="Delete Account" />
-                        </form>
-                    </td></tr>
-                <tr><td>
-                        <form action="LogServlet" method="post">
-                            <input type="submit" value="Access Logs"/>
-                        </form>
-                    </td></tr>
-                <form action="OrderHistory.jsp" method="post">
-                    <input type="submit" value="View Order"/>  
-                </form>   
-                <tr><td>
-                        <form action="payment_search.jsp">
-                            <input type="submit" value="Search Payment" />
-                        </form>
-                    </td></tr>
-            </table>
+        <table>
+            <tr><td>
+                    <form action="edit.jsp">
+                        <input type="submit" value="Edit Account" />
+                    </form>
+                </td></tr>
+            <tr><td>
+                    <form action="DeleteServlet" method="post">
+                        <input type="submit" value="Delete Account" />
+                    </form>
+                </td></tr>
+            <tr><td>
+                    <form action="LogServlet" method="post">
+                        <input type="submit" value="Access Logs"/>
+                    </form>
+                </td></tr>
+            <form action="OrderHistory.jsp" method="post">
+                <input type="submit" value="View Order"/>  
+            </form>   
+            <tr><td>
+                    <form action="payment_search.jsp">
+                        <input type="submit" value="Search Payment" />
+                    </form>
+                    <form action="payment_search.jsp">
+                        <input type="submit" value="Search Payment" />
+                    </form>
+                </td></tr>
+
+        </table>
     </div>
 </body>
 </html>
