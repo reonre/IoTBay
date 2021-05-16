@@ -13,7 +13,7 @@ public class PaymentHistory implements Serializable {
     private String paymentMethod, cardNumber, nameOnCard, datePaid;
     private int id, paymentId, orderId;
     private double price;
-    public PaymentHistory(int id, int paymentId, int invoiceId, String paymentMethod, double price, String cardNumber, String nameOnCard, String datePaid) {
+    public PaymentHistory(int id, int paymentId, int orderId, String paymentMethod, double price, String cardNumber, String nameOnCard, String datePaid) {
         this.id = id;
         this.paymentId = paymentId;
         this.orderId = orderId;

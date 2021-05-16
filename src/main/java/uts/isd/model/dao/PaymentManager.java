@@ -86,13 +86,14 @@ public class PaymentManager {
            int payment_Id = rs.getInt(1);
            String date_Paid = rs.getString(9);
            if(payment_Id == PAY_ID && date_Paid.equals(datePaid)){
+               int orderId = rs.getInt(2);
                 String paymentMethod  = rs.getString(3);
-                
+                double price = rs.getDouble(4);
                 String cardNumber = rs.getString(5);
                 String cvv = rs.getString(7);
                 String expiryDate = rs.getString(6);
                 String nameOnCard = rs.getString(8);
-                return new Payment(paymentMethod, cardNumber, expiryDate, cvv, nameOnCard, datePaid );
+                return new Payment(payment_Id, orderId, paymentMethod,price, cardNumber, expiryDate,  cvv, nameOnCard, datePaid);
                 }
            }
        return null;   

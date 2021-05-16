@@ -6,6 +6,7 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="uts.isd.model.dao.*"%>
+<%@page import="uts.isd.model.*"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -14,9 +15,8 @@
         <script src="js/bootstrap.min.js"></script>
         <title> Payment Create Page</title>
         <% 
-            String creditCardErr = (String)session.getAttribute("creditCardErr");
-            String cvvErr = (String)session.getAttribute("CvvErr");
-            String expiryDateErr = (String)session.getAttribute("expiryDateErr");
+            
+            OrderDBManager ordManager = (OrderDBManager) session.getAttribute("orderDBManager");
         %>
     </head>
     <body>
@@ -40,9 +40,6 @@
                     <li class="nav-item active">
                         <a class="nav-link btn btn-primary text-white" type="button" href="main.jsp" data-toggle="modal" data-target="#myModal">Profile<span class="sr-only">(current)</a>                  
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link btn btn-danger text-white" type="button" href="LogoutServlet" data-toggle="modal" data-target="#myModal">Logout</a>
-                    </li>
                 </ul>
             </div>
         </nav>
@@ -50,8 +47,7 @@
         <form action="PaymentServlet" method="post">
             <table class="table table-responsive">
                 
-                <tr><td>Order :#</td></tr>
-                <tr><td>Amount :$</td></tr>
+                <tr><td>Amount :$</td><td>${order.getTotalPrice()}</td></tr>
                 
                 <tr>
                     <td>
@@ -66,9 +62,9 @@
                         <input class="date" type="date" name="datePaid"/>  
                     </td>
                 </tr>
-                <tr><td>Card Number</td><td><input placeholder="<%= creditCardErr != null ? creditCardErr : "" %>" type="text" name="cardNumber" required=""/></td></tr>
-                <tr><td>Expiry Date</td><td><input placeholder="<%= expiryDateErr != null ? expiryDateErr : "" %>" type="text" name="expiryDate" required=""/></td></tr>
-                <tr><td>CVV</td><td><input placeholder="<%= cvvErr != null ? cvvErr : "" %>" type="text" name="cvv"/></td></tr>
+                <tr><td>Card Number</td><td><input  type="text" name="cardNumber" required=""/></td></tr>
+                <tr><td>Expiry Date</td><td><input  type="text" name="expiryDate" required=""/></td></tr>
+                <tr><td>CVV</td><td><input type="text" name="cvv"/></td></tr>
                 <tr><td>Name On Card</td><td><input type="text" name="nameOnCard" required=""/></td></tr>
                 <tr><td>Agree to Terms of Service</td><td><input type="checkbox" name="tos" id="tos"/></td></tr>
                 <tr><td>

@@ -47,7 +47,7 @@
         <form action="DeletePaymentServlet" method="post">
             <table class="table table-responsive" id="users">
                 <tr><td>User Id:#</td><td><%= user.getUSER_ID()%></td></tr>
-                <tr><td>Order Id:#</td><td><%= payment.getOrderId()%></td></tr>
+                <tr><td>Order Id:#</td><td>${orderId}</td></tr>
                 <tr><td>Payment Method:</td><td><%= payment.getPaymentMethod()%></td></tr>
                 <tr><td>Amount :$</td><td><%= payment.getPrice()%></td></tr>
                 <tr><td>Date Paid:</td><td><%= payment.getDatePaid()%></td></tr>

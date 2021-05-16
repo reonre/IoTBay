@@ -41,6 +41,7 @@ public class PaymentServlet extends HttpServlet {
         Payment payment = new Payment(paymentMethod, cardNumber, expiryDate, cvv, nameOnCard, datePaid);
         User user = (User) session.getAttribute("user");
         PaymentManager manager = (PaymentManager) session.getAttribute("manager");
+        Orders orders = (Orders) session.getAttribute("order");
         validator.clear(session);
 
         try {
@@ -50,8 +51,9 @@ public class PaymentServlet extends HttpServlet {
             //request.getRequestDispatcher("confirm_payment.jsp").include(request, response);
             //} else {
             //int order_Id = manager.getOrderId();
-            double orderPrice = 100;
-            Integer order_Id = 100;
+            
+            double orderPrice = orders.getTotalPrice();
+            int order_Id = (int)session.getAttribute("orderId");
             //double orderPrice = manager.getPrice();
             System.out.println(order_Id);
             System.out.println(orderPrice);

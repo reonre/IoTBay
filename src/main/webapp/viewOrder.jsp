@@ -112,6 +112,9 @@
                 <tr><td>
                 <input type="submit" value="Cancel Order" class="button" name = "submit" id="submit">
                 </td></tr>
+                <form action="create_payment.jsp">
+                            <input type="submit" value="Make Payment" />
+                        </form>
             </table>
 
         </div>
