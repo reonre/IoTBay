@@ -29,11 +29,35 @@ VALUES
 
 INSERT INTO "STAFF"(ID, "POSITION")
 VALUES
-(10000, 'Manager');
+(10000, 'Manager'),
+(10001, 'Slave'),
+(10002, 'Slave'),
+(10003, 'Slave'),
+(10004, 'Slave'),
+(10005, 'Slave'),
+(10006, 'Slave'),
+(10007, 'Slave'),
+(10008, 'Slave'),
+(10009, 'Slave'),
+(10010, 'Slave'),
+(10011, 'Kuing');
+
+
+
+
 
 INSERT INTO CUSTOMER(ID, "TYPE")
 VALUES
-(10012, 'Individual');
+(10012, 'Individual'),
+(10013, 'Company'),
+(10014, 'Individual'),
+(10015, 'Individual'),
+(10016, 'Individual'),
+(10017, 'Individual'),
+(10018, 'Company'),
+(10019, 'Individual'),
+(10020, 'Individual'),
+(10021, 'Individual');
 
 
 -- INSERT 20 instances into PRODUCT table
