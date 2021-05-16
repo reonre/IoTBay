@@ -38,9 +38,6 @@
                 <li class="nav-item active">
                     <a class="nav-link btn btn-primary text-white" type="button" href="main.jsp" data-toggle="modal" data-target="#myModal">Profile<span class="sr-only">(current)</a>                  
                 </li>
-                <li class="nav-item active">
-                    <a class="nav-link btn btn-warning text-dark" type="button" href="create_payment.jsp" data-toggle="modal" data-target="#myModal">Payment<span class="sr-only">(current)</a>                  
-                </li>
             </ul>
         </div>
     </nav>
