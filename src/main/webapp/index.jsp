@@ -49,9 +49,15 @@
                 </ul>
             </div>
         </nav>
-            <p>You are logged in as ${user.name} &lt;${user.email}&gt;</p>
+        <div class="container-fluid">
+            <br></br>
+            <h1><center>
+                    Welcome to IoTBay!
+                </center></h1>
+        </div>
+        <p><center>You are logged in as ${user.name} &lt;${user.email}&gt;</center></p>
 
-        <%} else {
+<%} else {
         %>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto topnav">
@@ -76,13 +82,14 @@
             </ul>
         </div>
     </nav>
+    <div class="container-fluid">
+        <br></br>
+            <h1><center>
+                    Welcome to IoTBay!
+                </center></h1>
+        </div>
     <% }
     %>
-    <div class="container-fluid">
-        <p>
-            Welcome to IoTBay!
-        </p>
-    </div>
     <jsp:include page="/ConnServlet" flush="true"/>
 </body>
 </html>

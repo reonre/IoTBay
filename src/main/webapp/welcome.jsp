@@ -15,6 +15,7 @@
         <script src="js/bootstrap.min.js"></script>
         <title>Welcome</title>
     </head>
+    
     <body>
         <nav class="navbar navbar-expand-md navbar-dark bg-dark">
             <a class="navbar-brand" href="index.jsp">IoTBay</a>
