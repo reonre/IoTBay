@@ -22,11 +22,13 @@ import uts.isd.model.dao.*;
  * @author Charl
  */
 public class ConnServlet extends HttpServlet {
-
+    
+    
     private DBConnector db;
     private DBManager manager;
     private Connection conn;
     private ProductDBManager productDBManager;
+    private OrderDBManager orderDBManager;
 
     @Override //Create and instance of DBConnector for the deployment session
 
@@ -47,12 +49,14 @@ public class ConnServlet extends HttpServlet {
         try {
             manager = new DBManager(conn);
             productDBManager = new ProductDBManager(conn);
+            orderDBManager=new OrderDBManager(conn);
         } catch (SQLException ex) {
             Logger.getLogger(ConnServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
         //export the DB manager to the view-session (JSPs)
         session.setAttribute("manager", manager);
         session.setAttribute("productDBManager", productDBManager);
+        session.setAttribute("orderDBManager", orderDBManager);
     }
 
     @Override //Destroy the servlet and release the resources of the application (terminate also the db connection)

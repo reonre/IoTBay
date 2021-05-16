@@ -66,6 +66,12 @@ public class Orders implements Serializable{
         return PROD_ID;
     }
     
+//    public String getPRODNAME(int PROD_ID){
+//        Product product = new Product();
+//        String name= Product
+//       return 
+//    }
+    
     public void setProdID(int PRODID){
         this.PROD_ID=PRODID;
     }
@@ -87,7 +93,8 @@ public class Orders implements Serializable{
     }
 
     public double getTotalPrice() {
-        return TOTAL_PRICE;
+        double total= (double)PRICE*(double)QUANTITY;
+        return total;
     }
 
     public void setTotalPrice(double TOTAL_Price) {
@@ -122,12 +129,6 @@ public class Orders implements Serializable{
         return STATUS;
     }
     
-//    public void updatePrice(double price, int quantity) {
-//        this.totalPrice = this.totalPrice + (price*quantity);
-//    }
-//    
-//    public void deleteOrderLine(double totalPrice) {
-//        this.totalPrice = this.totalPrice - totalPrice;
-//    }
-//    
 }
+    
+

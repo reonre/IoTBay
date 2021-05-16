@@ -60,28 +60,27 @@
         </div>
         </nav>
          <div class="container">
-            <% if (user != null && user.getClass().getSimpleName().equals("Staff")) { %>
-            <a class="btn btn-outline-info mt-2" href="EditProductServlet?Prod_id=<%= product.getProd_id()%>" >Edit</a>
-            <a class="btn btn-outline-danger mt-2" href="DeleteProductServlet?id=<%= product.getProd_id()%>">Delete</a>
-            <% } %>
-            <h1><%= product.getProduct_name() %></h1>
-            <% if (user != null && user.getClass().getSimpleName().equals("Staff")) { %>
-            <h4>ID: <%= product.getProd_id()%></h4>
-            <% } %>
-            <h5><%= product.getProduct_type()%></h5>
-            <p><%= product.getProduct_desc()%></p>
-            <p><%= priceFormatter.format(product.getProduct_price()) %></p>
-            
-            <form class="form-inline justify-content-center" action="productList.jsp" method="post">
-                <div class="form-group">
-                    <label class="mr-2" for="quantity">Quantity: </label>
-                    <input type="text" class="form-control mr-2" id="quantity" name="quantity">
-                </div>
-                <div class="mr-2">
-                    <input type="submit" value="Order" class="btn btn-outline-success">
-                    <a href="ProductListServlet" class="btn btn-outline-warning">Cancel</a>
-                </div>
-            </form>
+            <form action="OrderProductServlet" method="post">
+            <table class="table table-responsive">
+                
+                <tr><td><%= product.getProduct_name() %></td><td> 
+                 <tr><td>Quantity</td><td><input type="number" name="quant"/></td></tr>
+                        
+                <tr><td>Customer Name</td><td><input type="text" name="name"/></td></tr>
+                <tr><td>Billing Address</td><td><input type="text" name="billadd"/></td></tr>
+                <tr><td>Shipping Address</td><td><input type="text" name="shipadd"/></td></tr>                
+               
+               
+                <tr><td>
+                        <input type="submit" value="Submit" class="button" name = "submit" id="submit" >
+                    </td></tr>
+            </table>
+        </form>
+             
+             
+             
+             
+
             
         </div>
     </body>

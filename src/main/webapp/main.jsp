@@ -78,9 +78,13 @@
         <form action="DeleteServlet" method="post">
             <input type="submit" value="Delete Account" />
         </form>
-        <form action="LogServlet" method="post">
-            <input type="submit" value="Access Logs"/>
-        </form>
+            <form action="LogServlet" method="post">
+                <input type="submit" value="Access Logs"/>
+            </form>
+
+            <form action="viewOrder.jsp" method="post">
+                <input type="submit" value="View Order"/>  
+            </form>   
 
     </div>
 

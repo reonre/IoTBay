@@ -53,9 +53,16 @@ public class OrderDBManager {
     
     //adds order using order id and user id
     public void addOrder(Orders order) throws SQLException {
-        st.executeUpdate("INSERT INTO IOTUSER.ORDERS VALUES (" +order.getUserID()+"," +order.getProdID()+",'" +order.getOrderDate()+"','" +order.getOrderDetails()+"','" +order.getOrdererName()+"'," +order.getQuantity()+"," +order.getPrice()+"," +order.getTotalPrice()+",'" +order.getBillingAddress()+"','" +order.getShippingAddress()+"','" +order.getStatus()+"')");
-       
+        String a = "INSERT INTO IOTUSER.\"ORDER\" (ID,PROD_ID,ORDER_DATE,ORDER_DETAILS,ORDERER_NAME,QUANTITY,PRICE,TOTAL_PRICE,BILLING_ADDRESS,SHIPPING_ADDRESS,STATUS)";
+        String b=  "VALUES (" +order.getUserID()+"," +order.getProdID()+",'" +order.getOrderDate()+"','" +order.getOrderDetails()+"','" +order.getOrdererName()+"'," +order.getQuantity()+"," +order.getPrice()+"," +order.getTotalPrice()+",'" +order.getBillingAddress()+"','" +order.getShippingAddress()+"','" +order.getStatus()+"')";
+        st.executeUpdate(a +b);
+//        st.executeUpdate("INSERT INTO IOTUSER.ORDER VALUES (" +order.getUserID()+"," +order.getProdID()+",'" +order.getOrderDate()+"','" +order.getOrderDetails()+"','" +order.getOrdererName()+"'," +order.getQuantity()+"," +order.getPrice()+"," +order.getTotalPrice()+",'" +order.getBillingAddress()+"','" +order.getShippingAddress()+"','" +order.getStatus()+"')");
+
     }
+    
+//    public void addOrder(int ID, int PROD_ID, int ORDER_DATE, int productID, String productName, double totalPrice, double price) throws SQLException {
+//        st.executeUpdate("INSERT INTO IOTBAY.ORDERLINE " + "VALUES (" +orderLineID+", " +orderID+", "+quantity+", "+productID+", '"+productName+"', "+totalPrice+", "+ price+")");
+//    }
     
     //updates order with all variables
     public void updateOrder(int orderID, int userID, String orderDate, double totalPrice, String Address) throws SQLException {
@@ -68,22 +75,31 @@ public class OrderDBManager {
         st.executeUpdate("DELETE FROM IOTBAY.ORDERS WHERE ORDERID=" +orderID+"");
     }
     //fetches order using userID
-    public ArrayList<Orders> fetchOrder(int userID) throws SQLException {
-        String fetch = "select * from ORDER where USERID='"+userID+"'";
+   public ArrayList<Orders> fetchOrders(int userID) throws SQLException {
+        String fetch = "select * from IOTUSER.\"ORDER\" where ID="+userID+"";
+         ArrayList<Orders> temp = new ArrayList();
         ResultSet rs = st.executeQuery(fetch);
-        ArrayList<Orders> temp = new ArrayList();
+ 
         
-        //reads data from user table, then stores into order. use controller and view to show order
-        while (rs.next()) { 
-            int orderID = rs.getInt(1);
-            String orderDate = rs.getString(3);
-            double totalPrice = rs.getDouble(4);
-            String Address = rs.getString(5);
-//            temp.add(new Orders(orderID, userID, orderDate, totalPrice, Address));
+        while (rs.next()) {
+            int ORDER_ID=Integer.parseInt(rs.getString(1));
+            int PROD_ID=Integer.parseInt(rs.getString(3));
+            String ORDER_DATE = rs.getString(4);
+            String ORDER_DETAILS=rs.getString(5);
+            String ORDERER_NAME=rs.getString(6);
+            int QUANTITY=rs.getInt(9);
+            double PRICE=rs.getDouble(10);
+            double TOTAL_PRICE=rs.getDouble(11);
+            String BILLING_ADDRESS=rs.getString(7);
+            String SHIPPING_ADDRESS=rs.getString(8);
+            String STATUS=rs.getString(12);
+            temp.add(new Orders(ORDER_ID,userID,PROD_ID,ORDER_DATE,ORDER_DETAILS,ORDERER_NAME,QUANTITY,PRICE,TOTAL_PRICE,BILLING_ADDRESS,SHIPPING_ADDRESS,STATUS));
         }
         return temp;
     }
+   
+   
     
-    
+   
     
 }
