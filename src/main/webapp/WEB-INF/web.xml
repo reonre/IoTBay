@@ -100,8 +100,12 @@
         <servlet-class>uts.isd.controller.product.SearchProductServlet</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>OrderHistoryServlet</servlet-name>
-        <servlet-class>uts.isd.controller.OrderHistoryServlet</servlet-class>
+        <servlet-name>PaymentSearchServlet</servlet-name>
+        <servlet-class>uts.isd.controller.PaymentSearchServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>PaymentUpdateServlet</servlet-name>
+        <servlet-class>uts.isd.controller.PaymentUpdateServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>ConnServlet</servlet-name>
@@ -200,8 +204,12 @@
         <url-pattern>/OrderProductServlet</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>OrderHistoryServlet</servlet-name>
-        <url-pattern>/OrderHistoryServlet</url-pattern>
+        <servlet-name>PaymentSearchServlet</servlet-name>
+        <url-pattern>/PaymentSearchServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>PaymentUpdateServlet</servlet-name>
+        <url-pattern>/PaymentUpdateServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>30</session-timeout>

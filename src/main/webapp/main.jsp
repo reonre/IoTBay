@@ -1,4 +1,4 @@
-<%-- 
+<%--
     Document   : about us page
     Created on : 25/03/2021, 1:12:38 PM
     Author     : team 43
@@ -40,10 +40,13 @@
                     <a class="nav-link" href="contact_us.jsp">Contact</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link btn btn-primary text-white" type="button" href="main.jsp" data-toggle="modal" data-target="#myModal">Profile<span class="sr-only">(current)</a>                  
+                    <a class="nav-link btn btn-primary text-white" type="button" href="main.jsp" data-toggle="modal" data-target="#myModal">Profile<span class="sr-only">(current)</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link btn btn-danger text-white" type="button" href="LogoutServlet" data-toggle="modal" data-target="#myModal">Logout</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link btn btn-warning text-dark" type="button" href="create_payment.jsp" data-toggle="modal" data-target="#myModal">Payment<span class="sr-only">(current)</a>
                 </li>
             </ul>
         </div>
@@ -65,7 +68,7 @@
             <%
                 }
                 else if (user.getClass().getSimpleName().equals("Customer")){
-            %> 
+            %>
             <tr><td>Type:</td><td>${user.type}</td></tr>
             <%
                 }
@@ -78,13 +81,12 @@
         <form action="DeleteServlet" method="post">
             <input type="submit" value="Delete Account" />
         </form>
-            <form action="LogServlet" method="post">
-                <input type="submit" value="Access Logs"/>
-            </form>
-
-            <form action="viewOrder.jsp" method="post">
-                <input type="submit" value="View Order"/>  
-            </form>   
+        <form action="LogServlet" method="post">
+            <input type="submit" value="Access Logs"/>
+        </form>
+            <form action="payment_search.jsp">
+            <input type="submit" value="Search Payment" />
+        </form>
 
     </div>
 

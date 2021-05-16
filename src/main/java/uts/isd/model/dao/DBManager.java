@@ -207,6 +207,7 @@ public class DBManager {
     }
     
     
+    
 
 //    public void addUser(String name, String EMAIL, String ADDRESS, String PASSWORD, String GENDER, String PHONE,
 //            String DOB) {
@@ -216,3 +217,4 @@ public class DBManager {
 //    }
 
 }
+

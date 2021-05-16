@@ -30,37 +30,44 @@ public class PaymentServlet extends HttpServlet {
 
         // Session
         HttpSession session = request.getSession();
+        Validator validator = new Validator();
         String paymentMethod = request.getParameter("paymentMethod");
         String cardNumber = request.getParameter("cardNumber");
         String cvv = request.getParameter("cvv");
         String nameOnCard = request.getParameter("nameOnCard");
         String expiryDate = request.getParameter("expiryDate");
         String datePaid = request.getParameter("datePaid");
-        
-        
 
-        Payment payment;
+        Payment payment = new Payment(paymentMethod, cardNumber, expiryDate, cvv, nameOnCard, datePaid);
+        User user = (User) session.getAttribute("user");
         PaymentManager manager = (PaymentManager) session.getAttribute("manager");
+        validator.clear(session);
 
         try {
-            
+
             //payment = manager.searchPayment(payment_Id, datePaid);
             //if (payment != null) {
-                //request.getRequestDispatcher("confirm_payment.jsp").include(request, response);
+            //request.getRequestDispatcher("confirm_payment.jsp").include(request, response);
             //} else {
-                int invoice_Id = 100;
-                //int order_Id = manager.getOrderId();
-                //session.setAttribute("INVOICE_ID", invoice_Id);
-                //session.setAttribute("PAY_ID", payment_Id);
-                manager.addPayment(invoice_Id, paymentMethod, cardNumber, expiryDate, cvv, nameOnCard, datePaid);
-                int payment_Id = manager.getPaymentId(cardNumber);
-                payment = manager.searchPayment(payment_Id, datePaid);
-                session.setAttribute("payment", payment);
-                
-                request.getRequestDispatcher("confirm_payment.jsp").include(request, response);
+            //int order_Id = manager.getOrderId();
+            double orderPrice = 100;
+            Integer order_Id = 100;
+            //double orderPrice = manager.getPrice();
+            System.out.println(order_Id);
+            System.out.println(orderPrice);
+            //session.setAttribute("INVOICE_ID", invoice_Id);
+            //session.setAttribute("PAY_ID", payment_Id);
+            manager.addPayment(order_Id, paymentMethod, orderPrice, cardNumber, expiryDate, cvv, nameOnCard, datePaid);
+            int payment_Id = manager.getPaymentId(cardNumber);
+            payment = manager.searchPayment(payment_Id, datePaid);
+            manager.addHistory(user.getUSER_ID(), payment_Id, order_Id, paymentMethod, orderPrice, cardNumber, nameOnCard, datePaid);
+            session.setAttribute("payment", payment);
+
+            request.getRequestDispatcher("confirm_payment.jsp").include(request, response);
             //}
-        } catch (SQLException ex) {
+        } catch (SQLException | NullPointerException ex) {
             request.getRequestDispatcher("create_payment.jsp").include(request, response);
+
         }
     }
 }

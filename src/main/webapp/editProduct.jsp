@@ -102,7 +102,7 @@
                             <input placeholder="<%= productQuantityErr != null ? productQuantityErr : "" %>" value="<%= product.getProduct_quant() %>" type="number" class="form-control" id="PRODUCT_QUANT" name="PRODUCT_QUANT" required="">
                         </div>
                         <div class="text-center">
-                            <button type="button" onclick="history.back()" class="btn btn-outline-warning">Back</button>
+                            <a class="btn btn-outline-warning" href="ProductServlet?id=<%= product.getProd_id()%>">Back</a>
                             <input type="submit" value="Update" class="btn btn-outline-success">
                         </div>
                     </form>
