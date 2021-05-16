@@ -24,6 +24,8 @@ import uts.isd.model.dao.OrderDBManager;
  *
  * @author leon
  */
+
+//Servlet for creating an order with products.
 public class OrderProductServlet extends HttpServlet {
     HttpSession session;
     OrderDBManager OrderDBManager;
@@ -46,10 +48,11 @@ public class OrderProductServlet extends HttpServlet {
 
 //        System.out.println(user.get);
         try {
-            Orders order= new Orders(0,user.getUSER_ID(),product.getProd_id(),date.toString(),"",name,quantity,product.getProduct_price(),0.00,billAddress,shipAddress,"In-Progress");
+            Orders order= new Orders(0,user.getUSER_ID(),product.getProd_id(),date.toString(),"",name,quantity,product.getProduct_price(),0.0,billAddress,shipAddress,"In-Progress");
             OrderDBManager.addOrder(order);
             session.setAttribute("order", order);
             response.sendRedirect("viewOrder.jsp");
+            
 //            request.getRequestDispatcher("viewOrder.jsp").include(request, response);
           
 //            OrderDBManager= OrderDBManager.findProduct(PROD_ID);
