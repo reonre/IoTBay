@@ -200,19 +200,5 @@ public class DBManager {
         }
         return temp;
     }
-<<<<<<< Updated upstream
-    
-    
-    
-
-//    public void addUser(String name, String EMAIL, String ADDRESS, String PASSWORD, String GENDER, String PHONE,
-//            String DOB) {
-//        String query = "INSERT INTO uts.dbTableforUser.sql (NAME, EMAIL, ADDRESS, PASSWORD, GENDER, PHONE, DOB) VALUES ('"
-//                + name + "', '" + EMAIL + "','" + ADDRESS + "', '" + PASSWORD + "', '" + GENDER + "', '" + PHONE
-//                + "', '" + DOB + "')";
-//    }
-
-=======
->>>>>>> Stashed changes
 }
 
