@@ -49,7 +49,8 @@ public class OrderProductServlet extends HttpServlet {
 //        System.out.println(user.get);
         try {
             Orders order= new Orders(0,user.getUSER_ID(),product.getProd_id(),date.toString(),"",name,quantity,product.getProduct_price(),0.0,billAddress,shipAddress,"In-Progress");
-            OrderDBManager.addOrder(order);
+            int orderId = OrderDBManager.addOrder(order);
+            session.setAttribute("orderId", orderId);
             session.setAttribute("order", order);
 
 //            response.sendRedirect("OrderHistoryServlet");
